@@ -1,0 +1,10 @@
+Use case-eksempel: 
+  UC01 Beregn omsætning
+  Format: Word (doc)
+
+Activity diagram-eksempel: 
+  AD01 Beregn omsætning
+  Format: Visio
+
+Mockup-eksempel: 
+  Mockup01a...z Beregn omsætning
