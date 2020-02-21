@@ -1,2 +1,7 @@
-Retningslinjer
-Vejledninger
+Retningslinjer-eksempel: 
+  ENV01 Merge-procedure
+  Format: Markdown
+
+Vejledning-eksempel: 
+  ENV04 Merge-vejledning
+  Format: Markdown
