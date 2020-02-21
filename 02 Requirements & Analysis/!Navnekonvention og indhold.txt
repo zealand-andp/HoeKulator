@@ -10,17 +10,21 @@ Mockup-eksempel:
   Mockup01a...z Beregn omsætning
   Format: Image (jpg, png), Adobe XD (xd)
 
+Use case diagram-eksempel: 
+  UCD01 HoeKulator
+  Format: Visio (vsdx)
+
 Use case-eksempel: 
   UC01 Beregn omsætning
   Format: Word (doc)
 
 Activity diagram-eksempel: 
   AD01 Beregn omsætning
-  Format: Visio
+  Format: Visio (vsdx)
 
 System sequence diagram-eksempel: 
   SSD01 Beregn omsætning
-  Format: Visio
+  Format: Visio (vsdx)
 
 Operation contract-eksempel: 
   OC0101 angivSalgspris
