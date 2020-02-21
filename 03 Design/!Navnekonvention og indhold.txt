@@ -1,3 +1,7 @@
 Sequence diagram-eksempel: 
+  SD0101 angivSalgspris
+  Format: Visio
 
 Design class diagram-eksempel: 
+  DCD0101 angivSalgspris
+  Format: Visio
