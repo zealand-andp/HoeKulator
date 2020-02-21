@@ -1,5 +1,14 @@
+Vision-eksempel: 
+  Req01 Visionsdokument
+  Format: Word (doc)
+
+Supplementary specification-eksempel: 
+  Req02 Supplerende kravspecifikation
+  Format: Word (doc)
+
 Mockup-eksempel: 
   Mockup01a...z Beregn omsætning
+  Format: Image (jpg, png), Adobe XD (xd)
 
 Use case-eksempel: 
   UC01 Beregn omsætning
@@ -9,5 +18,12 @@ Activity diagram-eksempel:
   AD01 Beregn omsætning
   Format: Visio
 
-Operation contract-eksempel: 
+System sequence diagram-eksempel: 
+  SSD01 Beregn omsætning
+  Format: Visio
 
+Operation contract-eksempel: 
+  OC0101 angivSalgspris
+  Note: De første 2 cifre henviser til den første UC hvor OC'en indgår. 
+        Se krydsreferencer i OC'en for evt. yderligere UC-referencer.
+  Format: Word (doc)
