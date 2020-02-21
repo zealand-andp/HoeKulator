@@ -1,1 +1,7 @@
-...
+Test data-eksempel for system test (UC-niveau): 
+  TD01 Beregn omsætning
+  Format: Excel (xls)
+
+Test data-eksempel for unit/integration test (klasseniveau):
+  UTD01 Salgspris
+  Format: Excel (xls)
