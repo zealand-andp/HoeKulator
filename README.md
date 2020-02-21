@@ -6,7 +6,7 @@
 > 
 > HoeKulator er den perfekte applikation til eksamen, da applikationen sætter informationerne ind overskueligt og hurtigt med eksportering til de mest benyttede fil formater.
 
-## Holdsamarbejde <a name="Contributing"></a>
+## Holdsamarbejde 
 I uge 8 til 11 udarbejder nf19da2a2F20 en Resultatbudget-app til 2. semester-holdene på handelsøkonomuddannelsen. For at samarbejdet kan fungerer når 19 datamatikere skal arbejde på samme applikation så er det vigtigt at alle følger de fælles retningslinjer: 
 
 * I hver mappe ligger der en fil kaldet "*!Navnekonventioner og indhold.txt*". Den beskriver: 
