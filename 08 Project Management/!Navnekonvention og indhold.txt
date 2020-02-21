@@ -1,4 +1,11 @@
-Faseplan
-Iterationsplaner
-Tidsregistrering
-Mødeplaner
+Faseplan-eksempel: 
+  PM02 Faseplan
+  Format: Project (mpp), Image (jpg, png)
+
+Iterationsplan-eksempel: 
+  PM03 Iteration 1-plan
+  Format: Project (mpp), Image (jpg, png)
+
+Mødeplan-eksempel: 
+  PM01 Kravworkshop 2020-02-20 kl. 11-13
+  Format: Image(jpg, png), Excel (xls), Word (doc)
