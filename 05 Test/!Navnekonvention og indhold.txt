@@ -1,5 +1,9 @@
-Test data-eksempel for system test (UC-niveau): 
-  TD01 Beregn omsætning
+Test data-eksempel for accept test (UC-niveau): 
+  ATD01 Beregn omsætning
+  Format: Excel (xls)
+
+Test data-eksempel for system test (OC-niveau): 
+  STD0101 angivSalgspris
   Format: Excel (xls)
 
 Test data-eksempel for unit/integration test (klasseniveau):
