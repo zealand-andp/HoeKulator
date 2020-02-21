@@ -32,9 +32,16 @@ Alt i alt er vilkårene meget lige som dem I vil opleve på arbejdsmarkedet.
 Sygefravær meddeles via mail eller Moodle til ANDP **senest** kl. 08:30 på dagen. <br>
 Øvrigt fravær i mindre omfang aftales med ANDP **på forhånd**.
 
-## Tidsregistrering
+## Tidsregistrering og diversitet i arbejdsopgaver
 Lige som på det rigtige arbejdsmarked så skal I registrere brugen af jeres tid under projektet. Jeres tidsregistrering vil være den primære dokumentation for jeres aktive deltagelse i projektet og dermed adgang til få projektet godkendt som en obligatorisk studieaktivitet (hvis godkendelse er en forudsætning for at kunne deltage ved Førsteårsprøven).
 
-Tidsregistreringen vil også være hjælpsom når vi fordeler opgaver fordi historikken gør det lettere at sikre at alle prøver kræfter med så *mange forskellige opgavetyper* som muligt.
+Tidsregistreringen vil også være hjælpsom når vi fordeler opgaver fordi historikken gør det lettere at sikre at alle prøver kræfter med så *mange forskellige opgavetyper* som muligt. Det er den enkeltes eget ansvar at arbejde med så mange forskellige opgavetyper fra så mange forskellige discipliner som muligt, men vi vil i fællesskab skabe rammerne for det under den daglige fordeling af opgaver.
 
 Tidsregistrering vil foregå i individuelle Excel-ark som findes i mappen [Tidsregistrering](https://github.com/zealand-andp/HoeKulator/tree/master/08%20Project%20Management/Tidsregistrering) under [08 Project Management](https://github.com/zealand-andp/HoeKulator/tree/master/08%20Project%20Management).
+
+## Videnoverførsel via artefakter
+[<img align="right" src="https://github.com/zealand-andp/HoeKulator/blob/master/09%20Environment/ENV04%20Sammenh%C3%A6ng%20mellem%20artefakter.jpg" alt="Artefaktsammenhænge" width="264" height="333">](https://raw.githubusercontent.com/zealand-andp/HoeKulator/master/09%20Environment/ENV04%20Sammenh%C3%A6ng%20mellem%20artefakter.jpg)
+
+For at træne skabelsen af gode artefakter så indfører vi et benspænd, som dikterer at man som udgangspunkt ikke må lave en artefakt, som bygger på en artefakt, som man selv har lavet. Dvs. at man eksempelvis ikke må lave SSD01 hvis man selv har lavet UC01. Sammenhængen mellem artefakter kan ses af tegningen til højre.
+
+Det er hjælpsomt at I selv er opmærksomme på denne begrænsning under opgavefordelingen og forudseende nok til at melde jer til opgaver som ikke konflikter med jeres tidligere bidrag.
