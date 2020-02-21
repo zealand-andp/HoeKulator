@@ -13,3 +13,4 @@ Første linje er den normale commit description. De efterfølgende linjer er ext
 # Kendte krydsreferencer
 * [ENV01 Merge-procedure](https://github.com/zealand-andp/HoeKulator/blob/master/09%20Environment/ENV01%20Merge-procedure.md)
 * [ENV02 Branching-strategi og -procedure](https://github.com/zealand-andp/HoeKulator/blob/master/09%20Environment/ENV02%20Branching-strategi%20og%20-procedure.md)
+* [CM01 Change-procedure](https://github.com/zealand-andp/HoeKulator/blob/master/07%20Configuration%20%26%20Change%20Management/CM01%20Change-procedure.md)
