@@ -1,7 +1,7 @@
 Retningslinjer-eksempel: 
   ENV01 Merge-procedure
-  Format: Markdown
+  Format: Markdown (md), Image (jpg, png) 
 
 Vejledning-eksempel: 
   ENV04 Merge-vejledning
-  Format: Markdown
+  Format: Markdown (md), Image (jpg, png) 
