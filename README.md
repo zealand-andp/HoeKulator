@@ -6,7 +6,7 @@
 > 
 > HoeKulator er den perfekte applikation til eksamen, da applikationen sætter informationerne ind overskueligt og hurtigt med eksportering til de mest benyttede fil formater.
 
-## Holdsamarbejde
+## Holdsamarbejde <a name="Contributing"></a>
 I uge 8 til 11 udarbejder nf19da2a2F20 en Resultatbudget-app til 2. semester-holdene på handelsøkonomuddannelsen. For at samarbejdet kan fungerer når 19 datamatikere skal arbejde på samme applikation så er det vigtigt at alle følger de fælles retningslinjer: 
 
 * I hver mappe ligger der en fil kaldet "*!Navnekonventioner og indhold.txt*". Den beskriver: 
@@ -30,9 +30,11 @@ Alt i alt er vilkårene meget lige som dem I vil opleve på arbejdsmarkedet.
 
 ### Fravær og sygdom
 Sygefravær meddeles via mail eller Moodle til ANDP **senest** kl. 08:30 på dagen. <br>
-Øvrigt fravær i mindre omfang aftales med ANDP.
+Øvrigt fravær i mindre omfang aftales med ANDP **på forhånd**.
 
 ## Tidsregistrering
 Lige som på det rigtige arbejdsmarked så skal I registrere brugen af jeres tid under projektet. Jeres tidsregistrering vil være den primære dokumentation for jeres aktive deltagelse i projektet og dermed adgang til få projektet godkendt som en obligatorisk studieaktivitet (hvis godkendelse er en forudsætning for at kunne deltage ved Førsteårsprøven).
+
+Tidsregistreringen vil også være hjælpsom når vi fordeler opgaver fordi historikken gør det lettere at sikre at alle prøver kræfter med så *mange forskellige opgavetyper* som muligt.
 
 Tidsregistrering vil foregå i individuelle Excel-ark som findes i mappen [Tidsregistrering](https://github.com/zealand-andp/HoeKulator/tree/master/08%20Project%20Management/Tidsregistrering) under [08 Project Management](https://github.com/zealand-andp/HoeKulator/tree/master/08%20Project%20Management).
