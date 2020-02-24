@@ -8,6 +8,8 @@ Merging skal foretages af en uafhængig reviewer, dvs. en der ikke har bidraget 
    1. Evt. merge-konflikter skal rettes af branchens bidragsydere
    2. Hvis der var merge-konflikter, start fra trin 1 igen
 3. Pull branch into the master
+   1. Anfør branchens bidragsydere som authors i merge description
+   2. Anfør eget navn som merger i merge description
 4. Afslut pull request såfremt det kan gøres uden merge-konflikter
    1. Hvis der er merge-konflikter så slettes pull request og trin 2 udføres igen
 
