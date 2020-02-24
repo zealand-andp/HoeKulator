@@ -1,1 +1,4 @@
-...
+Domæne Model-eksempel: 
+  DOM01 Beregn omsætning
+  Format: Visio (vsdx)
+
