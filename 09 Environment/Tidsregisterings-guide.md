@@ -13,7 +13,7 @@ Du skal udfylde følgene ting i den tidsregisteringsskabelon du har fået udelev
 2. Rolle - den rolle som din opgave høre ind under. Se apendix A i The Rationel Unified Process.
 
 
-3. Dato.
+3. Dato- dd/mm/YYYY
 
 
 4. Starttid - det klokkeslæt hvor at du startede din opgave.
