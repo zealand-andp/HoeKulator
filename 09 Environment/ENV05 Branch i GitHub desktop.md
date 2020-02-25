@@ -51,7 +51,7 @@
 9. Sæt kun flueben i den fil, som du vil committe <br>
 
 
-![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning9.png)
+![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning9.PNG)
 
 
 10. Skriv en passende **commit message**. Husk coauthors og reviewers. Hvis dit GitHub navn er forskelligt fra dit rigtige navn, skal du skrive dit eget navn som coauthor. <br>
