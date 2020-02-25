@@ -87,4 +87,6 @@
 	
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning16.png) <br><br>
 
-<br><br> 22. Først når din pull request er gået igennem, skal du huske at slette din branch ved at trykke på **delete branch**
+<br><br> 22. Først når din pull request er gået igennem, skal du huske at slette din branch ved at trykke på **delete branch** <br>
+
+![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning17.png)
