@@ -49,17 +49,17 @@
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning13.png)
 
-<br><br> 14. Filen comittes ligesom i IntelliJ ved i menuen at trykke på **VCS > Git > Commit** <br>
+<br><br> 14. Filen comittes ligesom i IntelliJ ved i menuen at trykke på **VCS > Commit** <br>
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning14.png)
 
 <br><br> 15. I vinduet der popper op, vælg kun den fil som skal comittes. <br>
-16. Husk en beskrivende **Commit Message**
+16. Husk en beskrivende **Commit Message** <br>
 17. Tryk til sidst på **Commit**
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning15.png)
 
-<br><br> 18. Ligesom i IntelliJ, bliver ens commit først synlig når man pusher så tryk igen på **VCS > Git > Push** <br>
+<br><br> 18. Ligesom i IntelliJ, bliver ens commit først synlig når man pusher, så tryk igen på **VCS > Git > Push** <br>
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning16.png)
 
@@ -86,7 +86,7 @@
 
 <br><br> 25. Når branch'en er merged til master, så skal branch'en slettes. <br>
 
-![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning21.png) 
+![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning22.png) 
 
 
 
