@@ -50,13 +50,13 @@
 
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning10.png) <br><br>
 
-<br><br> 11. Tryk på **commit to branchnavn** 
+<br><br> 11. Tryk på **commit to branchnavn** <br>
 12. Hvis der er filer, som ikke skal committes, skal du højreklikke på dem og vælge **discard changes** _(OBS filen bliver slettet)_ <br>
 <br>
 
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning11.png) <br><br>
 
-<br><br> 13. **Pull** fra master
+<br><br> 13. **Pull** fra master <br>
 14. **Push** dit commit <br>
 <br>
 
@@ -67,21 +67,21 @@
 
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning13.png) <br><br>
 
-<br><br> 16. GitHub åbnes automatisk i din browser. 
+<br><br> 16. GitHub åbnes automatisk i din browser. <br>
 17. Skriv en pull request message. Alle bidragsydere angives som authors. Personen, som gennemfører mergen angives som merger. <br>
 18. Tryk på **create pull request**
 <br>
 
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning14.png) <br><br>
 
-<br><br> 19. Gå til repo'et på GitHub's hjemmeside og tryk på **pull requests** 
+<br><br> 19. Gå til repo'et på GitHub's hjemmeside og tryk på **pull requests** <br>
 20. Tryk på pull requestens navn <br>
 <br>
 
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning15.png) <br><br>
 
-<br><br> 21. Gennemfør pull request
-	1. Hvis der ikke er nogen konflikter, **merge** pull request
+<br><br> 21. Gennemfør pull request <br>
+	1. Hvis der ikke er nogen konflikter, **merge** pull request <br>
 	2. Hvis der er konflikter, så skal pull requesten slettes og du starter forfra fra punkt 13 <br>
 <br>	
 	
