@@ -59,7 +59,8 @@
 22. Tryk på **Create pull request**
 ![vejledning1](./Billeder_til_github_webbrowser_branchvejledning/vejledning18.png)
 
-<br><br>23. Du skal nu merge din pull request ind i masteren:
+<br><br>
+23. Du skal nu merge din pull request ind i masteren:
 	1. Hvis der ikke er nogen merge conflicts, skal du trykke på **Merge pull request**
 	2. Hvis der er merge conflicts, skal du gå tilbage til step 11
 ![vejledning1](./Billeder_til_github_webbrowser_branchvejledning/vejledning15.png)
