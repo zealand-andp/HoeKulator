@@ -4,7 +4,7 @@
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning1.png)
 
-<br><br> 2. Tryk på file i øvre venstre hjørne og tryk **New > Project from version control > Git**
+<br><br> 2. Tryk på **File** i øvre venstre hjørne og tryk **New > Project from version control > Git**
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning2.png)
 
