@@ -1,6 +1,6 @@
 # Vejledning to branching i Android Studio
 
-1. Åben Android Studio så du er på start siden. <br>
+1. Åben Android Studio så du er på startsiden. <br>
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning1.png)
 
@@ -12,7 +12,7 @@
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning3.png)
 
-<br><br> 4. Tilbage i Android Studio sættes linket ind i **URL**
+<br><br> 4. Tilbage i Android Studio sættes linket ind i **URL** <br>
 5. Sørg for at **Directory** er et brugbart sted på din PC (Normalt: AndroidStudioProjects\PROJEKTNAVN) <br>
 
 ![Alt text](./Billeder_til_android_studio_branchvejledning/vejledning4.png)
