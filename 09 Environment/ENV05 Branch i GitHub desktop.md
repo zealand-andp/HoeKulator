@@ -81,7 +81,7 @@
 ![Alt text](./Billeder_til_github_desktop_branchvejledning/vejledning15.png) <br><br>
 
 21. Gennemfør pull request <br>
-	1. Hvis der ikke er nogen konflikter, **merge** pull request <br>
+	1. Hvis der ikke er nogen konflikter, **merge** pull request 
 	2. Hvis der er konflikter, så skal pull requesten slettes og du starter forfra fra punkt 13 <br>
 <br>	
 	
