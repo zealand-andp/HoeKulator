@@ -66,4 +66,18 @@ se man git for hjælp
 # github Desktop
 
 
+1. Åben github Desktop
+
+
+2. Lav et nyt branch ved at klikke på new branch under branch menuen 
+
+// pic goes here
+
+
+3. Navigér til din lokale version af dit repo - det ligger som en normal mappe et sted på din computer.
+
+// pic gpes here
+
+
+
 
