@@ -66,4 +66,50 @@ se man git for hjælp
 # github Desktop
 
 
+1. Åben github Desktop
+
+
+2. Lav et nyt branch ved at klikke på new branch under branch menuen 
+
+// pic goes here
+
+
+3. Navigér til din lokale version af dit repo - det ligger som en normal mappe et sted på din computer.
+
+// pic gpes here
+
+
+4. Fortag de ændringer du har brug for. 
+
+
+5. Gem og Luk
+
+
+6. Gå tilbage til Github Desktop 
+
+
+7.  Du burde nu se at der er kommede ændringer til din fil ude i venstre hjørne 
+
+// pic goes here
+
+
+8. Skriv en god commit besked
+
+
+9. commit og push til dit branch.
+
+
+
+10. på github lav en pull request og godkend den.
+
+
+11. efter merge selt dit branch.
+
+
+12. bed github desktop om at lave git pull.
+
+
+
+
+
 
