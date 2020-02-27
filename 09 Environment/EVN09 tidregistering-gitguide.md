@@ -92,7 +92,7 @@ se man git for hjælp
 ![pic3](https://github.com/zealand-andp/HoeKulator/blob/tidregistering-gitguide/09%20Environment/pics/pic3.png)
 
 
-8. Skriv en god commit besked
+8. Skriv en god commit besked jf ![ENV03](https://github.com/zealand-andp/HoeKulator/blob/tidregistering-gitguide/09%20Environment/ENV03%20Commit-procedure.md) stk 2
 
 
 9. commit og push til dit branch.
@@ -105,7 +105,11 @@ se man git for hjælp
 11. efter merge slet dit branch.
 
 
-12. bed github desktop om at lave git pull.
+12. Skift tilbage til master
+
+13. bed github desktop om at lave git pull.
+
+
 
 
 
