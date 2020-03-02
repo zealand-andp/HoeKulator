@@ -34,6 +34,19 @@ public class OmsaetningImpl implements Omsaetning, Observable {
     }
 
     @Override
+    public void anvendPrimoAarsomsaetningOgProcentstigning(PrimoAarsomsaetning primoAarsomsaetning, Procentstigning procentstigning) {
+        this.primoAarsomsaetning = primoAarsomsaetning;
+        this.procentstigning = procentstigning;
+        this.salgspris = null;
+        this.vareforbrug = null;
+        this.bruttofortjeneste = null;
+        this.afsaetning = null;
+
+        observerManager.notificerObservere(this);
+    }
+
+
+    @Override
     public void tilmeldObserver(Observer observer) {
 
     }
