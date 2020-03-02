@@ -16,6 +16,12 @@ public class VareforbrugImpl implements Vareforbrug, Observable {
     }
 
     @Override
+    public double hentBeloeb() {
+        return beloeb;
+    }
+
+
+    @Override
     public void tilmeldObserver(Observer observer) {
 
     }

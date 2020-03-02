@@ -8,6 +8,7 @@ public class OmsaetningImpl implements Omsaetning, Observable {
     private Procentstigning procentstigning;
     private Afsaetning afsaetning;
     private Salgspris salgspris;
+    private double beloeb;
 
     @Override
     public void anvendBruttofortjenesteOgVareforbrug(Bruttofortjeneste bruttofortjeneste, Vareforbrug vareforbrug) {
@@ -43,6 +44,29 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         this.afsaetning = null;
 
         observerManager.notificerObservere(this);
+    }
+
+
+    public void hentOmsaetningen(Afsaetning afsaetning , Salgspris salgspris, Vareforbrug vareforbrug){
+        this.afsaetning = afsaetning;
+        this.salgspris = salgspris;
+        this.vareforbrug = vareforbrug;
+
+        observerManager.notificerObservere(this);
+
+    }
+
+    public void hentOmsaetning() {
+        if (primoAarsomsaetning != null && procentstigning != null) {
+            beloeb = primoAarsomsaetning.hentBeloeb()*procentstigning.hentDecimaltal();
+        }
+        else if (vareforbrug != null && bruttofortjeneste != null){
+            beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentbeloeb();
+        }
+
+        else if (salgspris != null && afsaetning != null) {
+            beloeb = salgspris.hentPris() * afsaetning.hentAntal();
+        }
     }
 
 

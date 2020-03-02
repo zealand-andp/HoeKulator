@@ -12,6 +12,11 @@ public class ProcentstigningImpl implements Procentstigning, Observable {
     }
 
     @Override
+    public double hentDecimaltal() {
+        return decmaltal;
+    }
+
+    @Override
     public void tilmeldObserver(Observer observer) {
 
     }

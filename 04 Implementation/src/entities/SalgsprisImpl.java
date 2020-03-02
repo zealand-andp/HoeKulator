@@ -16,6 +16,11 @@ public class SalgsprisImpl implements Salgspris, Observable {
     }
 
     @Override
+    public double hentPris() {
+        return pris;
+    }
+
+    @Override
     public void tilmeldObserver(Observer observer) {
 
     }
