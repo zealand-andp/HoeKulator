@@ -21,6 +21,11 @@ public class BruttofortjenesteImpl implements Bruttofortjeneste, Observable {
     }
 
     @Override
+    public double hentbeloeb() {
+        return beloeb;
+    }
+
+    @Override
     public void tilmeldObserver(Observer observer) {
         observerManager.tilmeldObserver(observer);
     }
