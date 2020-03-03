@@ -15,9 +15,9 @@ public class PrimoAarsomsaetningImpl implements PrimoAarsomsaetning, Observable 
 return beloeb;
     }
 
-    public double getBeloeb() {
-        return beloeb;
-    }
+
+
+
 
     @Override
     public void tilmeldObserver(Observer observer) {
