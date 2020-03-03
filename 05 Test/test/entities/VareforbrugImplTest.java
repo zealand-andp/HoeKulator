@@ -1,71 +1,65 @@
 package entities;
 
 import entities.exceptions.NegativBeloebException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-class BruttofortjenesteImplTest {
-
+class VareforbrugImplTest {
+private static MockObserverManager mockObserverManager;
     private static final double DELTA = 0.001;
-    private static MockObserverManager mockObserverManager;
 
-    //UT010101
     @Test
     void angivBeloeb() throws NegativBeloebException {
         mockObserverManager = new MockObserverManager();
-        BruttofortjenesteImpl bruttofortjeneste = new TestbarBruttofortjeneste();
-        assertEquals(0.0, bruttofortjeneste.hentBeloeb(), DELTA);
-
-        double beloeb = 12698.0;
-
-        bruttofortjeneste.angivBeloeb(beloeb);
-
-        assertEquals(12698.0, bruttofortjeneste.hentBeloeb(), DELTA);
-        assertEquals(1, mockObserverManager.notificationsTaeller);
+        VareforbrugImpl vareforbrug = new Testvarforbrug();
+        assertEquals(0.0,vareforbrug.hentBeloeb());
+        double beloeb = 21622.0;
+        vareforbrug.angivBeloeb(beloeb);
+        assertEquals(21622.0,vareforbrug.hentBeloeb(),DELTA);
+        assertEquals(1,mockObserverManager.notifkationsteller);
     }
-
-    //UT010102
     @Test
-    void testException() {
-        BruttofortjenesteImpl bruttofortjeneste = new BruttofortjenesteImpl();
-        double beloeb = -2698;
+    void vareforbrugbelobexceptiontest()  {
+        mockObserverManager = new MockObserverManager();
+        VareforbrugImpl vareforbrug = new Testvarforbrug();
+        assertEquals(0.0,vareforbrug.hentBeloeb());
+        double beloeb = -1622;
         assertThrows(NegativBeloebException.class, () -> {
-            bruttofortjeneste.angivBeloeb(beloeb);
+            vareforbrug.angivBeloeb(beloeb);
         });
-        assertEquals(0.0, bruttofortjeneste.hentBeloeb(), DELTA);
+        assertEquals(0,mockObserverManager.notifkationsteller);
+
     }
 
-    //UT010106
     @Test
-    void testTilmeldObserver() {
+    void tilmeldObserver() {
         mockObserverManager = new MockObserverManager();
         MockObserver mockObserver = new MockObserver();
-        BruttofortjenesteImpl bruttofortjeneste = new TestbarBruttofortjeneste();
-        bruttofortjeneste.tilmeldObserver(mockObserver);
+        VareforbrugImpl vareforbrug = new Testvarforbrug();
+        vareforbrug.tilmeldObserver(mockObserver);
         assertTrue(mockObserverManager.tilmeldtObserver.contains(mockObserver));
     }
 
-    //UT010107
     @Test
-    void testAfmeldObserver() {
+    void afmeldObserver() {
         mockObserverManager = new MockObserverManager();
         MockObserver mockObserver = new MockObserver();
-        BruttofortjenesteImpl bruttofortjeneste = new TestbarBruttofortjeneste();
-        bruttofortjeneste.afmeldObserver(mockObserver);
+        VareforbrugImpl vareforbrug = new Testvarforbrug();
+        vareforbrug.afmeldObserver(mockObserver);
         assertTrue(mockObserverManager.afmeldtObserver.contains(mockObserver));
     }
-
-
-
-    private class MockObserverManager implements ObserverManager {
-        public int notificationsTaeller = 0;
+    private class MockObserverManager  implements ObserverManager {
+    public int notifkationsteller = 0;
         public ArrayList<Observer> tilmeldtObserver = null;
         public ArrayList<Observer> afmeldtObserver = null;
 
         @Override
         public void notificerObservere(Observable observable) {
-            notificationsTaeller++;
+        notifkationsteller ++;
         }
 
         @Override
@@ -78,17 +72,18 @@ class BruttofortjenesteImplTest {
         public void afmeldObserver(Observer observer) {
             afmeldtObserver = new ArrayList<>();
             afmeldtObserver.add(observer);
+
         }
     }
-
     private class MockObserver implements Observer {
+
         @Override
         public void opdater(Observable observable) {
 
         }
     }
+    private class Testvarforbrug extends VareforbrugImpl{
 
-    private class TestbarBruttofortjeneste extends BruttofortjenesteImpl {
         @Override
         protected ObserverManager newObserverManager() {
             return mockObserverManager;
