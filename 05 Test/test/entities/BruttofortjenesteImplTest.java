@@ -60,8 +60,8 @@ class BruttofortjenesteImplTest {
 
     private class MockObserverManager implements ObserverManager {
         public int notificationsTaeller = 0;
-        public ArrayList<Observer> tilmeldtObserver = new ArrayList<>();
-        public ArrayList<Observer> afmeldtObserver = new ArrayList<>();
+        public ArrayList<Observer> tilmeldtObserver = null;
+        public ArrayList<Observer> afmeldtObserver = null;
 
         @Override
         public void notificerObservere(Observable observable) {
@@ -70,11 +70,13 @@ class BruttofortjenesteImplTest {
 
         @Override
         public void tilmeldObserver(Observer observer) {
+            tilmeldtObserver = new ArrayList<>();
             tilmeldtObserver.add(observer);
         }
 
         @Override
         public void afmeldObserver(Observer observer) {
+            afmeldtObserver = new ArrayList<>();
             afmeldtObserver.add(observer);
         }
     }
