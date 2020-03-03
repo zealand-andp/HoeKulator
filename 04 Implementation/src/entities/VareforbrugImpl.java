@@ -27,6 +27,7 @@ public class VareforbrugImpl implements Vareforbrug, Observable {
     @Override
     public void tilmeldObserver(Observer observer) { observerManager.tilmeldObserver(observer);
 
+
     }
 
     @Override
