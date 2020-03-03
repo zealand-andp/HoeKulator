@@ -36,6 +36,8 @@ class BruttofortjenesteImplTest {
         assertEquals(0.0, bruttofortjeneste.hentBeloeb(), DELTA);
     }
 
+
+
     //UT010106
     @Test
     void testTilmeldObserver() {
