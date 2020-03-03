@@ -16,6 +16,11 @@ public class AfsaetningImpl implements Afsaetning, Observable {
     }
 
     @Override
+    public double hentAntal() {
+        return antal;
+    }
+
+    @Override
     public void tilmeldObserver(Observer observer) {
 
     }

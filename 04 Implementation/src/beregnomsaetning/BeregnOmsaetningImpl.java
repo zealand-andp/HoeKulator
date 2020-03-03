@@ -11,6 +11,8 @@ public class BeregnOmsaetningImpl implements BeregnOmsaetning {
     private Afsaetning afsaetning;
     private Salgspris salgspris;
     private Omsaetning omsaetning;
+    private PrimoAarsomsaetning primoAarsomsaetning;
+    private Procentstigning procentstigning;
 
     @Override
     public void angivBruttofortjenesteOgVareforbrug(double bruttofortjeneste, double vareforbrug) throws NegativBeloebException {
@@ -25,4 +27,14 @@ public class BeregnOmsaetningImpl implements BeregnOmsaetning {
         this.salgspris.angivPris(salgspris);
         this.omsaetning.anvendAfsaetningOgSalgspris(this.afsaetning, this.salgspris);
     }
+
+    @Override
+    public void angivPrimoAarsomsaetningOgProcentstigning(double primoAarsomsaetning, double procentstigning) {
+        this.primoAarsomsaetning.angivBeloeb(primoAarsomsaetning);
+        this.procentstigning.angivDecimaltal(procentstigning);
+        this.omsaetning.anvendPrimoAarsomsaetningOgProcentstigning(this.primoAarsomsaetning, this.procentstigning);
+
+    }
+
+
 }
