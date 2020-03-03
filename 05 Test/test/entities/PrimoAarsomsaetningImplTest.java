@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PrimoAarsomsaetningTest {
+public class PrimoAarsomsaetningImplTest {
 
     private static  final double DELTA = 0.001;
     private static  MockObserverManager mockObserverManager;

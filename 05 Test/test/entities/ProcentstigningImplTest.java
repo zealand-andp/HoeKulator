@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ProcentstigningTest {
+public class ProcentstigningImplTest {
 
     private static  final double DELTA = 0.001;
     private  static MockObserverManager mockObserverManager;
