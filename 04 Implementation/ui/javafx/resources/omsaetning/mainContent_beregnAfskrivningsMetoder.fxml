@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox prefWidth="200.0">
+         <children>
+            <Button fx:id="psButton" mnemonicParsing="false" onAction="#psButtonAction" prefWidth="150.0" text="Procent Stigning" wrapText="true" />
+            <Button mnemonicParsing="false" prefHeight="45.0" text="?" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Bruttofortjeneste og Vareforbrug" wrapText="true" />
+            <Button mnemonicParsing="false" prefHeight="61.0" text="?" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Afsætning og Salgspris" wrapText="true" />
+            <Button mnemonicParsing="false" prefHeight="45.0" text="?" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
