@@ -1,12 +1,10 @@
 package entities;
-import entities.*;
+import entities.exceptions.NegativAntalException;
 import entities.exceptions.NegativBeloebException;
+import entities.exceptions.NegativPrisException;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
-import entities.ObserverManager;
-import entities.ObserverManagerImpl;
-import entities.Observer;
 
 
 class OmsaetningImplTest {
@@ -17,7 +15,7 @@ class OmsaetningImplTest {
   // UC010105
 
     @Test
-    void anvendBruttofortjenesteOgVareforbrug() throws NegativBeloebException {
+    void anvendBruttofortjenesteOgVareforbrugOghentOmsaetning() throws NegativBeloebException {
       mockObserverManager = new MockObserverManager();
       OmsaetningImpl omsaetning = new TestbarOmsaetning();
       MockBruttofortjeneste bruttofortjeneste = new MockBruttofortjeneste();
@@ -31,34 +29,70 @@ class OmsaetningImplTest {
       omsaetning.anvendBruttofortjenesteOgVareforbrug(bruttofortjeneste, vareforbrug);
 
       assertEquals(1, mockObserverManager.notificationsTaeller);
-      assertNull(omsaetning.hentPrimoAarsomsaetning());
-      assertNull(omsaetning.hentProcentstigning());
-      assertNull(omsaetning.hentAfsaetning());
-      assertNull(omsaetning.hentSalgspris());
+     double resultat = 34320.0;
+     assertEquals(resultat, omsaetning.hentOmsaetning());
+
+
     }
 
     @Test
     void anvendAfsaetningOgSalgspris() {
+      mockObserverManager = new MockObserverManager();
+      OmsaetningImpl omsaetning = new TestbarOmsaetning();
+      Mockafsaetning mockafsaetning = new Mockafsaetning();
+      MockSalgspris mockSalgspris = new MockSalgspris();
+      assertEquals(21622, mockafsaetning.afsaetning);
+      assertEquals(66666, mockSalgspris.salgspris);
+      assertEquals(0, mockObserverManager.notificationsTaeller);
+
+
+      omsaetning.anvendAfsaetningOgSalgspris(mockafsaetning, mockSalgspris );
+
+      assertEquals(1, mockObserverManager.notificationsTaeller);
+      double resultat = 1.441452252E9;
+      assertEquals(resultat, omsaetning.hentOmsaetning());
+
     }
 
     @Test
     void anvendPrimoAarsomsaetningOgProcentstigning() {
+      mockObserverManager = new MockObserverManager();
+      OmsaetningImpl omsaetning = new OmsaetningImpl();
+      MockProcentstigning mockProcentstigning = new MockProcentstigning();
+      MockPrimoAarsomsaetning mockPrimoAarsomsaetning = new MockPrimoAarsomsaetning();
+      assertEquals(100000, mockPrimoAarsomsaetning.primoAarsomsaetning);
+      assertEquals(5.0, mockProcentstigning.procentstigning);
+      assertEquals(0, mockObserverManager.notificationsTaeller);
+
+      omsaetning.anvendPrimoAarsomsaetningOgProcentstigning(mockPrimoAarsomsaetning, mockProcentstigning);
+
+      assertEquals(1, mockObserverManager.notificationsTaeller);
+
+      double resultat = 5000;
+      assertEquals(resultat, omsaetning.hentOmsaetning());
+
+
 
     }
 
-    @Test
-    void hentOmsaetning() {
-
-    }
 
     @Test
     void tilmeldObserver() {
-        mockObserverManager.tilmeldObserver(null);
+      mockObserverManager = new MockObserverManager();
+      MockObserver mockObserver = new MockObserver();
+      OmsaetningImpl omsaetning = new TestbarOmsaetning();
+      omsaetning.tilmeldObserver(mockObserver);
+      assertFalse(mockObserverManager.tilmeldtObserver.contains(mockObserver));
 
     }
 
     @Test
     void afmeldObserver() {
+      mockObserverManager = new MockObserverManager();
+      MockObserver mockObserver = new MockObserver();
+      OmsaetningImpl omsaetning = new TestbarOmsaetning();
+      omsaetning.afmeldObserver(mockObserver);
+      assertFalse(mockObserverManager.afmeldtObserver.contains(mockObserver));
     }
 
 
@@ -108,7 +142,7 @@ class OmsaetningImplTest {
 
     @Override
     public double hentbeloeb() {
-      return 0;
+      return beloeb;
     }
   }
 
@@ -121,7 +155,61 @@ class OmsaetningImplTest {
 
     @Override
     public double hentBeloeb() {
-      return 0;
+      return beloeb;
     }
   }
+
+  private class Mockafsaetning implements Afsaetning{
+      public double afsaetning = 21622;
+
+    public void angivAntal(int antal) throws NegativAntalException {
+
+    }
+
+    @Override
+    public double hentAntal() {
+      return afsaetning;
+    }
+  }
+
+  private class MockSalgspris implements Salgspris {
+      public double salgspris = 66666;
+
+    @Override
+    public void angivPris(double pris) throws NegativPrisException {
+
+    }
+
+    @Override
+    public double hentPris() {
+      return salgspris;
+    }
+  }
+private class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
+ public double primoAarsomsaetning = 100000;
+
+  @Override
+  public void angivBeloeb(double beloeb) {
+
+  }
+
+  @Override
+  public double hentBeloeb() {
+    return primoAarsomsaetning;
+  }
+}
+
+private class MockProcentstigning implements entities.Procentstigning {
+public double procentstigning = 5.0;
+  @Override
+  public void angivDecimaltal(double decimaltal) {
+
+  }
+
+  @Override
+  public double hentDecimaltal() {
+    return procentstigning;
+  }
+}
+
 }
