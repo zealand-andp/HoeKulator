@@ -57,18 +57,18 @@ class OmsaetningImplTest {
     @Test
     void anvendPrimoAarsomsaetningOgProcentstigning() {
       mockObserverManager = new MockObserverManager();
-      OmsaetningImpl omsaetning = new OmsaetningImpl();
+      OmsaetningImpl omsaetning = new TestbarOmsaetning();
       MockProcentstigning mockProcentstigning = new MockProcentstigning();
       MockPrimoAarsomsaetning mockPrimoAarsomsaetning = new MockPrimoAarsomsaetning();
-      assertEquals(100000, mockPrimoAarsomsaetning.primoAarsomsaetning);
-      assertEquals(5.0, mockProcentstigning.procentstigning);
+      assertEquals(100000, mockPrimoAarsomsaetning.primoAarsomsaetning, DELTA);
+      assertEquals(5.0, mockProcentstigning.procentstigning, DELTA );
       assertEquals(0, mockObserverManager.notificationsTaeller);
 
       omsaetning.anvendPrimoAarsomsaetningOgProcentstigning(mockPrimoAarsomsaetning, mockProcentstigning);
 
       assertEquals(1, mockObserverManager.notificationsTaeller);
 
-      double resultat = 5000;
+      double resultat = 105000;
       assertEquals(resultat, omsaetning.hentOmsaetning());
 
 
@@ -202,7 +202,7 @@ private class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
 private class MockProcentstigning implements entities.Procentstigning {
 public double procentstigning = 5.0;
   @Override
-  public void angivDecimaltal(double decimaltal) {
+  public void angivDecimaltal(double procentstigning) {
 
   }
 

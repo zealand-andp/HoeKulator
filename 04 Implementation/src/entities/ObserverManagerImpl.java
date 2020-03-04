@@ -3,7 +3,7 @@ package entities;
 import java.util.ArrayList;
 
 public class ObserverManagerImpl implements ObserverManager {
-    private ArrayList<Observer> observers;
+    private ArrayList<Observer> observers = new ArrayList<>();
     @Override
     public void tilmeldObserver(Observer observer) {
         if (!observers.contains(observer)) {

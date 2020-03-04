@@ -56,8 +56,9 @@ public class OmsaetningImpl implements Omsaetning, Observable {
     // Vi tænker at den skal sendes vidre til Beregnomseatning 
 
     public double hentOmsaetning() {
+
         if (primoAarsomsaetning != null && procentstigning != null) {
-            beloeb = primoAarsomsaetning.hentBeloeb()*procentstigning.hentDecimaltal();
+           beloeb = primoAarsomsaetning.hentBeloeb()*(1.0 + procentstigning.hentDecimaltal() / 100.0);
         }
         else if (vareforbrug != null && bruttofortjeneste != null){
             beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentbeloeb();
@@ -65,9 +66,10 @@ public class OmsaetningImpl implements Omsaetning, Observable {
 
         else if (salgspris != null && afsaetning != null) {
             beloeb = salgspris.hentPris() * afsaetning.hentAntal();
-        }
 
+        }
         return beloeb;
+
     }
 
     public Bruttofortjeneste getBruttofortjeneste() {
@@ -105,6 +107,8 @@ public class OmsaetningImpl implements Omsaetning, Observable {
     public void afmeldObserver(Observer observer) {
 
     }
+
+
 
     protected  ObserverManager newObserverManager(){
         return new ObserverManagerImpl();
