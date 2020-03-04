@@ -82,7 +82,7 @@ class OmsaetningImplTest {
       MockObserver mockObserver = new MockObserver();
       OmsaetningImpl omsaetning = new TestbarOmsaetning();
       omsaetning.tilmeldObserver(mockObserver);
-      assertFalse(mockObserverManager.tilmeldtObserver.contains(mockObserver));
+      assertTrue(mockObserverManager.tilmeldtObserver.contains(mockObserver));
 
     }
 
@@ -92,7 +92,7 @@ class OmsaetningImplTest {
       MockObserver mockObserver = new MockObserver();
       OmsaetningImpl omsaetning = new TestbarOmsaetning();
       omsaetning.afmeldObserver(mockObserver);
-      assertFalse(mockObserverManager.afmeldtObserver.contains(mockObserver));
+      assertTrue(mockObserverManager.afmeldtObserver.contains(mockObserver));
     }
 
 

@@ -72,40 +72,14 @@ public class OmsaetningImpl implements Omsaetning, Observable {
 
     }
 
-    public Bruttofortjeneste getBruttofortjeneste() {
-        return bruttofortjeneste;
-    }
-    public Vareforbrug hentVareforbrug() {
-        return vareforbrug;
-    }
-    public PrimoAarsomsaetning hentPrimoAarsomsaetning() {
-        return primoAarsomsaetning;
-    }
-    public Procentstigning hentProcentstigning() {
-        return procentstigning;
-    }
-    public Afsaetning hentAfsaetning() {
-        return afsaetning;
-    }
-    public Salgspris hentSalgspris() {
-        return salgspris;
-    }
-
-
-
-
-
-
-
-
     @Override
     public void tilmeldObserver(Observer observer) {
-
+        observerManager.tilmeldObserver(observer);
     }
 
     @Override
     public void afmeldObserver(Observer observer) {
-
+        observerManager.afmeldObserver(observer);
     }
 
 
