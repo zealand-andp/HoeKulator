@@ -44,7 +44,7 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="900.0" layoutY="7.0" text="Resultat:">
+      <Label layoutX="900.0" layoutY="7.0" text="Afskrivninger">
          <font>
             <Font size="12.0" />
          </font>
