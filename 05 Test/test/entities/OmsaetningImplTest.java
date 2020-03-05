@@ -1,7 +1,4 @@
 package entities;
-import entities.exceptions.NegativAntalException;
-import entities.exceptions.NegativBeloebException;
-import entities.exceptions.NegativPrisException;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +12,7 @@ class OmsaetningImplTest {
   // UC010105
 
     @Test
-    void anvendBruttofortjenesteOgVareforbrugOghentOmsaetning() throws NegativBeloebException {
+    void anvendBruttofortjenesteOgVareforbrugOghentOmsaetning()  {
       mockObserverManager = new MockObserverManager();
       OmsaetningImpl omsaetning = new TestbarOmsaetning();
       MockBruttofortjeneste bruttofortjeneste = new MockBruttofortjeneste();
@@ -24,7 +21,7 @@ class OmsaetningImplTest {
       assertEquals(21622.0, vareforbrug.beloeb, DELTA);
       assertEquals(0, mockObserverManager.notificationsTaeller);
 
-      ;
+
 
       omsaetning.anvendBruttofortjenesteOgVareforbrug(bruttofortjeneste, vareforbrug);
 
@@ -96,7 +93,7 @@ class OmsaetningImplTest {
     }
 
 
-  private class MockObserverManager implements ObserverManager {
+  private static class MockObserverManager implements ObserverManager {
     public int notificationsTaeller = 0;
     public ArrayList<Observer> tilmeldtObserver = new ArrayList<>();
     public ArrayList<Observer> afmeldtObserver = new ArrayList<>();
@@ -118,7 +115,7 @@ class OmsaetningImplTest {
 
   }
 
-  private class MockObserver implements Observer{
+  private static class MockObserver implements Observer{
 
     @Override
     public void opdater(Observable observable) {
@@ -126,17 +123,17 @@ class OmsaetningImplTest {
     }
   }
 
-  private class TestbarOmsaetning extends OmsaetningImpl {
+  private static class TestbarOmsaetning extends OmsaetningImpl {
     @Override
     protected ObserverManager newObserverManager() {
       return mockObserverManager;
     }
   }
 
-  private class  MockBruttofortjeneste implements Bruttofortjeneste {
+  private static class  MockBruttofortjeneste implements Bruttofortjeneste {
     public double beloeb = 12698;
     @Override
-    public void angivBeloeb(double beloeb) throws NegativBeloebException {
+    public void angivBeloeb(double beloeb) {
 
     }
 
@@ -146,10 +143,10 @@ class OmsaetningImplTest {
     }
   }
 
-  private class MockVareforbrug implements Vareforbrug {
+  private static class MockVareforbrug implements Vareforbrug {
       public double beloeb = 21622;
     @Override
-    public void angivBeloeb(double beloeb) throws NegativBeloebException {
+    public void angivBeloeb(double beloeb)  {
 
     }
 
@@ -159,10 +156,10 @@ class OmsaetningImplTest {
     }
   }
 
-  private class Mockafsaetning implements Afsaetning{
+  private static class Mockafsaetning implements Afsaetning{
       public double afsaetning = 21622;
 
-    public void angivAntal(int antal) throws NegativAntalException {
+    public void angivAntal(int antal)  {
 
     }
 
@@ -172,11 +169,11 @@ class OmsaetningImplTest {
     }
   }
 
-  private class MockSalgspris implements Salgspris {
+  private static class MockSalgspris implements Salgspris {
       public double salgspris = 66666;
 
     @Override
-    public void angivPris(double pris) throws NegativPrisException {
+    public void angivPris(double pris)  {
 
     }
 
@@ -185,7 +182,7 @@ class OmsaetningImplTest {
       return salgspris;
     }
   }
-private class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
+private static class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
  public double primoAarsomsaetning = 100000;
 
   @Override
@@ -199,7 +196,7 @@ private class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
   }
 }
 
-private class MockProcentstigning implements entities.Procentstigning {
+private static class MockProcentstigning implements entities.Procentstigning {
 public double procentstigning = 5.0;
   @Override
   public void angivDecimaltal(double procentstigning) {
