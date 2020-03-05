@@ -5,7 +5,7 @@ import entities.exceptions.NegativBeloebException;
 public class VareforbrugImpl implements Vareforbrug, Observable {
     private double beloeb;
     ObserverManager observerManager;
-    VareforbrugImpl(){
+    public VareforbrugImpl(){
         observerManager = newObserverManager();
     }
 
