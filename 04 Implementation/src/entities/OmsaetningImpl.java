@@ -23,6 +23,7 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         this.afsaetning = null;
         this.salgspris = null;
 
+
         observerManager.notificerObservere(this);
     }
 
@@ -50,9 +51,12 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         observerManager.notificerObservere(this);
     }
 
-    public void hentOmsaetning() {
+
+    // Vi tænker at den skal sendes vidre til Beregnomseatning 
+
+    public double hentOmsaetning() {
         if (primoAarsomsaetning != null && procentstigning != null) {
-            beloeb = primoAarsomsaetning.hentBeloeb()*procentstigning.hentDecimaltal();
+           beloeb = primoAarsomsaetning.hentBeloeb()*(1.0 + procentstigning.hentDecimaltal() / 100.0);
         }
         else if (vareforbrug != null && bruttofortjeneste != null){
             beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentbeloeb();
@@ -61,19 +65,23 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         else if (salgspris != null && afsaetning != null) {
             beloeb = salgspris.hentPris() * afsaetning.hentAntal();
         }
-
-        observerManager.notificerObservere(this);
+        return beloeb;
     }
-
 
     @Override
     public void tilmeldObserver(Observer observer) {
-
+        observerManager.tilmeldObserver(observer);
     }
 
     @Override
     public void afmeldObserver(Observer observer) {
+        observerManager.afmeldObserver(observer);
+    }
 
+
+
+    protected  ObserverManager newObserverManager(){
+        return new ObserverManagerImpl();
     }
 
     protected ObserverManager newObserverManager() {
