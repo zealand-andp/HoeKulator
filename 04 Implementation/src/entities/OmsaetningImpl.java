@@ -14,7 +14,6 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         observerManager = newObserverManager();
     }
 
-
     @Override
     public void anvendBruttofortjenesteOgVareforbrug(Bruttofortjeneste bruttofortjeneste, Vareforbrug vareforbrug) {
         this.bruttofortjeneste = bruttofortjeneste;
@@ -56,7 +55,6 @@ public class OmsaetningImpl implements Omsaetning, Observable {
     // Vi tænker at den skal sendes vidre til Beregnomseatning 
 
     public double hentOmsaetning() {
-
         if (primoAarsomsaetning != null && procentstigning != null) {
            beloeb = primoAarsomsaetning.hentBeloeb()*(1.0 + procentstigning.hentDecimaltal() / 100.0);
         }
@@ -66,10 +64,8 @@ public class OmsaetningImpl implements Omsaetning, Observable {
 
         else if (salgspris != null && afsaetning != null) {
             beloeb = salgspris.hentPris() * afsaetning.hentAntal();
-
         }
         return beloeb;
-
     }
 
     @Override
@@ -85,6 +81,10 @@ public class OmsaetningImpl implements Omsaetning, Observable {
 
 
     protected  ObserverManager newObserverManager(){
+        return new ObserverManagerImpl();
+    }
+
+    protected ObserverManager newObserverManager() {
         return new ObserverManagerImpl();
     }
 }
