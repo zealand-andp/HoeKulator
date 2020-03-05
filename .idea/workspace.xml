@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad25fc93-0f6d-4103-870b-85451ee951f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/HoeKulator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04 Implementation/javafx/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04 Implementation/javafx/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04 Implementation/javafx/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04 Implementation/javafx/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04 Implementation/javafx/src/main/java/HoeMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/09 Environment/ENV10 merge-conflict-vejledning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HoeKulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HoeKulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04 Implementation/src/entities/OmsaetningImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/entities/OmsaetningImpl.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,23 +26,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="hoekulatorAID" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="hoekulatorAID" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="hoekulatorAID" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -75,6 +50,10 @@
   </component>
   <component name="ProjectId" id="1Yc6bi8w8TZXKQpV05mDRouC0nX" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Chapter 14" />
@@ -88,19 +67,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Gradle.javafx [run]">
+  <component name="RunManager" selected="JUnit.OmsaetningImplTest">
     <configuration name="HoeMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HoeMain" />
       <module name="hoekulatorAID.main" />
@@ -127,10 +94,26 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="OmsaetningImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HoeKulator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="entities" />
+      <option name="MAIN_CLASS_NAME" value="entities.OmsaetningImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.javafx [run]" />
+        <item itemvalue="JUnit.OmsaetningImplTest" />
         <item itemvalue="Application.HoeMain" />
+        <item itemvalue="Gradle.javafx [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -164,5 +147,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1583398290626">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290626" />
+    <state width="1878" height="278" key="GridCell.Tab.0.center" timestamp="1583398290624">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="278" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290624" />
+    <state width="1878" height="278" key="GridCell.Tab.0.left" timestamp="1583398290623">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="278" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290623" />
+    <state width="1878" height="278" key="GridCell.Tab.0.right" timestamp="1583398290625">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="278" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290625" />
+    <state x="678" y="421" width="553" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583397967243">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="678" y="421" width="553" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1048@0.0.1920.1048" timestamp="1583397967243" />
   </component>
 </project>
