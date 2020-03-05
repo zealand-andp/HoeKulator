@@ -83,8 +83,4 @@ public class OmsaetningImpl implements Omsaetning, Observable {
     protected  ObserverManager newObserverManager(){
         return new ObserverManagerImpl();
     }
-
-    protected ObserverManager newObserverManager() {
-        return new ObserverManagerImpl();
-    }
 }
