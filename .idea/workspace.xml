@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad25fc93-0f6d-4103-870b-85451ee951f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/09 Environment/ENV10 merge-conflict-vejledning.md" beforeDir="false" afterPath="$PROJECT_DIR$/09 Environment/ENV10 merge-conflict-vejledning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04 Implementation/javafx/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/javafx/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04 Implementation/javafx/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/javafx/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

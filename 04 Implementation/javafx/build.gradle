@@ -4,7 +4,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
-group 'høk_test_project'
+group 'hoek_projekt'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -19,7 +19,7 @@ dependencies {
 
 javafx {
     version = "11.0.2"
-    modules = [ 'javafx.controls' ]
+    modules = [ 'javafx.controls','javafx.fxml' ]
 }
 
 mainClassName = 'HoeMain'
