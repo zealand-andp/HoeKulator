@@ -1,4 +1,5 @@
 package beregnafskrivning;
 
-public class LinearAfskrivningsBeregnerImpl {
+public class LinearAfskrivningsBeregnerImpl{
+    double resultat;
 }
