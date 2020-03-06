@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HoeMain">
     <items>
         <ExpansionPanel>
             <collapsedContent>
@@ -31,7 +31,7 @@
          <expandedContent>
             <ExpansionPanel.ExpandedPanel>
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                  <Pane fx:id="omsaetningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                      <children>
                         <Label prefWidth="250.0" text="Omsætning">
                            <padding>
@@ -43,39 +43,6 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Pane layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0">
-                           <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Metode:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="710.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Tilføj/opdatere" />
-                              <Pane layoutX="174.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="362.0">
-                                 <children>
-                                    <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <Label layoutX="188.0" layoutY="7.0" text="Salgspris">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="14.0" layoutY="7.0" text="Afsætning">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <Label layoutX="536.0" layoutY="7.0" text="Omsætning">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <TextField alignment="CENTER_RIGHT" editable="false" layoutX="536.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                           </children>
-                        </Pane>
                         <Button layoutX="1220.0" layoutY="58" mnemonicParsing="false" text="+" />
                      </children>
                   </Pane>
