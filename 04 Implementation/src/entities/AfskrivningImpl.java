@@ -9,6 +9,7 @@ public class AfskrivningImpl implements Afskrivning {
     public AfskrivningImpl(String navn) {
         this.navn = navn;
 
+
     }
 
 

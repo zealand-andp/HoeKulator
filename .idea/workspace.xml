@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad25fc93-0f6d-4103-870b-85451ee951f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_fxml_win_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/BeregnAfskrivningImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/BeregnAfskrivningImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04 Implementation/src/entities/AfskrivningImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/entities/AfskrivningImpl.java" afterDir="false" />
@@ -79,11 +72,36 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="timesune" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="implementering-af-0802-beregnLinearAfskrivning" />
+                    <option name="lastUsedInstant" value="1583481081" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="timesune" />
+                    <option name="lastUsedInstant" value="1583481080" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectId" id="1Yc6bi8w8TZXKQpV05mDRouC0nX" />
   <component name="ProjectViewState">
@@ -176,7 +194,8 @@
       <workItem from="1583314739798" duration="1505000" />
       <workItem from="1583408234746" duration="2472000" />
       <workItem from="1583410728275" duration="1920000" />
-      <workItem from="1583415904027" duration="247000" />
+      <workItem from="1583415904027" duration="407000" />
+      <workItem from="1583481047629" duration="2558000" />
     </task>
     <task id="LOCAL-00001" summary="Added ENV10 merge-conflict-vejledning.md">
       <created>1583400896068</created>
@@ -185,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583400896068</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Made some Changes">
+      <created>1583416282411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583416282411</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +232,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added ENV10 merge-conflict-vejledning.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ENV10 merge-conflict-vejledning.md" />
+    <MESSAGE value="Made some Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some Changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="236" width="374" height="573" key="#com.intellij.ide.util.MemberChooser" timestamp="1583411698624">
@@ -225,10 +252,10 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="705" y="386" width="509" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1048@0.0.1920.1048" timestamp="1583411670974" />
-    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2" timestamp="1583401570849">
+    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2" timestamp="1583416282213">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1583401570849" />
+    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1583416282213" />
     <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1583398290626">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
@@ -249,10 +276,10 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="464" y="159" key="SettingsEditor/0.0.1920.1048@0.0.1920.1048" timestamp="1583410799692" />
-    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2" timestamp="1583401580470">
+    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2" timestamp="1583416300417">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2/0.0.1920.1048@0.0.1920.1048" timestamp="1583401580470" />
+    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2/0.0.1920.1048@0.0.1920.1048" timestamp="1583416300417" />
     <state x="678" y="421" width="553" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583397967243">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
@@ -261,5 +288,9 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="757" y="444" width="395" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1048@0.0.1920.1048" timestamp="1583416259484" />
+    <state x="721" y="230" width="467" height="586" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583481848650">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="721" y="230" width="467" height="586" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1583481848650" />
   </component>
 </project>
