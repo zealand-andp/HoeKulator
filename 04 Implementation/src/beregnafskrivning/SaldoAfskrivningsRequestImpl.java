@@ -1,8 +1,8 @@
 package beregnafskrivning;
 
 public class SaldoAfskrivningsRequestImpl {
-    private double anskaffelsVardi;
-    private afskrivningsetode Afskrivningsmetode;
-    SaldoAfskrivningsRequest saldoAfskrivningsRequest = new
+    private double anskaffelsVaerdi;
+    private afskrivningsmetode Afskrivningsmetode;
+    SaldoAfskrivningsRequest saldoAfskrivningsRequest = new SaldoAfskrivningsRequest(double anskaffelsesVaerdi, double afskrivningsProcent);
 
 }

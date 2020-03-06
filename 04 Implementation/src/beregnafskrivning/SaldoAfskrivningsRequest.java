@@ -1,4 +1,4 @@
 package beregnafskrivning;
 
-public interface SaldoAfskrivningsRequest {
+public interface SaldoAfskrivningsRequest { //extends AfskrivningsRequest
 }
