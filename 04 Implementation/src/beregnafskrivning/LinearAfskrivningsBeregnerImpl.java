@@ -4,14 +4,18 @@ import entities.exceptions.*;
 
 public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
     double resultat;
-    AfskrivningsBeregner beregnAfskrivning;
+    LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner;
+    AfskrivningsBeregner afskrivningsBeregner;
+    LinearAfskrivningsRequestImpl linearAfskrivningsRequest;
+
 
     @Override
     public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException {
-       if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
-           return;
-       }
 
+        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
+           afskrivningsBeregner.beregnAfskrivning(request);
+       }
+            linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;
        if (request.hentBrugstid() <=0){
            throw  new NegativEllerNulVaerdiException();
        }
@@ -27,6 +31,5 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
        if (request.hentScrapvaerdi() > request.hentAnskaffelsesvaedi()){
            throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
        }
-       beregnAfskrivning.beregnAfskrivning(request);
     }
 }
