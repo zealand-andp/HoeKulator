@@ -10,9 +10,11 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
 
 
     @Override
-    public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException {
+    public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException,
+            NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException,
+            NegativBeloebException, OverMaksbeloebException {
 
-        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
+       if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
            afskrivningsBeregner.beregnAfskrivning(request);
        }
             linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;

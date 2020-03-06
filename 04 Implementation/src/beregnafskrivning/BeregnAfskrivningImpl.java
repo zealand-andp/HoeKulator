@@ -15,7 +15,8 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     }
 
     @Override
-    public void angivLinearAfskrivning(String navn, int brugstid, double scrapvaerdi, double anskaffelsesvaerdi) throws KanIkkeBeregneAfskrivningException {
+    public void angivLinearAfskrivning(String navn, int brugstid,
+                                       double scrapvaerdi, double anskaffelsesvaerdi) throws KanIkkeBeregneAfskrivningException {
        boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
        if (!afskrivningMedNavnFindes){
            Afskrivning afskrivning =  new AfskrivningImpl(navn);
