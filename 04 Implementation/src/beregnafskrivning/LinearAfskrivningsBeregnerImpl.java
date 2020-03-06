@@ -2,7 +2,7 @@ package beregnafskrivning;
 
 import entities.exceptions.NegativVaerdiException;
 
-public class LinearAfskrivningsBeregnerImpl extends Throwable implements AfskrivningsBeregner{
+public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
     double resultat;
 
     @Override
