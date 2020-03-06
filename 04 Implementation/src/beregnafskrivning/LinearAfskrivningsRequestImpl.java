@@ -53,4 +53,9 @@ public class LinearAfskrivningsRequestImpl implements LinearAfskrivningsRequest,
     public double hentAnskaffelsesvaedi() {
         return 0;
     }
+
+    @Override
+    public double hentAfskrivningsProcent() {
+        return 0;
+    }
 }

@@ -12,7 +12,7 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
     @Override
     public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException,
             NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException,
-            NegativBeloebException, OverMaksbeloebException {
+            NegativBeloebException, OverMaksbeloebException, NegativAfskrivningsprocentException {
 
        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
            afskrivningsBeregner.beregnAfskrivning(request);

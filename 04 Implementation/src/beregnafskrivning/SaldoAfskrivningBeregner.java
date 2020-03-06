@@ -1,4 +1,5 @@
 package beregnafskrivning;
 
-public interface SaldoAfskrivningBeregner { //extends AfskrivningBeregner
+public interface SaldoAfskrivningBeregner extends AfskrivningsBeregner {
+
 }
