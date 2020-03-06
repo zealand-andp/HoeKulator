@@ -16,10 +16,10 @@
     <items>
         <ExpansionPanel>
             <collapsedContent>
-                <ExpansionPanel.CollapsedPanel>
+                <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Omsætning" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -52,10 +52,10 @@
         </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Vareforbrug" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -88,10 +88,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Bruttofortjeneste" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -124,10 +124,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Salgsfremmende omkostninger" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -160,10 +160,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Markedsføringsbidrag" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -196,10 +196,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Kontante kapacitetsomkostninger" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -235,10 +235,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Indtjeningsbidrag" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -271,10 +271,10 @@
       </ExpansionPanel>
         <ExpansionPanel>
             <collapsedContent>
-                <ExpansionPanel.CollapsedPanel>
+                <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
                     <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Afskrivninger" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -442,10 +442,10 @@
         </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Resultat før renter" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -478,10 +478,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Renteomkostninger" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
@@ -514,10 +514,10 @@
       </ExpansionPanel>
       <ExpansionPanel>
          <collapsedContent>
-            <ExpansionPanel.CollapsedPanel>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Resultat" />
-                  <Label alignment="CENTER_RIGHT" text="Resultat:" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
                   <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
