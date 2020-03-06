@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="68.0" prefWidth="1225.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane AnchorPane.leftAnchor="14.0">
+         <children>
+            <TextField layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+            <TextField layoutX="174.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+            <ComboBox layoutX="348.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+            <Label layoutY="11.0" text="Navn:">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="11.0" text="Beløb:">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="348.0" layoutY="11.0" text="Ændring:">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Pane layoutX="508.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="190.0">
+               <children>
+                  <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+                  <Label layoutX="14.0" layoutY="11.0" text="Procentændring:">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="701.0" layoutY="11.0" text="Kontante kapacitetsomkostninger:">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <TextField alignment="CENTER_RIGHT" editable="false" layoutX="701.0" layoutY="26.0" prefHeight="28.0" prefWidth="240.0" />
+         </children>
+      </Pane>
+      <Button layoutX="1139.0" layoutY="18.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Tilføj/opdater" AnchorPane.rightAnchor="14.0" />
+   </children>
+</AnchorPane>
