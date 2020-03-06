@@ -31,5 +31,13 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
        if (request.hentScrapvaerdi() > request.hentAnskaffelsesvaedi()){
            throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
        }
+
+
+       double anskaffelseværdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
+       double scrapvaerdi = linearAfskrivningsRequest.hentScrapvaerdi();
+       int brugsTid = linearAfskrivningsRequest.hentBrugstid();
+
+       this.resultat = (anskaffelseværdi-scrapvaerdi) / brugsTid;
+       linearAfskrivningsRequest.angivAfskrivning(this.resultat);
     }
 }
