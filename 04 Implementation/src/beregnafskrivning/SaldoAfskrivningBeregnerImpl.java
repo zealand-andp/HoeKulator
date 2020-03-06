@@ -5,7 +5,6 @@ import java.util.LinkedHashMap;
 
 public class SaldoAfskrivningBeregnerImpl {
 
-   double resultat;
-
+   private double resultat;
 
 }
