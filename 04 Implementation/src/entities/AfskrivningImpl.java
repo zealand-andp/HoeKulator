@@ -1,6 +1,7 @@
 package entities;
 
 import beregnafskrivning.LinearAfskrivningsRequest;
+import beregnafskrivning.LinearAfskrivningsRequestImpl;
 
 public class AfskrivningImpl implements Afskrivning {
     private String navn;
@@ -32,6 +33,6 @@ public class AfskrivningImpl implements Afskrivning {
     @Override
     public void angivloneaerAfskrvning(double anskaffelsesvaerdi) {
         this.afskrivningsvaerdi = anskaffelsesvaerdi;
-        LinearAfskrivningsRequest linearAfskrivningsRequest = new
+        LinearAfskrivningsRequestImpl linearAfskrivningsRequest = new LinearAfskrivningsRequestImpl();
     }
 }
