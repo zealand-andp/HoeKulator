@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ad25fc93-0f6d-4103-870b-85451ee951f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/BeregnAfskrivningImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/BeregnAfskrivningImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/LinearAfskrivningsBeregnerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/LinearAfskrivningsBeregnerImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,10 +129,24 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
-  <component name="RunManager" selected="JUnit.OmsaetningImplTest">
+  <component name="RunManager" selected="Application.LinuxStarter">
+    <configuration name="HoeMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HoeMain" />
+      <module name="hoek_projekt.hoekulatorAID.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HoeMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HoeMain" />
       <module name="hoekulatorAID.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinuxStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LinuxStarter" />
+      <module name="hoek_projekt.hoekulatorAID.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +187,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LinuxStarter" />
+        <item itemvalue="Application.HoeMain (1)" />
         <item itemvalue="JUnit.OmsaetningImplTest" />
         <item itemvalue="Application.HoeMain" />
         <item itemvalue="Gradle.javafx [run]" />
@@ -307,22 +321,22 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1583496240747" />
-    <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1583398290626">
+    <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1583497677924">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290626" />
-    <state width="1878" height="278" key="GridCell.Tab.0.center" timestamp="1583398290624">
+    <state width="1878" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1583497677924" />
+    <state width="1878" height="278" key="GridCell.Tab.0.center" timestamp="1583497677922">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290624" />
-    <state width="1878" height="278" key="GridCell.Tab.0.left" timestamp="1583398290623">
+    <state width="1878" height="278" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1583497677922" />
+    <state width="1878" height="278" key="GridCell.Tab.0.left" timestamp="1583497677921">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290623" />
-    <state width="1878" height="278" key="GridCell.Tab.0.right" timestamp="1583398290625">
+    <state width="1878" height="278" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1583497677921" />
+    <state width="1878" height="278" key="GridCell.Tab.0.right" timestamp="1583497677924">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1583398290625" />
+    <state width="1878" height="278" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1583497677924" />
     <state x="464" y="159" key="SettingsEditor" timestamp="1583410799692">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
