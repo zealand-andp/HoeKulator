@@ -55,7 +55,7 @@ public class HoeMain extends Application{
     }
 
     public void loadOmsaetning() throws IOException {
-        Node node = FXMLLoader.load(getClass().getResource("omsaetning/Beregn_omsaetning.fxml"));
+        Node node = FXMLLoader.load(getClass().getResource("beregnomsaetning/Beregn_omsaetning.fxml"));
         omsaetningPane.getChildren().add(node);
     }
 }

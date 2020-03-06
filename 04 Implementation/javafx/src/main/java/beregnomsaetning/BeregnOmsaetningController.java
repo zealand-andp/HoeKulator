@@ -1,4 +1,4 @@
-package omsaetning;
+package beregnomsaetning;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -84,8 +84,6 @@ public class BeregnOmsaetningController {
                 procentstigning = Double.parseDouble(metodeController.getProcentstigningTf().getText());
                 break;
         }
-
-
-
+        BeregnOmsaetningImpl beregnOmsaetning = new BeregnOmsaetningImpl();
     }
 }

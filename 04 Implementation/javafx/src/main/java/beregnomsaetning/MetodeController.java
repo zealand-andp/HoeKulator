@@ -1,4 +1,4 @@
-package omsaetning;
+package beregnomsaetning;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
