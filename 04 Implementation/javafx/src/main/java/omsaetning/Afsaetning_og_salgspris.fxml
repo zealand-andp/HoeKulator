@@ -13,7 +13,7 @@
          <font>
             <Font size="12.0" />
          </font></Label>
-      <Label layoutX="14.0" layoutY="7.0" text="Afskrivning:">
+      <Label layoutX="14.0" layoutY="7.0" text="Afsaetning:">
          <font>
             <Font size="12.0" />
          </font></Label>
