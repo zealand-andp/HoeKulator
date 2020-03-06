@@ -1,15 +1,18 @@
 package beregnafskrivning;
 
-import entities.Afskrivning;
-import entities.AfskrivningImpl;
-import entities.Observable;
-import entities.Observer;
+import entities.*;
 
 import java.util.LinkedHashMap;
 
 public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
+    ObserverManager observerManager;
     LinkedHashMap<String, Afskrivning> afskrivninger;
     AfskrivningImpl afskrivning;
+
+    public BeregnAfskrivningImpl() {
+        observerManager = newOberserverManager();
+    }
+
     @Override
     public void angivLinearAfskrivning(String navn, int brugstid, double scrapvaerdi, double anskaffelsesvaerdi) {
        boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
@@ -18,7 +21,8 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
            afskrivninger.put(navn, afskrivning);
        }
        Afskrivning afskrivning =  afskrivninger.get(navn);
-
+       afskrivning.angivloneaerAfskrvning(anskaffelsesvaerdi);
+       observerManager.notificerObservere(this);
     }
 
     @Override
@@ -29,5 +33,8 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     @Override
     public void afmeldObserver(Observer observer) {
 
+    }
+    protected ObserverManager newOberserverManager(){
+        return new ObserverManagerImpl();
     }
 }
