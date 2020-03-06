@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ad25fc93-0f6d-4103-870b-85451ee951f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/BeregnAfskrivningImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/BeregnAfskrivningImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/AfskrivningsBeregner.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/AfskrivningsBeregner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/LinearAfskrivningsBeregnerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/LinearAfskrivningsBeregnerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/entities/Afskrivning.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/entities/Afskrivning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/entities/AfskrivningImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/entities/AfskrivningImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/entities/exceptions/KanIkkeBeregneAfskrivning.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/entities/exceptions/KanIkkeBeregneAfskrivningException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,7 @@
       <workItem from="1583408234746" duration="2472000" />
       <workItem from="1583410728275" duration="1920000" />
       <workItem from="1583415904027" duration="407000" />
-      <workItem from="1583481047629" duration="5371000" />
+      <workItem from="1583481047629" duration="8172000" />
     </task>
     <task id="LOCAL-00001" summary="Added ENV10 merge-conflict-vejledning.md">
       <created>1583400896068</created>
@@ -235,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583485047926</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Made some Changes">
+      <created>1583486753426</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583486753426</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,10 +264,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Made some Changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="768" y="236" width="374" height="573" key="#com.intellij.ide.util.MemberChooser" timestamp="1583485787206">
+    <state x="768" y="236" width="374" height="573" key="#com.intellij.ide.util.MemberChooser" timestamp="1583487492934">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state x="768" y="236" width="374" height="573" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1048@0.0.1920.1048" timestamp="1583485787206" />
+    <state x="768" y="236" width="374" height="573" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1048@0.0.1920.1048" timestamp="1583487492934" />
     <state x="808" y="416" width="293" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583408716932">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
@@ -276,10 +280,10 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="705" y="386" width="509" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1048@0.0.1920.1048" timestamp="1583411670974" />
-    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2" timestamp="1583486718186">
+    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2" timestamp="1583486753369">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1583486718186" />
+    <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1583486753369" />
     <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1583398290626">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
@@ -300,10 +304,10 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="464" y="159" key="SettingsEditor/0.0.1920.1048@0.0.1920.1048" timestamp="1583410799692" />
-    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2" timestamp="1583485049614">
+    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2" timestamp="1583486757743">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2/0.0.1920.1048@0.0.1920.1048" timestamp="1583485049614" />
+    <state x="555" y="248" width="800" height="549" key="Vcs.Push.Dialog.v2/0.0.1920.1048@0.0.1920.1048" timestamp="1583486757743" />
     <state x="678" y="421" width="553" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583397967243">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>

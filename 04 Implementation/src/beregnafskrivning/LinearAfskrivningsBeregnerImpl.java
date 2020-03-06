@@ -1,12 +1,32 @@
 package beregnafskrivning;
 
-import entities.exceptions.NegativVaerdiException;
+import entities.exceptions.*;
 
 public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
     double resultat;
+    AfskrivningsBeregner beregnAfskrivning;
 
     @Override
-    public void beregnAfskrivning(AfskrivningsRequest request) {
+    public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException {
+       if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
+           return;
+       }
 
+       if (request.hentBrugstid() <=0){
+           throw  new NegativEllerNulVaerdiException();
+       }
+
+       if (request.hentAnskaffelsesvaedi() <0){
+           throw new NegativVaerdiException();
+       }
+
+       if (request.hentScrapvaerdi() <0){
+           throw  new NegativVaerdiException();
+       }
+
+       if (request.hentScrapvaerdi() > request.hentAnskaffelsesvaedi()){
+           throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
+       }
+       beregnAfskrivning.beregnAfskrivning(request);
     }
 }
