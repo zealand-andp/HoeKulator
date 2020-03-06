@@ -12,7 +12,7 @@ public class VareforbrugImpl implements Vareforbrug, Observable {
     @Override
     public void angivBeloeb(double beloeb) throws NegativBeloebException {
         if (beloeb < 0) {
-           throw new NegativBeloebException();
+           throw new NegativBeloebException("Beløbet må ikke være negativt");
 
         }
         this.beloeb = beloeb;
