@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad25fc93-0f6d-4103-870b-85451ee951f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/SaldoAfskrivningBeregner.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/SaldoAfskrivningBeregner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/SaldoAfskrivningsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/04 Implementation/src/beregnafskrivning/SaldoAfskrivningsRequestImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -146,7 +146,7 @@
       <updated>1583229609114</updated>
       <workItem from="1583229611992" duration="619000" />
       <workItem from="1583314739798" duration="1505000" />
-      <workItem from="1583482677460" duration="1635000" />
+      <workItem from="1583482677460" duration="1889000" />
     </task>
     <task id="LOCAL-00001" summary="Added ENV10 merge-conflict-vejledning.md">
       <created>1583400896068</created>
@@ -169,7 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583484283715</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2.udgave af SaldoAfskrivningBeregner.java&#10;Coauther: Nicki&#10;Reviewer: Ingen">
+      <created>1583484325166</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583484325166</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1.udgave af SaldoAfskrivningsRequest.java&#10;Coauther: Nicki&#10;Reviewer: Ingen">
+      <created>1583484368292</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583484368292</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,13 +206,15 @@
     <MESSAGE value="Added ENV10 merge-conflict-vejledning.md" />
     <MESSAGE value="1.udgave af SaldoAfskrivningBeregnerImpl.java&#10;Coauther: Nicki&#10;Reviewer: Ingen" />
     <MESSAGE value="1.udgave af SaldoAfskrivningBeregner.java&#10;Coauther: Nicki&#10;Reviewer: Ingen" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.udgave af SaldoAfskrivningBeregner.java&#10;Coauther: Nicki&#10;Reviewer: Ingen" />
+    <MESSAGE value="2.udgave af SaldoAfskrivningBeregner.java&#10;Coauther: Nicki&#10;Reviewer: Ingen" />
+    <MESSAGE value="1.udgave af SaldoAfskrivningsRequest.java&#10;Coauther: Nicki&#10;Reviewer: Ingen" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.udgave af SaldoAfskrivningsRequest.java&#10;Coauther: Nicki&#10;Reviewer: Ingen" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="447" y="0" width="791" height="821" key="CommitChangelistDialog2" timestamp="1583484324545">
+    <state x="447" y="0" width="791" height="821" key="CommitChangelistDialog2" timestamp="1583484367651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583484324545" />
+    <state x="447" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583484367651" />
     <state x="559" y="112" width="791" height="821" key="CommitChangelistDialog2/0.0.1920.1048@0.0.1920.1048" timestamp="1583401570849" />
     <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1583398290626">
       <screen x="0" y="0" width="1920" height="1048" />
