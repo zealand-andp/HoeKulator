@@ -24,7 +24,13 @@ public class SaldoAfskrivningBeregnerImpl implements  SaldoAfskrivningBeregner{
          //thrower en Exception hvis Anskaffelsesværdien er negativ
          throw new NegativBeloebException("beløb må ikke være negativt");
       }
-      if (request.hentAfskrivningsProcent()>350.00)
+      if (request.hentAfskrivningsProcent()>350.00){
+         try {
+            throw new UrealistiskProcentException();
+         } catch (UrealistiskProcentException urealistiskProcentException) {
+            urealistiskProcentException.printStackTrace();
+         }
+      }
 
       saldoAfskrivningsRequest= (SaldoAfskrivningsRequest) request;
       double anskaffelsesvardi = saldoAfskrivningsRequest.hentAnskaffelsesvaedi();

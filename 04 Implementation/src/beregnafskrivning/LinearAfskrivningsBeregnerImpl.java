@@ -33,7 +33,7 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
            throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
        }
 
-       linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;
+
        double anskaffelsevaerdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
        double scrapvaerdi = linearAfskrivningsRequest.hentScrapvaerdi();
        int brugsTid = linearAfskrivningsRequest.hentBrugstid();
