@@ -2,13 +2,13 @@ package beregnafskrivning;
 
 import entities.exceptions.*;
 
-import java.lang.reflect.Array;
-import java.util.LinkedHashMap;
-
 public class SaldoAfskrivningBeregnerImpl implements SaldoAfskrivningsRequest, AfskrivningsBeregner{
 
    private double resultat;
    AfskrivningsBeregner afskrivningsBeregner;
+   SaldoAfskrivningsRequest saldoAfskrivningsRequest;
+   SaldoAfskrivningBeregnerImpl saldoAfskrivningBeregnerImpl;
+
    @Override
    public void beregnAfskrivning(AfskrivningsRequest request) throws NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
       if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.SALDO){
@@ -20,6 +20,14 @@ public class SaldoAfskrivningBeregnerImpl implements SaldoAfskrivningsRequest, A
       if (request.hentAnskaffelsesvaedi()<0){
          throw new NegativBeloebException("beløb må ikke være negativt");
       }
+      if (request.hentAfskrivningsProcent()>3.5){
+
+      }
+
+      saldoAfskrivningsRequest=(SaldoAfskrivningBeregnerImpl) request;
+      double anskaffelsesvardi = saldoAfskrivningsRequest.hentAnskaffelsesvaedi();
+      double saldoAfksrivningsProcent = saldoAfskrivningsRequest.hentAfskrivningsProcent()
+
 
    }
 }

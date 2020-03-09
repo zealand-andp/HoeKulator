@@ -17,7 +17,6 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
            afskrivningsBeregner.beregnAfskrivning(request);
        }
-            linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;
        if (request.hentBrugstid() <=0){
            throw  new NegativEllerNulVaerdiException();
        }
@@ -34,12 +33,12 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
            throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
        }
 
-
-       double anskaffelseværdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
+       linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;
+       double anskaffelsevaerdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
        double scrapvaerdi = linearAfskrivningsRequest.hentScrapvaerdi();
        int brugsTid = linearAfskrivningsRequest.hentBrugstid();
 
-       this.resultat = (anskaffelseværdi-scrapvaerdi) / brugsTid;
+       this.resultat = (anskaffelsevaerdi-scrapvaerdi) / brugsTid;
        linearAfskrivningsRequest.angivAfskrivning(this.resultat);
     }
 }
