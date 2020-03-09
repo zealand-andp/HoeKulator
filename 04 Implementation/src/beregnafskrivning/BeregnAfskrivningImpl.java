@@ -1,7 +1,7 @@
 package beregnafskrivning;
 
 import entities.*;
-import entities.exceptions.KanIkkeBeregneAfskrivningException;
+import entities.exceptions.*;
 
 import java.util.LinkedHashMap;
 
@@ -16,7 +16,7 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
 
     @Override
     public void angivLinearAfskrivning(String navn, int brugstid,
-                                       double scrapvaerdi, double anskaffelsesvaerdi) throws KanIkkeBeregneAfskrivningException {
+                                       double scrapvaerdi, double anskaffelsesvaerdi) throws KanIkkeBeregneAfskrivningException, NegativVaerdiException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativBeloebException {
        boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
        if (!afskrivningMedNavnFindes){
            Afskrivning afskrivning =  new AfskrivningImpl(navn);

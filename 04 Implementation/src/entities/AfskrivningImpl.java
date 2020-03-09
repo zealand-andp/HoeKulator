@@ -2,7 +2,7 @@ package entities;
 
 import beregnafskrivning.LinearAfskrivningsBeregnerImpl;
 import beregnafskrivning.LinearAfskrivningsRequestImpl;
-import entities.exceptions.KanIkkeBeregneAfskrivningException;
+import entities.exceptions.*;
 
 public class AfskrivningImpl implements Afskrivning {
     private String navn;
@@ -33,7 +33,7 @@ public class AfskrivningImpl implements Afskrivning {
 
 
     @Override
-    public void angivloneaerAfskrvning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException {
+    public void angivloneaerAfskrvning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException {
         this.afskrivningsvaerdi = anskaffelsesvaerdi;
         LinearAfskrivningsRequestImpl linearAfskrivningsRequest = new LinearAfskrivningsRequestImpl( brugstid, anskaffelsesvaerdi, scrapvaerdi);
         LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
