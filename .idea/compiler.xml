@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="javafx" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hoek_projekt.hoekulatorAID.main" target="1.8" />
       <module name="hoek_projekt.hoekulatorAID.test" target="1.8" />
@@ -10,6 +18,7 @@
       <module name="høk_project.hoekulatorAID.test" target="1.8" />
       <module name="høk_projekt.hoekulatorAID.main" target="1.8" />
       <module name="høk_projekt.hoekulatorAID.test" target="1.8" />
+      <module name="javafx" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

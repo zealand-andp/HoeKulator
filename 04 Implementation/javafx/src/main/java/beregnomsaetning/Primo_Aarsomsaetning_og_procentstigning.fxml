@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="beregnomsaetning.MetodeController">
    <children>
-      <TextField layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-      <TextField layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="primoaarTf" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="procentstigningTf" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
       <Label layoutX="188.0" layoutY="7.0" text="Procentstigning:">
          <font>
             <Font size="12.0" />
