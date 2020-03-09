@@ -12,12 +12,11 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
     @Override
     public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException,
             NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException,
-            NegativBeloebException, OverMaksbeloebException {
+            NegativBeloebException, OverMaksbeloebException, NegativAfskrivningsprocentException {
 
        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
            afskrivningsBeregner.beregnAfskrivning(request);
        }
-            linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;
        if (request.hentBrugstid() <=0){
            throw  new NegativEllerNulVaerdiException();
        }
@@ -35,11 +34,11 @@ public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
        }
 
 
-       double anskaffelseværdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
+       double anskaffelsevaerdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
        double scrapvaerdi = linearAfskrivningsRequest.hentScrapvaerdi();
        int brugsTid = linearAfskrivningsRequest.hentBrugstid();
 
-       this.resultat = (anskaffelseværdi-scrapvaerdi) / brugsTid;
+       this.resultat = (anskaffelsevaerdi-scrapvaerdi) / brugsTid;
        linearAfskrivningsRequest.angivAfskrivning(this.resultat);
     }
 }
