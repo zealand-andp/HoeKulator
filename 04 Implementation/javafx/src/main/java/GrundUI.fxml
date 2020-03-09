@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HoeMain">
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GrundUIController">
     <items>
         <ExpansionPanel>
             <collapsedContent>
@@ -20,7 +20,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Omsætning" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="omsaetningResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -38,12 +38,12 @@
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="omsaetningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="58" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="58" mnemonicParsing="false" text="+" onAction="#tilfoejTilResultatBudget"/>
                      </children>
                   </Pane>
                </content>
@@ -56,7 +56,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Vareforbrug" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00" >
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -312,7 +312,7 @@
                                  </font>
                               </Label>
                               <ComboBox layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Tilføj/opdatere" />
+                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
                               <Pane layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
                                  <children>
                                     <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
@@ -357,7 +357,7 @@
                                  </font>
                               </Label>
                               <ComboBox layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Tilføj/opdatere" />
+                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
                               <Pane layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
                                  <children>
                                     <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
@@ -402,7 +402,7 @@
                                  </font>
                               </Label>
                               <ComboBox layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Tilføj/opdatere" />
+                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
                               <Pane layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
                                  <children>
                                     <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />

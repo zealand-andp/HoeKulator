@@ -12,7 +12,7 @@
             </font>
         </Label>
         <ChoiceBox fx:id="metodeComboBox" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-        <Button fx:id="opdaterButton" layoutX="710.0" layoutY="20.0" mnemonicParsing="false" onAction="#beregn" prefHeight="32.0" prefWidth="120.0" text="Tilføj/opdater" />
+        <Button fx:id="beregnButton" layoutX="710.0" layoutY="20.0" mnemonicParsing="false" onAction="#beregn" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
         <Pane fx:id="metodePane" layoutX="174.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="362.0">
             <children>
                 <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />

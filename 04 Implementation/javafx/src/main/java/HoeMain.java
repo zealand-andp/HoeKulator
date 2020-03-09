@@ -10,15 +10,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HoeMain extends Application{
-    @FXML
-    private Pane omsaetningPane;
+
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-    public void initialize() throws IOException {
-        loadOmsaetning();
     }
 
     @Override
@@ -52,10 +47,5 @@ public class HoeMain extends Application{
 
 
         primaryStage.show();
-    }
-
-    public void loadOmsaetning() throws IOException {
-        Node node = FXMLLoader.load(getClass().getResource("beregnomsaetning/Beregn_omsaetning.fxml"));
-        omsaetningPane.getChildren().add(node);
     }
 }
