@@ -83,7 +83,6 @@ public class BeregnOmsaetningController {
         node = loader.load();
         metodeController = loader.getController();
         metodePane.getChildren().setAll(node);
-
     }
 
     public void beregn() throws NegativAntalException, NegativBeloebException {
