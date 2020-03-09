@@ -3,11 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HoeKulator.iml" filepath="$PROJECT_DIR$/.idea/HoeKulator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.test.iml" filepath="$PROJECT_DIR$/.idea/modules/hoek_projekt.hoekulatorAID.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hoekulatorAID.iml" filepath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hoekulatorAID.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hoekulatorAID.test.iml" filepath="$PROJECT_DIR$/.idea/modules/hoekulatorAID.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04 Implementation/javafx/javafx.iml" filepath="$PROJECT_DIR$/04 Implementation/javafx/javafx.iml" />
     </modules>
   </component>
 </project>
