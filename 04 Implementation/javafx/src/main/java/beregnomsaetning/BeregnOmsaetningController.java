@@ -19,6 +19,7 @@ import java.io.IOException;
 public class BeregnOmsaetningController {
     String nuvaerendeMetode;
     MetodeController metodeController;
+
     Omsaetning omsaetning;
     @FXML
     private Pane metodePane;
@@ -27,7 +28,7 @@ public class BeregnOmsaetningController {
     private ChoiceBox<String> metodeComboBox;
 
     @FXML
-    private Button opdaterButton;
+    private Button beregnButton;
 
     @FXML
     private TextField omsaetningTf;
@@ -121,5 +122,13 @@ public class BeregnOmsaetningController {
                 omsaetning.anvendPrimoAarsomsaetningOgProcentstigning(primoAarsomsaetning, procentstigning);
                 break;
         }
+    }
+
+    public TextField getOmsaetningTf() {
+        return omsaetningTf;
+    }
+
+    public Omsaetning getOmsaetning() {
+        return omsaetning;
     }
 }
