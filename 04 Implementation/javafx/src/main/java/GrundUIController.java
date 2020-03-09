@@ -1,3 +1,4 @@
+import afskrivninger.BeregnAfskrivningController;
 import beregnomsaetning.BeregnOmsaetningController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import java.io.IOException;
 
 public class GrundUIController {
     private BeregnOmsaetningController beregnOmsaetningController;
+    private BeregnAfskrivningController beregnAfskrivningController;
 
     @FXML
     Label omsaetningResultatLabel1, omsaetningResultatLabel2;
@@ -21,11 +23,16 @@ public class GrundUIController {
     }
 
     public void loadOmsaetning() throws IOException {
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("beregnomsaetning/Beregn_omsaetning.fxml"));
         Node node = fxmlLoader.load();
         beregnOmsaetningController = fxmlLoader.getController();
         omsaetningPane.getChildren().add(node);
+    }
+
+    public void loadAfskrivning() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Tilfoej_dialog_base.fxml"));
+        Node node = fxmlLoader.load();
+        beregnAfskrivningController = fxmlLoader.getController();
     }
 
     @FXML
