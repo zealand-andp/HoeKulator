@@ -206,9 +206,6 @@
                      </padding>
                   </Label>
                </titleNodes>
-               <padding>
-                  <Insets right="42.0" />
-               </padding>
             </ExpansionPanel.CollapsedPanel>
          </collapsedContent>
          <expandedContent>
