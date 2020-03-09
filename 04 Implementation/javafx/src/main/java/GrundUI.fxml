@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HoeMain">
     <items>
         <ExpansionPanel>
             <collapsedContent>
@@ -31,7 +31,7 @@
          <expandedContent>
             <ExpansionPanel.ExpandedPanel>
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                  <Pane fx:id="omsaetningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                      <children>
                         <Label prefWidth="250.0" text="Omsætning">
                            <padding>
@@ -43,7 +43,7 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="58" mnemonicParsing="false" text="+" />
                      </children>
                   </Pane>
                </content>

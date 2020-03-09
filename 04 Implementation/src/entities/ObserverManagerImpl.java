@@ -19,7 +19,7 @@ public class ObserverManagerImpl implements ObserverManager {
     @Override
     public void notificerObservere(Observable observable) {
         for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).opdater(this);
+            observers.get(i).opdater(observable);
         }
     }
 }

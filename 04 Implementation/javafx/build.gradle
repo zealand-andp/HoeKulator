@@ -28,7 +28,7 @@ javafx {
 sourceSets {
     main {
         resources {
-            srcDirs = ["src/main/java"]
+            srcDirs = ["src/main/java", "../src"]
             includes = ["**/*.fxml"]
         }
     }
