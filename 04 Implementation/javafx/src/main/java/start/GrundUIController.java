@@ -1,4 +1,7 @@
+package start;
+
 import beregnafskrivning.BeregnAfskrivningController;
+import beregnafskrivning.MetodeController;
 import beregnomsaetning.BeregnOmsaetningController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,10 +14,10 @@ import java.util.ArrayList;
 
 public class GrundUIController {
     private BeregnOmsaetningController beregnOmsaetningController;
-    private BeregnAfskrivningController beregnAfskrivningController;
-    double nodeY = 38;
+//    private BeregnAfskrivningController beregnAfskrivningController;
+    double afskrivningsPaneLayoutY = 38;
     ArrayList<Node> afskrivninger;
-
+    ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
 
     @FXML
     Label omsaetningResultatLabel1, omsaetningResultatLabel2;
@@ -24,23 +27,28 @@ public class GrundUIController {
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
+        beregnAfskrivningControllers = new ArrayList<>();
         loadOmsaetning();
         loadAfskrivning();
     }
 
     public void loadOmsaetning() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("beregnomsaetning/Beregn_omsaetning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnomsaetning/Beregn_omsaetning.fxml"));
         Node node = fxmlLoader.load();
         beregnOmsaetningController = fxmlLoader.getController();
         omsaetningPane.getChildren().add(node);
     }
 
     public void loadAfskrivning() throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("beregnafskrivning/Tilfoej_dialog_base.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnafskrivning/Tilfoej_dialog_base.fxml"));
         Node node = fxmlLoader.load();
+        BeregnAfskrivningController beregnAfskrivningController;
         beregnAfskrivningController = fxmlLoader.getController();
+        beregnAfskrivningController.setGrundUIController(this);
+        beregnAfskrivningControllers.add(beregnAfskrivningController);
         afskrivningPane.getChildren().add(node);
         afskrivninger.add(node);
+        beregnAfskrivningController.setNode(node);
     }
 
     @FXML
@@ -51,25 +59,36 @@ public class GrundUIController {
 
     @FXML
     public void tilfoejNyAfskrivning() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("beregnafskrivning/Tilfoej_dialog_base.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnafskrivning/Tilfoej_dialog_base.fxml"));
         Node node = fxmlLoader.load();
         afskrivninger.add(node);
-        nodeY += 68;
+        afskrivningsPaneLayoutY += 68;
+        BeregnAfskrivningController beregnAfskrivningController;
         beregnAfskrivningController = fxmlLoader.getController();
-        node.setLayoutY(nodeY);
+        beregnAfskrivningController.setGrundUIController(this);
+        beregnAfskrivningControllers.add(beregnAfskrivningController);
+        node.setLayoutY(afskrivningsPaneLayoutY);
         afskrivningPane.setPrefHeight(afskrivningPane.getPrefHeight() + 68);
         afskrivningPane.getChildren().add(node);
-
+        beregnAfskrivningController.setNode(node);
+        changeLayout();
     }
 
     @FXML
-    public void fjernAfkrivning() throws IOException{
+    public void fjernAfkrivning(Node node) throws IOException{
         if (afskrivninger.size() <= 0){
             return;
         }
-        afskrivningPane.getChildren().remove(afskrivninger.get(afskrivninger.size() - 1));
-        afskrivninger.remove(afskrivninger.size()-1);
-        nodeY -= 68;
+        afskrivningPane.getChildren().remove(node);
+        afskrivninger.remove(node);
+        changeLayout();
         afskrivningPane.setPrefHeight(afskrivningPane.getPrefHeight() - 68);
+    }
+
+    @FXML
+    public void changeLayout() {
+        for (int i = 0; i < afskrivninger.size(); i++) {
+            afskrivninger.get(i).setLayoutY(i * 68 + 38);
+        }
     }
 }

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import start.GrundUIController;
 
 import java.io.IOException;
 
@@ -18,6 +19,8 @@ public class BeregnAfskrivningController {
     String nuvaerendeMetode;
     MetodeController metodeController;
     private Afskrivning afskrivning;
+    GrundUIController grundUIController;
+    Node node;
 
     @FXML
     private Pane metodePane;
@@ -30,6 +33,13 @@ public class BeregnAfskrivningController {
 
     @FXML
     private TextField afskrivningTf;
+
+    public TextField getNavnTf() {
+        return navnTf;
+    }
+
+    @FXML
+    private TextField navnTf;
 
     public void initialize() {
 //        afskrivning = new AfskrivningImpl();
@@ -81,5 +91,18 @@ public class BeregnAfskrivningController {
         node = loader.load();
         metodeController = loader.getController();
         metodePane.getChildren().setAll(node);
+    }
+
+    @FXML
+    public void fjernSelv() throws IOException {
+        grundUIController.fjernAfkrivning(node);
+    }
+
+    public void setGrundUIController(GrundUIController grundUIController) {
+        this.grundUIController = grundUIController;
+    }
+
+    public void setNode(Node node) {
+        this.node = node;
     }
 }

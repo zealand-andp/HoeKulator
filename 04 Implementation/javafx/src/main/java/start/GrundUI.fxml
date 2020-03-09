@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 
-<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GrundUIController">
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
     <items>
         <ExpansionPanel>
             <collapsedContent>
@@ -288,13 +288,12 @@
                            </padding>
                         </Label>
                         <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" onAction="#tilfoejNyAfskrivning" text="Tilføj ny afskrivning" />
-                        <Button fx:id="fjernAfskrivning" layoutX="240.0" layoutY="0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" onAction="#fjernAfkrivning" text="Fjern afskrivning" />
                         <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="58.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+"/>
                      </children>
                   </Pane>
                </content>
@@ -330,7 +329,7 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+"/>
                      </children>
                   </Pane>
                </content>
