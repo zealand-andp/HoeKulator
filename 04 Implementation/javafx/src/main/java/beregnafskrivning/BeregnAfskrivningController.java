@@ -75,15 +75,15 @@ public class BeregnAfskrivningController {
         Node node = null;
         switch (metode) {
             case "Lineær Afskrivning":
-                loader = new FXMLLoader(getClass().getResource("Lineaer_metode.fxml"));
+                loader = new FXMLLoader(getClass().getResource("Lineaer_afskrivning.fxml"));
                 nuvaerendeMetode = "Lineær Afskrivning";
                 break;
             case "Saldoafskrivning":
-                loader = new FXMLLoader(getClass().getResource("Saldo_metode.fxml"));
+                loader = new FXMLLoader(getClass().getResource("Saldoafskrivning.fxml"));
                 nuvaerendeMetode = "Saldoafskrivning";
                 break;
             case "Straksafskrivning":
-                loader = new FXMLLoader(getClass().getResource("Straks.fxml"));
+                loader = new FXMLLoader(getClass().getResource("Straksafskrivning.fxml"));
                 nuvaerendeMetode = "Straksafskrivning";
                 break;
         }

@@ -1,7 +1,6 @@
 package start;
 
 import beregnafskrivning.BeregnAfskrivningController;
-import beregnafskrivning.MetodeController;
 import beregnomsaetning.BeregnOmsaetningController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +39,7 @@ public class GrundUIController {
     }
 
     public void loadAfskrivning() throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnafskrivning/Tilfoej_dialog_base.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnafskrivning/Beregn_afskrivning.fxml"));
         Node node = fxmlLoader.load();
         BeregnAfskrivningController beregnAfskrivningController;
         beregnAfskrivningController = fxmlLoader.getController();
@@ -59,7 +58,7 @@ public class GrundUIController {
 
     @FXML
     public void tilfoejNyAfskrivning() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnafskrivning/Tilfoej_dialog_base.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnafskrivning/Beregn_afskrivning.fxml"));
         Node node = fxmlLoader.load();
         afskrivninger.add(node);
         afskrivningsPaneLayoutY += 68;
