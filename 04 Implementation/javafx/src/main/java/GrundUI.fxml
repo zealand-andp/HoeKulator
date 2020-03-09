@@ -32,12 +32,12 @@
             <ExpansionPanel.ExpandedPanel>
                <content>
                   <Pane fx:id="omsaetningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
-                     <children>
-                        <Label prefWidth="250.0" text="Omsætning">
-                           <padding>
-                              <Insets left="10.0" top="10.0" />
-                           </padding>
-                        </Label>
+                  <children>
+                     <Label prefWidth="250.0" text="Omsætning">
+                        <padding>
+                           <Insets left="10.0" top="10.0" />
+                        </padding>
+                     </Label>
                         <Label fx:id="omsaetningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
@@ -286,7 +286,7 @@
          <expandedContent>
             <ExpansionPanel.ExpandedPanel>
                <content>
-                  <Pane prefHeight="290.0" prefWidth="1288.0">
+                  <Pane fx:id="afskrivningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                      <children>
                         <Label prefWidth="200.0" text="-Afskrivninger">
                            <padding>
@@ -298,142 +298,7 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Pane layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0">
-                           <children>
-                              <TextField layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Label layoutX="14.0" layoutY="10.0" text="Navn:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="188.0" layoutY="10.0" text="Metode:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
-                              <Pane layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
-                                 <children>
-                                    <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="362.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <Label layoutX="362.0" layoutY="7.0" text="Brugstid i år:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="188.0" layoutY="7.0" text="Scrapværdi:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="14.0" layoutY="7.0" text="Anskaffelsesværdi:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <Label layoutX="900.0" layoutY="7.0" text="Afskrivning">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <TextField alignment="CENTER_RIGHT" editable="false" layoutX="900.0" layoutY="26.0" prefHeight="28.0" prefWidth="240.0" />
-                           </children>
-                        </Pane>
-                        <Pane layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0">
-                           <children>
-                              <TextField layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Label layoutX="14.0" layoutY="10.0" text="Navn:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="188.0" layoutY="10.0" text="Metode:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
-                              <Pane layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
-                                 <children>
-                                    <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="362.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <Label layoutX="362.0" layoutY="7.0" text="Brugstid i år:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="188.0" layoutY="7.0" text="Scrapværdi:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="14.0" layoutY="7.0" text="Anskaffelsesværdi:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <Label layoutX="900.0" layoutY="7.0" text="Afskrivning">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <TextField alignment="CENTER_RIGHT" editable="false" layoutX="900.0" layoutY="26.0" prefHeight="28.0" prefWidth="240.0" />
-                           </children>
-                        </Pane>
-                        <Pane layoutY="178.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0">
-                           <children>
-                              <TextField layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Label layoutX="14.0" layoutY="10.0" text="Navn:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="188.0" layoutY="10.0" text="Metode:">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                              <Button layoutX="1154.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="Beregn" />
-                              <Pane layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
-                                 <children>
-                                    <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <TextField alignment="CENTER_RIGHT" layoutX="362.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-                                    <Label layoutX="362.0" layoutY="7.0" text="Brugstid i år:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="188.0" layoutY="7.0" text="Scrapværdi:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="14.0" layoutY="7.0" text="Anskaffelsesværdi:">
-                                       <font>
-                                          <Font size="12.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <Label layoutX="900.0" layoutY="7.0" text="Afskrivning">
-                                 <font>
-                                    <Font size="12.0" />
-                                 </font>
-                              </Label>
-                              <TextField alignment="CENTER_RIGHT" editable="false" layoutX="900.0" layoutY="26.0" prefHeight="28.0" prefWidth="240.0" />
-                           </children>
-                        </Pane>
-                        <Button layoutX="1220.0" layoutY="250.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="58.0" mnemonicParsing="false" text="+" />
                      </children>
                   </Pane>
                </content>

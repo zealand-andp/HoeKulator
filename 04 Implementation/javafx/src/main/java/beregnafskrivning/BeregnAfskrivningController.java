@@ -1,4 +1,4 @@
-package afskrivninger;
+package beregnafskrivning;
 
 public class BeregnAfskrivningController {
 }

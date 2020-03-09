@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
       <Label layoutX="14.0" layoutY="10.0" text="Navn:">
@@ -49,6 +49,6 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField alignment="CENTER_RIGHT" editable="false" layoutX="900.0" layoutY="26.0" prefHeight="28.0" prefWidth="240.0" />
+      <TextField alignment="CENTER_RIGHT" editable="false" layoutX="900.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
    </children>
 </Pane>
