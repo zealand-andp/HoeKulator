@@ -3,7 +3,7 @@ package beregnafskrivning;
 import entities.exceptions.NegativBeloebException;
 import entities.exceptions.OverMaksbeloebException;
 
-public class StraksAfskrivningsRequestImpl {
+public class StraksAfskrivningsRequestImpl implements StraksAfskrivningsRequest {
     private double anskaffelsesvaerdi;
 //TODO når Afskrivningsmetoder er lavet
    // public Afskrivningsmetoder hentAfskrivningsmetode(){

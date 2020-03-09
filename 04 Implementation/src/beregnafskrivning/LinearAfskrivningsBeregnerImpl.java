@@ -2,7 +2,7 @@ package beregnafskrivning;
 
 import entities.exceptions.*;
 
-public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
+public class LinearAfskrivningsBeregnerImpl implements AfskrivningsBeregner{
     double resultat;
     LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner;
     AfskrivningsBeregner afskrivningsBeregner;
