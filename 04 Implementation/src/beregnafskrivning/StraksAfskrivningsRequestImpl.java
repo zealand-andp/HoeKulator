@@ -3,19 +3,19 @@ package beregnafskrivning;
 public class StraksAfskrivningsRequestImpl implements StraksAfskrivningsRequest, AfskrivningRequest {
     double anskaffelsesvaerdi;
     double beloeb;
-    boolean erBergenet;
+    boolean erBeregnet;
 
 
     @Override
     public boolean erBeregnet() {
-        return false;
+        return erBeregnet;
     }
 
 
     @Override
     public void angivAfskrivning(double beloeb) {
         this.beloeb = beloeb;
-        erBergenet = true;
+        erBeregnet = true;
     }
 
     @Override

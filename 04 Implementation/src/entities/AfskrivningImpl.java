@@ -9,6 +9,7 @@ public class AfskrivningImpl implements Afskrivning {
     private String navn;
     private int brugstid;
     private double scrapvaerdi;
+
     private double afskrivningsvaerdi;
 
     public AfskrivningImpl(String navn) {
@@ -16,30 +17,10 @@ public class AfskrivningImpl implements Afskrivning {
 
 
     }
-
-
-    static void angivStandardAfskrivningsBeregner(AfskrivningsBeregner afskrivningsBeregner) {
-        standardafskrivningsberegner = afskrivningsBeregner;
-    }
-
-    @Override
-    public void containsKey(String navn) {
-    }
-
-    @Override
-    public void get(String navn) {
-
-    }
-
-    @Override
-    public void put(String navn, Afskrivning afskrivning) {
-
-    }
-
-
+    
     @Override
     public void angivLineaerAfskrivning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
-        LinearAfskrivningRequestImpl linearAfskrivningsRequest = new LinearAfskrivningRequestImpl(brugstid, anskaffelsesvaerdi, scrapvaerdi);
+        LinearAfskrivningRequestImpl linearAfskrivningsRequest = new LinearAfskrivningRequestImpl(brugstid, scrapvaerdi, anskaffelsesvaerdi);
         LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
         linearAfskrivningsBeregner.beregnAfskrivning(linearAfskrivningsRequest);
         boolean erBeregnet = linearAfskrivningsRequest.erBeregnet();
@@ -73,5 +54,10 @@ public class AfskrivningImpl implements Afskrivning {
             throw new KanIkkeBeregneAfskrivningException();
         }
         afskrivningsvaerdi = straksAfskrivningsRequest.hentAfskrivning();
+    }
+
+    @Override
+    public double hentAfskrivningsvaerdi() {
+        return afskrivningsvaerdi;
     }
 }
