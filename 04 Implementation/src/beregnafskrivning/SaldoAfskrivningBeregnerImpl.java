@@ -11,13 +11,15 @@ public class SaldoAfskrivningBeregnerImpl implements SaldoAfskrivningBeregner{
 
    @Override
    public void beregnAfskrivning(AfskrivningRequest request) throws NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
-      saldoAfskrivningsRequest = (SaldoAfskrivningRequest) request;
-
-      if (saldoAfskrivningsRequest.hentAfskrivningsmetode() != Afskrivningsmetoder.SALDO){
+      if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.SALDO){
          //Sender programmet videre til næste del af systemet
          afskrivningsBeregner = new StraksAfskrivningBeregnerImpl();
          afskrivningsBeregner.beregnAfskrivning(request);
       }
+      if (request.erBeregnet()){
+         return;
+      }
+      saldoAfskrivningsRequest = (SaldoAfskrivningRequest) request;
 
       if (saldoAfskrivningsRequest.hentAfskrivningsProcent() < 0){
          //thrower en Exception hvis Afksrivningsprocenten er under 0
@@ -40,6 +42,6 @@ public class SaldoAfskrivningBeregnerImpl implements SaldoAfskrivningBeregner{
       double anskaffelsesvardi = saldoAfskrivningsRequest.hentAnskaffelsesvaerdi();
       double saldoAfksrivningsProcent = saldoAfskrivningsRequest.hentAfskrivningsProcent();
       this.resultat = (anskaffelsesvardi / 100) * saldoAfksrivningsProcent;
-
+      saldoAfskrivningsRequest.angivAfskrivning(resultat);
    }
 }

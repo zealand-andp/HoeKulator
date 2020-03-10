@@ -5,7 +5,7 @@ public class SaldoAfskrivningsRequestImpl implements SaldoAfskrivningRequest, Af
     private double anskaffelsVaerdi;
     private double afskrivningsProcent;
     private double beloeb;
-    private boolean erBergenet;
+    private boolean erBeregnet;
 
     public SaldoAfskrivningsRequestImpl(double anskaffelsVaerdi, double afskrivningsProcent) {
         this.anskaffelsVaerdi=anskaffelsVaerdi;
@@ -14,13 +14,13 @@ public class SaldoAfskrivningsRequestImpl implements SaldoAfskrivningRequest, Af
 
     @Override
     public boolean erBeregnet() {
-        return erBergenet;
+        return erBeregnet;
     }
 
     @Override
     public void angivAfskrivning(double beloeb) {
         this.beloeb = beloeb;
-        erBergenet = true;
+        erBeregnet = true;
 
     }
 

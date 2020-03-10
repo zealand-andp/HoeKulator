@@ -9,11 +9,10 @@ public class StraksAfskrivningBeregnerImpl implements StraksAfskrivningBeregner 
 
 
     public void beregnAfskrivning(AfskrivningRequest request) throws NegativBeloebException, OverMaksbeloebException {
-        straksAfskrivningsRequest = (StraksAfskrivningsRequest) request;
-
-        if (straksAfskrivningsRequest.hentAfskrivningsmetode() != Afskrivningsmetoder.STRAKS) {
+        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.STRAKS) {
             return;
         }
+        straksAfskrivningsRequest = (StraksAfskrivningsRequest) request;
 
         if (straksAfskrivningsRequest.hentAnskaffelsesvaerdi() < 0) {
             throw new NegativBeloebException("Negativt beloeb");

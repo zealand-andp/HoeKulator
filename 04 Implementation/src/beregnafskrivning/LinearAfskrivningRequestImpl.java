@@ -6,7 +6,7 @@ public class LinearAfskrivningRequestImpl implements LinearAfskrivningsRequest, 
     double anskaffelsesvaerdi;
     Afskrivningsmetoder afskrivningsmetode;
     double beloeb;
-    boolean erBergenet;
+    boolean erBeregnet;
 
 
 
@@ -19,13 +19,13 @@ public class LinearAfskrivningRequestImpl implements LinearAfskrivningsRequest, 
 
     @Override
     public boolean erBeregnet() {
-        return erBergenet;
+        return erBeregnet;
     }
 
     @Override
     public void angivAfskrivning(double beloeb) {
         this.beloeb = beloeb;
-        erBergenet = true;
+        erBeregnet = true;
     }
 
     @Override
