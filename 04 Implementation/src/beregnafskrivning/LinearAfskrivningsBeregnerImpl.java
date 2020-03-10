@@ -12,32 +12,36 @@ public class LinearAfskrivningsBeregnerImpl implements LinearAfskrivningsBeregne
     public void beregnAfskrivning(AfskrivningRequest request) throws NegativEllerNulVaerdiException,
             NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException,
             NegativBeloebException, OverMaksbeloebException, NegativAfskrivningsprocentException {
-
        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
            afskrivningsBeregner = new SaldoAfskrivningBeregnerImpl();
            afskrivningsBeregner.beregnAfskrivning(request);
        }
-       if (((LinearAfskrivningsRequest) request).hentBrugstid() <= 0){
+        if (request.erBeregnet()) {
+            return;
+        }
+       linearAfskrivningsRequest = (LinearAfskrivningRequestImpl) request;
+
+       if (linearAfskrivningsRequest.hentBrugstid() <= 0){
            throw  new NegativEllerNulVaerdiException();
        }
 
-       if (request.hentAnskaffelsesvaerdi() <0){
+       if (linearAfskrivningsRequest.hentAnskaffelsesvaerdi() <0){
            throw new NegativVaerdiException();
        }
 
-       if (((LinearAfskrivningsRequest) request).hentScrapvaerdi() <0){
+       if (linearAfskrivningsRequest.hentScrapvaerdi() <0){
            throw  new NegativVaerdiException();
        }
 
-       if (((LinearAfskrivningsRequest) request).hentScrapvaerdi() > request.hentAnskaffelsesvaerdi()){
+       if (linearAfskrivningsRequest.hentScrapvaerdi() > request.hentAnskaffelsesvaerdi()){
            throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
        }
 
        double anskaffelsevaerdi = linearAfskrivningsRequest.hentAnskaffelsesvaerdi();
        double scrapvaerdi = linearAfskrivningsRequest.hentScrapvaerdi();
-       int brugsTid = linearAfskrivningsRequest.hentBrugstid();
+       int brugstid = linearAfskrivningsRequest.hentBrugstid();
 
-       this.resultat = (anskaffelsevaerdi-scrapvaerdi) / brugsTid;
+       this.resultat = (anskaffelsevaerdi-scrapvaerdi) / brugstid;
        linearAfskrivningsRequest.angivAfskrivning(this.resultat);
     }
 }
