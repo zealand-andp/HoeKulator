@@ -5,10 +5,12 @@ public class StraksAfskrivningsRequestImpl implements StraksAfskrivningsRequest,
     double beloeb;
     boolean erBeregnet;
 
+
     @Override
     public boolean erBeregnet() {
         return erBeregnet;
     }
+
 
     @Override
     public void angivAfskrivning(double beloeb) {
