@@ -12,12 +12,13 @@ public class StraksAfskrivningsRequestImpl implements StraksAfskrivningsRequest,
 
     @Override
     public void angivAfskrivning(double beloeb) {
-
+        this.beloeb = beloeb;
+        erBergenet = true;
     }
 
     @Override
     public double hentAfskrivning() {
-        return 0;
+        return beloeb;
     }
 
     public Afskrivningsmetoder hentAfskrivningsmetode() {
@@ -26,11 +27,10 @@ public class StraksAfskrivningsRequestImpl implements StraksAfskrivningsRequest,
 
     @Override
     public double hentAnskaffelsesvaerdi() {
-        return 0;
+        return anskaffelsesvaerdi;
     }
 
     public StraksAfskrivningsRequestImpl(double anskaffelsesvaerdi) {
         this.anskaffelsesvaerdi = anskaffelsesvaerdi;
     }
-
 }

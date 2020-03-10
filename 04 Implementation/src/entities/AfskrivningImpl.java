@@ -1,9 +1,6 @@
 package entities;
 
-import beregnafskrivning.AfskrivningRequest;
-import beregnafskrivning.LinearAfskrivningsBeregnerImpl;
-import beregnafskrivning.LinearAfskrivningRequestImpl;
-import beregnafskrivning.StraksAfskrivningsRequestImpl;
+import beregnafskrivning.*;
 import entities.exceptions.*;
 
 public class AfskrivningImpl implements Afskrivning {
@@ -49,10 +46,19 @@ public class AfskrivningImpl implements Afskrivning {
     }
 
     @Override
-    public void angivStraksafskrivning(double anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException, NegativVaerdiException {
+    public void angivSaldoafskrivning(double anskaffelsesvaerdi, double afskrivningsprocent) {
+
+    }
+
+    @Override
+    public void angivStraksafskrivning(double anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException, NegativVaerdiException, KanIkkeBeregneAfskrivningException {
         StraksAfskrivningsRequestImpl straksAfskrivningsRequest = new StraksAfskrivningsRequestImpl(anskaffelsesvaerdi);
         LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
         linearAfskrivningsBeregner.beregnAfskrivning(straksAfskrivningsRequest);
-
+        boolean erBeregnet = straksAfskrivningsRequest.erBeregnet();
+        if (!erBeregnet) {
+            throw new KanIkkeBeregneAfskrivningException();
+        }
+        afskrivningsvaerdi = straksAfskrivningsRequest.hentAfskrivning();
     }
 }
