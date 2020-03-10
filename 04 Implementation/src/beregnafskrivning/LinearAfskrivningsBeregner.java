@@ -1,4 +1,4 @@
 package beregnafskrivning;
 
-public interface LinearAfskrivningsBeregner {
+public interface LinearAfskrivningsBeregner extends AfskrivningsBeregner {
 }

@@ -7,21 +7,19 @@ public class StraksAfskrivningBeregnerImpl implements StraksAfskrivningBeregner 
     private double maksBeloeb=14100;
 
 
-    /*TODO når AfskrivningRequest, Afskrivningsmetoder, hentAnskaffelsesvaerdi er lavet,
-    public void beregnAfskrivning(AfskrivningRequest request) { // med s eller ej?
-        if (request.hentAfskrivningsMetode()!=Afskrivningsmetoder.STRAKS) {
+    public void beregnAfskrivning(AfskrivningRequest request) throws NegativBeloebException, OverMaksbeloebException {
+        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.STRAKS) {
             return;
         }
 
-        if (request.hentAnskaffelsesvaerdi()<0){
+        if (request.hentAnskaffelsesvaerdi() < 0) {
             throw new NegativBeloebException("Negativt beloeb");
         }
         if (request.hentAnskaffelsesvaerdi()>maksBeloeb) {
             throw new OverMaksbeloebException("Over maks straksafskrivningsbeløb");
         }
 
-        double resultat=request.hentAnskaffelsesvaerdi();
-
-        request.angivAfskrivning(resultat); }
- */
+        double resultat = request.hentAnskaffelsesvaerdi();
+        request.angivAfskrivning(resultat);
     }
+}

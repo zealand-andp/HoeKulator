@@ -1,5 +1,4 @@
 package beregnafskrivning;
 
-public interface StraksAfskrivningsRequest { //extends AfskrivningRequest
-
+public interface StraksAfskrivningsRequest extends AfskrivningRequest {
 }
