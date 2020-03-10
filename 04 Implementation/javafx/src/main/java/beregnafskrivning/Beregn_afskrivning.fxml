@@ -21,7 +21,7 @@
          </font>
       </Label>
       <ChoiceBox fx:id="metodeChoiceBox" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-      <Button layoutX="1080.0" layoutY="26.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="120.0" text="Beregn" />
+      <Button layoutX="1080.0" layoutY="26.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="120.0" text="Beregn" onAction="#beregn" />
       <Pane fx:id="metodePane" layoutX="348.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0">
          <children>
             <TextField alignment="CENTER_RIGHT" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />

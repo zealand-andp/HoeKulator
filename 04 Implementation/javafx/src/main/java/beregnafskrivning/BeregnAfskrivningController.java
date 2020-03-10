@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import start.GrundUIController;
 
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 public class BeregnAfskrivningController {
     String nuvaerendeMetode;
@@ -40,9 +41,9 @@ public class BeregnAfskrivningController {
         beregnAfskrivning.tilmeldObserver(new Observer() {
             @Override
             public void opdater(Observable observable) {
-                if (observable instanceof Afskrivning) {
-                    double changed = ((Afskrivning) observable).hentAfskrivningsvaerdi();
-                    afskrivningTf.setText(String.valueOf(changed));
+                if (observable instanceof BeregnAfskrivning) {
+                    Afskrivning changed = ((BeregnAfskrivning) observable).hentAfskrivninger().get(navnTf.getText());
+                    afskrivningTf.setText(String.valueOf(changed.hentAfskrivningsvaerdi()));
                 }
             }
         });

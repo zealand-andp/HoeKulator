@@ -8,10 +8,10 @@ import java.util.LinkedHashMap;
 public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     ObserverManager observerManager;
     LinkedHashMap<String, Afskrivning> afskrivninger;
-    AfskrivningImpl afskrivning;
 
     public BeregnAfskrivningImpl() {
         observerManager = newOberserverManager();
+        afskrivninger = new LinkedHashMap<>();
     }
 
     @Override
@@ -64,4 +64,10 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     protected ObserverManager newOberserverManager(){
         return new ObserverManagerImpl();
     }
+
+    @Override
+    public LinkedHashMap<String, Afskrivning> hentAfskrivninger() {
+        return afskrivninger;
+    }
+
 }

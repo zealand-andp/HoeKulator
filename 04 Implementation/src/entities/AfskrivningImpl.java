@@ -18,7 +18,7 @@ public class AfskrivningImpl implements Afskrivning {
 
     @Override
     public void angivLineaerAfskrivning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
-        LinearAfskrivningRequestImpl linearAfskrivningsRequest = new LinearAfskrivningRequestImpl(brugstid, anskaffelsesvaerdi, scrapvaerdi);
+        LinearAfskrivningRequestImpl linearAfskrivningsRequest = new LinearAfskrivningRequestImpl(brugstid, scrapvaerdi, anskaffelsesvaerdi);
         LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
         linearAfskrivningsBeregner.beregnAfskrivning(linearAfskrivningsRequest);
         boolean erBeregnet = linearAfskrivningsRequest.erBeregnet();

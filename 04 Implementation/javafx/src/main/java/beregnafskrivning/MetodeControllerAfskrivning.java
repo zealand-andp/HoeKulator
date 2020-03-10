@@ -1,8 +1,7 @@
 package beregnafskrivning;
 
 import javafx.fxml.FXML;
-
-import java.awt.*;
+import javafx.scene.control.TextField;
 
 public class MetodeControllerAfskrivning {
     @FXML
