@@ -23,18 +23,31 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
            afskrivninger.put(navn, afskrivning);
        }
        Afskrivning afskrivning =  afskrivninger.get(navn);
-       afskrivning.angivloneaerAfskrvning(anskaffelsesvaerdi,scrapvaerdi, brugstid);
+       afskrivning.angivLineaerAfskrivning(anskaffelsesvaerdi,scrapvaerdi, brugstid);
        observerManager.notificerObservere(this);
     }
 
     @Override
-    public void tilmeldObserver(Observer observer) {
+    public void angivStraksafskrivning(String navn, int anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException, NegativVaerdiException {
+        boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
+        if (!afskrivningMedNavnFindes) {
+            Afskrivning afskrivning = new AfskrivningImpl(navn);
+            afskrivning.put(navn, afskrivning);
+        }
+        Afskrivning afskrivning = afskrivninger.get(navn);
+        afskrivning.angivStraksafskrivning(anskaffelsesvaerdi);
+        observerManager.notificerObservere(this);
+    }
 
+
+    @Override
+    public void tilmeldObserver(Observer observer) {
+        observerManager.tilmeldObserver(observer);
     }
 
     @Override
     public void afmeldObserver(Observer observer) {
-
+        observerManager.afmeldObserver(observer);
     }
     protected ObserverManager newOberserverManager(){
         return new ObserverManagerImpl();

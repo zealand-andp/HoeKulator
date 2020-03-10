@@ -1,15 +1,35 @@
 package beregnafskrivning;
 
-import entities.exceptions.NegativBeloebException;
-import entities.exceptions.OverMaksbeloebException;
+public class StraksAfskrivningsRequestImpl implements StraksAfskrivningsRequest, AfskrivningRequest {
+    double anskaffelsesvaerdi;
+    double beloeb;
+    boolean erBergenet;
 
-public class StraksAfskrivningsRequestImpl {
-    private double anskaffelsesvaerdi;
-//TODO når Afskrivningsmetoder er lavet
-   // public Afskrivningsmetoder hentAfskrivningsmetode(){
-     //   return Afskrivningsmetoder.STRAKS;     }
+    @Override
+    public boolean erBeregnet() {
+        return false;
+    }
 
-    public StraksAfskrivningsRequestImpl(double anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException {
+    @Override
+    public void angivAfskrivning(double beloeb) {
+
+    }
+
+    @Override
+    public double hentAfskrivning() {
+        return 0;
+    }
+
+    public Afskrivningsmetoder hentAfskrivningsmetode() {
+        return Afskrivningsmetoder.STRAKS;
+    }
+
+    @Override
+    public double hentAnskaffelsesvaerdi() {
+        return 0;
+    }
+
+    public StraksAfskrivningsRequestImpl(double anskaffelsesvaerdi) {
         this.anskaffelsesvaerdi = anskaffelsesvaerdi;
     }
 

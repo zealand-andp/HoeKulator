@@ -6,12 +6,12 @@ public class SaldoAfskrivningBeregnerImpl implements  SaldoAfskrivningBeregner{
 
    private double resultat;
    AfskrivningsBeregner afskrivningsBeregner;
-   SaldoAfskrivningsRequest saldoAfskrivningsRequest;
+   SaldoAfskrivningRequest saldoAfskrivningsRequest;
    SaldoAfskrivningBeregnerImpl saldoAfskrivningBeregnerImpl;
 
 
    @Override
-   public void beregnAfskrivning(AfskrivningsRequest request) throws NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
+   public void beregnAfskrivning(AfskrivningRequest request) throws NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
       if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.SALDO){
          //Sender programmet videre til næste del af systemet
          afskrivningsBeregner.beregnAfskrivning(request);
@@ -20,7 +20,7 @@ public class SaldoAfskrivningBeregnerImpl implements  SaldoAfskrivningBeregner{
          //thrower en Exception hvis Afksrivningsprocenten er under 0
          throw new NegativAfskrivningsprocentException();
       }
-      if (request.hentAnskaffelsesvaedi()<0){
+      if (request.hentAnskaffelsesvaerdi()<0){
          //thrower en Exception hvis Anskaffelsesværdien er negativ
          throw new NegativBeloebException("beløb må ikke være negativt");
       }
@@ -32,8 +32,8 @@ public class SaldoAfskrivningBeregnerImpl implements  SaldoAfskrivningBeregner{
          }
       }
 
-      saldoAfskrivningsRequest= (SaldoAfskrivningsRequest) request;
-      double anskaffelsesvardi = saldoAfskrivningsRequest.hentAnskaffelsesvaedi();
+      saldoAfskrivningsRequest= (SaldoAfskrivningRequest) request;
+      double anskaffelsesvardi = saldoAfskrivningsRequest.hentAnskaffelsesvaerdi();
       double saldoAfksrivningsProcent = saldoAfskrivningsRequest.hentAfskrivningsProcent();
       this.resultat = (anskaffelsesvardi/100)*saldoAfksrivningsProcent;
 

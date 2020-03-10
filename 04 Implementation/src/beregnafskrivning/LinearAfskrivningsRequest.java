@@ -1,6 +1,7 @@
 package beregnafskrivning;
 
 public interface
-LinearAfskrivningsRequest {
-
+LinearAfskrivningsRequest extends AfskrivningRequest {
+    int hentBrugstid();
+    double hentScrapvaerdi();
 }
