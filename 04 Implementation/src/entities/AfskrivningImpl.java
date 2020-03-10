@@ -46,8 +46,15 @@ public class AfskrivningImpl implements Afskrivning {
     }
 
     @Override
-    public void angivSaldoafskrivning(double anskaffelsesvaerdi, double afskrivningsprocent) {
-
+    public void angivSaldoafskrivning(double anskaffelsesvaerdi, double afskrivningsprocent) throws NegativAfskrivningsprocentException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, KanIkkeBeregneAfskrivningException {
+        SaldoAfskrivningRequest saldoAfskrivningRequest = new SaldoAfskrivningsRequestImpl(anskaffelsesvaerdi, afskrivningsprocent);
+        LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
+        linearAfskrivningsBeregner.beregnAfskrivning(saldoAfskrivningRequest);
+        boolean erBeregnet = saldoAfskrivningRequest.erBeregnet();
+        if (!erBeregnet) {
+            throw new KanIkkeBeregneAfskrivningException();
+        }
+        afskrivningsvaerdi = saldoAfskrivningRequest.hentAfskrivning();
     }
 
     @Override

@@ -28,7 +28,7 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     }
 
     @Override
-    public void angivSaldoafskrivning(String navn, int anskaffelsesvaerdi, double afskrivningsprocent) {
+    public void angivSaldoafskrivning(String navn, int anskaffelsesvaerdi, double afskrivningsprocent) throws OverMaksbeloebException, KanIkkeBeregneAfskrivningException, NegativVaerdiException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, NegativAfskrivningsprocentException {
         boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
         if (!afskrivningMedNavnFindes) {
             Afskrivning afskrivning = new AfskrivningImpl(navn);

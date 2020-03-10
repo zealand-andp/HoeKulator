@@ -1,7 +1,5 @@
 package beregnafskrivning;
 
-import entities.exceptions.NegativAfskrivningsprocentException;
-import entities.exceptions.NegativBeloebException;
 
 public class SaldoAfskrivningsRequestImpl implements SaldoAfskrivningRequest, AfskrivningRequest {
     private double anskaffelsVaerdi;
@@ -9,7 +7,7 @@ public class SaldoAfskrivningsRequestImpl implements SaldoAfskrivningRequest, Af
     private double beloeb;
     private boolean erBergenet;
 
-    protected SaldoAfskrivningsRequestImpl(double anskaffelsVaerdi,double afskrivningsProcent) throws NegativBeloebException, NegativAfskrivningsprocentException {
+    public SaldoAfskrivningsRequestImpl(double anskaffelsVaerdi, double afskrivningsProcent) {
         this.anskaffelsVaerdi=anskaffelsVaerdi;
         this.afskrivningsProcent=afskrivningsProcent;
     }
