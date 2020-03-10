@@ -5,6 +5,8 @@ import beregnafskrivning.*;
 import entities.exceptions.*;
 
 public class AfskrivningImpl implements Afskrivning {
+
+
     private static AfskrivningsBeregner standardafskrivningsberegner = new LinearAfskrivningsBeregnerImpl();
     private String navn;
     private int brugstid;
@@ -59,5 +61,9 @@ public class AfskrivningImpl implements Afskrivning {
     @Override
     public double hentAfskrivningsvaerdi() {
         return afskrivningsvaerdi;
+    }
+
+    static void AngivStandardafskrivningsberegner(AfskrivningsBeregner standardafskrivningsberegner) {
+        AfskrivningImpl.standardafskrivningsberegner = standardafskrivningsberegner;
     }
 }

@@ -1,24 +1,25 @@
 package entities;
+import beregnafskrivning.AfskrivningRequest;
 import beregnafskrivning.AfskrivningsBeregner;
-import beregnafskrivning.AfskrivningsRequest;
 import entities.exceptions.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AfskrivningImplTest {
     @Test
-    void angivStraksAfskrivning() {
+    void angivStraksAfskrivning() throws NegativVaerdiException, KanIkkeBeregneAfskrivningException, NegativAfskrivningsprocentException, OverMaksbeloebException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, NegativEllerNulVaerdiException {
         String navn = "cykler";
         double anskaffelsesvaerdi = 5000;
-        AfskrivningImpl.angivStandardAfskrivningsBeregner(new MockStraksAfskrivningsBeregner());
+        AfskrivningImpl.AngivStandardafskrivningsberegner(new MockStraksAfskrivningsBeregner());
         AfskrivningImpl afskrivning = new AfskrivningImpl(navn);
-        afskrivning.angivStraksAfskrivning(anskaffelsesvaerdi);
+        afskrivning.angivStraksafskrivning(anskaffelsesvaerdi);
         assertEquals(5000,afskrivning.hentAfskrivningsvaerdi());
     }
 
     private class MockStraksAfskrivningsBeregner implements AfskrivningsBeregner {
+
         @Override
-        public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException {
+        public void beregnAfskrivning(AfskrivningRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException, NegativAfskrivningsprocentException {
             request.angivAfskrivning(5000);
         }
     }

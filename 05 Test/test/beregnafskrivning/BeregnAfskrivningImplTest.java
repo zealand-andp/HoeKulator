@@ -16,7 +16,7 @@ public class BeregnAfskrivningImplTest {
         mockObserverManager = new MockObserverManager();
         String navn = "Cykler";
         double anskaffelsesvaerdi = 5000;
-        BeregnAfskrivningImpl beregnAfskrivning = new BeregnAfskrivningImpl();
+        BeregnAfskrivningImpl beregnAfskrivning = new TestbarBeregnAfskrivning();
         beregnAfskrivning.angivStraksafskrivning(navn, anskaffelsesvaerdi);
 
         assertEquals(1, mockObserverManager.notificationsTaeller);
@@ -24,7 +24,7 @@ public class BeregnAfskrivningImplTest {
     @Test
     void TilmeldObserver() {
         mockObserverManager = new MockObserverManager();
-        BeregnAfskrivningImpl beregnAfskrivning = new BeregnAfskrivningImpl();
+        BeregnAfskrivningImpl beregnAfskrivning = new TestbarBeregnAfskrivning();
         MockObserver mockObserver = new MockObserver();
 
         beregnAfskrivning.tilmeldObserver(mockObserver);
@@ -35,7 +35,7 @@ public class BeregnAfskrivningImplTest {
     @Test
     void AfmeldObserver() {
         mockObserverManager = new MockObserverManager();
-        BeregnAfskrivningImpl beregnAfskrivning = new BeregnAfskrivningImpl();
+        BeregnAfskrivningImpl beregnAfskrivning = new TestbarBeregnAfskrivning();
         MockObserver mockObserver = new MockObserver();
 
         beregnAfskrivning.afmeldObserver(mockObserver);
@@ -72,5 +72,12 @@ public class BeregnAfskrivningImplTest {
 
         }
 
+    }
+
+    private class TestbarBeregnAfskrivning extends BeregnAfskrivningImpl{
+        @Override
+        protected ObserverManager newOberserverManager() {
+            return mockObserverManager;
+        }
     }
 }

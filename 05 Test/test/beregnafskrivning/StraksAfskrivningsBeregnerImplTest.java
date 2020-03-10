@@ -41,7 +41,7 @@ public class StraksAfskrivningsBeregnerImplTest {
 
         @Override
         public double hentAnskaffelsesvaerdi() {
-            return 0;
+            return -1;
         }
     }
 
@@ -69,7 +69,7 @@ public class StraksAfskrivningsBeregnerImplTest {
 
         @Override
         public double hentAnskaffelsesvaerdi() {
-            return 0;
+            return 30000;
         }
 
     }

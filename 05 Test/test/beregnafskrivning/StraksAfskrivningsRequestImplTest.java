@@ -17,6 +17,7 @@ public class StraksAfskrivningsRequestImplTest {
     @Test void erBeregnet() throws NegativBeloebException, OverMaksbeloebException {
         double anskaffelsvaerdi = 5000;
         StraksAfskrivningsRequestImpl straksAfskrivningsRequest = new StraksAfskrivningsRequestImpl(anskaffelsvaerdi);
+        straksAfskrivningsRequest.angivAfskrivning(5000);
 
         assertTrue(straksAfskrivningsRequest.erBeregnet());
     }
