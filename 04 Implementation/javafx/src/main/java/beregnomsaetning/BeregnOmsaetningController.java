@@ -3,7 +3,6 @@ package beregnomsaetning;
 import entities.*;
 import entities.exceptions.NegativAntalException;
 import entities.exceptions.NegativBeloebException;
-import entities.exceptions.NegativPrisException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -18,7 +17,8 @@ import java.io.IOException;
 
 public class BeregnOmsaetningController {
     String nuvaerendeMetode;
-    MetodeController metodeController;
+    MetodeControllerOmsaetning metodeControllerOmsaetning;
+
     Omsaetning omsaetning;
     @FXML
     private Pane metodePane;
@@ -27,7 +27,7 @@ public class BeregnOmsaetningController {
     private ChoiceBox<String> metodeComboBox;
 
     @FXML
-    private Button opdaterButton;
+    private Button beregnButton;
 
     @FXML
     private TextField omsaetningTf;
@@ -80,9 +80,8 @@ public class BeregnOmsaetningController {
         }
         assert loader != null;
         node = loader.load();
-        metodeController = loader.getController();
+        metodeControllerOmsaetning = loader.getController();
         metodePane.getChildren().setAll(node);
-
     }
 
     public void beregn() throws NegativAntalException, NegativBeloebException {
@@ -94,32 +93,40 @@ public class BeregnOmsaetningController {
         double procentstigningInput;
         switch (nuvaerendeMetode) {
             case "Afsætning og salgspris":
-                afsaetningInput = Integer.parseInt(metodeController.getAfsaetningTf().getText());
+                afsaetningInput = Integer.parseInt(metodeControllerOmsaetning.getAfsaetningTf().getText());
                 AfsaetningImpl afsaetning = new AfsaetningImpl();
                 afsaetning.angivAntal(afsaetningInput);
-                salgsprisInput = Double.parseDouble(metodeController.getSalgsprisTf().getText());
+                salgsprisInput = Double.parseDouble(metodeControllerOmsaetning.getSalgsprisTf().getText());
                 SalgsprisImpl salgspris = new SalgsprisImpl();
                 salgspris.angivPris(salgsprisInput);
                 omsaetning.anvendAfsaetningOgSalgspris(afsaetning, salgspris);
                 break;
             case "Bruttofortjeneste og vareforbrug":
-                bruttofortjenesteInput = Double.parseDouble(metodeController.getBruttofortjenesteTf().getText());
+                bruttofortjenesteInput = Double.parseDouble(metodeControllerOmsaetning.getBruttofortjenesteTf().getText());
                 BruttofortjenesteImpl bruttofortjeneste = new BruttofortjenesteImpl();
                 bruttofortjeneste.angivBeloeb(bruttofortjenesteInput);
-                vareforbrugInput = Double.parseDouble(metodeController.getVareforbrugTf().getText());
+                vareforbrugInput = Double.parseDouble(metodeControllerOmsaetning.getVareforbrugTf().getText());
                 VareforbrugImpl vareforbrug = new VareforbrugImpl();
                 vareforbrug.angivBeloeb(vareforbrugInput);
                 omsaetning.anvendBruttofortjenesteOgVareforbrug(bruttofortjeneste, vareforbrug);
                 break;
             case "Primoårsomsætning og procentstigning":
-                primoAarInput = Double.parseDouble(metodeController.getPrimoaarTf().getText());
+                primoAarInput = Double.parseDouble(metodeControllerOmsaetning.getPrimoaarTf().getText());
                 PrimoAarsomsaetningImpl primoAarsomsaetning = new PrimoAarsomsaetningImpl();
                 primoAarsomsaetning.angivBeloeb(primoAarInput);
-                procentstigningInput = Double.parseDouble(metodeController.getProcentstigningTf().getText());
+                procentstigningInput = Double.parseDouble(metodeControllerOmsaetning.getProcentstigningTf().getText());
                 ProcentstigningImpl procentstigning = new ProcentstigningImpl();
                 procentstigning.angivDecimaltal(procentstigningInput);
                 omsaetning.anvendPrimoAarsomsaetningOgProcentstigning(primoAarsomsaetning, procentstigning);
                 break;
         }
+    }
+
+    public TextField getOmsaetningTf() {
+        return omsaetningTf;
+    }
+
+    public Omsaetning getOmsaetning() {
+        return omsaetning;
     }
 }

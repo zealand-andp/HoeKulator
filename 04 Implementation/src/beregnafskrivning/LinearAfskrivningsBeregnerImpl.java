@@ -2,44 +2,48 @@ package beregnafskrivning;
 
 import entities.exceptions.*;
 
-public class LinearAfskrivningsBeregnerImpl  implements AfskrivningsBeregner{
+
+public class LinearAfskrivningsBeregnerImpl implements LinearAfskrivningsBeregner {
+
     double resultat;
-    LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner;
     AfskrivningsBeregner afskrivningsBeregner;
-    LinearAfskrivningsRequestImpl linearAfskrivningsRequest;
+    LinearAfskrivningRequestImpl linearAfskrivningsRequest;
 
 
     @Override
-    public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException,
+    public void beregnAfskrivning(AfskrivningRequest request) throws NegativEllerNulVaerdiException,
             NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException,
-            NegativBeloebException, OverMaksbeloebException {
-
+            NegativBeloebException, OverMaksbeloebException, NegativAfskrivningsprocentException {
        if (request.hentAfskrivningsmetode() != Afskrivningsmetoder.LINEAER){
+           afskrivningsBeregner = new SaldoAfskrivningBeregnerImpl();
            afskrivningsBeregner.beregnAfskrivning(request);
        }
-            linearAfskrivningsRequest = (LinearAfskrivningsRequestImpl) request;
-       if (request.hentBrugstid() <=0){
+        if (request.erBeregnet()) {
+            return;
+        }
+       linearAfskrivningsRequest = (LinearAfskrivningRequestImpl) request;
+
+       if (linearAfskrivningsRequest.hentBrugstid() <= 0){
            throw  new NegativEllerNulVaerdiException();
        }
 
-       if (request.hentAnskaffelsesvaedi() <0){
+       if (linearAfskrivningsRequest.hentAnskaffelsesvaerdi() <0){
            throw new NegativVaerdiException();
        }
 
-       if (request.hentScrapvaerdi() <0){
+       if (linearAfskrivningsRequest.hentScrapvaerdi() <0){
            throw  new NegativVaerdiException();
        }
 
-       if (request.hentScrapvaerdi() > request.hentAnskaffelsesvaedi()){
+       if (linearAfskrivningsRequest.hentScrapvaerdi() > request.hentAnskaffelsesvaerdi()){
            throw new ScrapvaerdiStoerreEndAnskaffelsesvaerdiException();
        }
 
-
-       double anskaffelseværdi = linearAfskrivningsRequest.hentAnskaffelsesvaedi();
+       double anskaffelsevaerdi = linearAfskrivningsRequest.hentAnskaffelsesvaerdi();
        double scrapvaerdi = linearAfskrivningsRequest.hentScrapvaerdi();
-       int brugsTid = linearAfskrivningsRequest.hentBrugstid();
+       int brugstid = linearAfskrivningsRequest.hentBrugstid();
 
-       this.resultat = (anskaffelseværdi-scrapvaerdi) / brugsTid;
+       this.resultat = (anskaffelsevaerdi-scrapvaerdi) / brugstid;
        linearAfskrivningsRequest.angivAfskrivning(this.resultat);
     }
 }

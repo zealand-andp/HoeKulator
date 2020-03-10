@@ -1,5 +1,4 @@
 package beregnafskrivning;
 
-public interface StraksAfskrivningBeregner { //extends AfskrivningBeregner
-
+public interface StraksAfskrivningBeregner extends AfskrivningsBeregner {
 }

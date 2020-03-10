@@ -1,13 +1,17 @@
 package entities;
 
-import beregnafskrivning.LinearAfskrivningsBeregnerImpl;
-import beregnafskrivning.LinearAfskrivningsRequestImpl;
+
+import beregnafskrivning.*;
 import entities.exceptions.*;
 
 public class AfskrivningImpl implements Afskrivning {
+
+
+    private static AfskrivningsBeregner standardafskrivningsberegner = new LinearAfskrivningsBeregnerImpl();
     private String navn;
     private int brugstid;
     private double scrapvaerdi;
+
     private double afskrivningsvaerdi;
 
     public AfskrivningImpl(String navn) {
@@ -15,35 +19,51 @@ public class AfskrivningImpl implements Afskrivning {
 
 
     }
-
-
+    
     @Override
-    public void containsKey(String navn) {
-    }
-
-    @Override
-    public void get(String navn) {
-
-    }
-
-    @Override
-    public void put(String navn, Afskrivning afskrivning) {
-
-    }
-
-
-    @Override
-    public void angivloneaerAfskrvning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException {
-        this.afskrivningsvaerdi = anskaffelsesvaerdi;
-        LinearAfskrivningsRequestImpl linearAfskrivningsRequest = new LinearAfskrivningsRequestImpl( brugstid, anskaffelsesvaerdi, scrapvaerdi);
+    public void angivLineaerAfskrivning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
+        LinearAfskrivningRequestImpl linearAfskrivningsRequest = new LinearAfskrivningRequestImpl(brugstid, scrapvaerdi, anskaffelsesvaerdi);
         LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
         linearAfskrivningsBeregner.beregnAfskrivning(linearAfskrivningsRequest);
-       boolean erBeregnet = linearAfskrivningsRequest.erBeregnet();
-        if (!erBeregnet){
+        boolean erBeregnet = linearAfskrivningsRequest.erBeregnet();
+        if (!erBeregnet) {
             throw new KanIkkeBeregneAfskrivningException();
         }
-      afskrivningsvaerdi =  linearAfskrivningsRequest.hentAfskrivning();
+        afskrivningsvaerdi = linearAfskrivningsRequest.hentAfskrivning();
 
 
+    }
+
+    @Override
+    public void angivSaldoafskrivning(double anskaffelsesvaerdi, double afskrivningsprocent) throws NegativAfskrivningsprocentException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, KanIkkeBeregneAfskrivningException {
+        SaldoAfskrivningRequest saldoAfskrivningRequest = new SaldoAfskrivningsRequestImpl(anskaffelsesvaerdi, afskrivningsprocent);
+        LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
+        linearAfskrivningsBeregner.beregnAfskrivning(saldoAfskrivningRequest);
+        boolean erBeregnet = saldoAfskrivningRequest.erBeregnet();
+        if (!erBeregnet) {
+            throw new KanIkkeBeregneAfskrivningException();
+        }
+        afskrivningsvaerdi = saldoAfskrivningRequest.hentAfskrivning();
+    }
+
+    @Override
+    public void angivStraksafskrivning(double anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException, NegativVaerdiException, KanIkkeBeregneAfskrivningException {
+        StraksAfskrivningsRequestImpl straksAfskrivningsRequest = new StraksAfskrivningsRequestImpl(anskaffelsesvaerdi);
+        LinearAfskrivningsBeregnerImpl linearAfskrivningsBeregner = new LinearAfskrivningsBeregnerImpl();
+        linearAfskrivningsBeregner.beregnAfskrivning(straksAfskrivningsRequest);
+        boolean erBeregnet = straksAfskrivningsRequest.erBeregnet();
+        if (!erBeregnet) {
+            throw new KanIkkeBeregneAfskrivningException();
+        }
+        afskrivningsvaerdi = straksAfskrivningsRequest.hentAfskrivning();
+    }
+
+    @Override
+    public double hentAfskrivningsvaerdi() {
+        return afskrivningsvaerdi;
+    }
+
+    static void AngivStandardafskrivningsberegner(AfskrivningsBeregner standardafskrivningsberegner) {
+        AfskrivningImpl.standardafskrivningsberegner = standardafskrivningsberegner;
     }
 }

@@ -1,16 +1,16 @@
 package beregnafskrivning;
 
-public class LinearAfskrivningsRequestImpl implements LinearAfskrivningsRequest, AfskrivningsRequest {
+public class LinearAfskrivningRequestImpl implements LinearAfskrivningsRequest, AfskrivningRequest {
     int brugstid;
     double scrapvaerdi;
     double anskaffelsesvaerdi;
     Afskrivningsmetoder afskrivningsmetode;
     double beloeb;
-    boolean erBergenet;
+    boolean erBeregnet;
 
 
 
-    public LinearAfskrivningsRequestImpl(int brugstid, double scrapvaerdi, double anskaffelsesvaerdi) {
+    public LinearAfskrivningRequestImpl(int brugstid, double scrapvaerdi, double anskaffelsesvaerdi) {
         this.brugstid = brugstid;
         this.scrapvaerdi = scrapvaerdi;
         this.anskaffelsesvaerdi = anskaffelsesvaerdi;
@@ -19,38 +19,37 @@ public class LinearAfskrivningsRequestImpl implements LinearAfskrivningsRequest,
 
     @Override
     public boolean erBeregnet() {
-        return erBergenet;
+        return erBeregnet;
     }
 
     @Override
     public void angivAfskrivning(double beloeb) {
         this.beloeb = beloeb;
-        erBergenet = true;
-
+        erBeregnet = true;
     }
 
     @Override
     public double hentAfskrivning() {
-        return 0;
+        return beloeb;
     }
 
     @Override
     public Afskrivningsmetoder hentAfskrivningsmetode() {
-        return null;
+        return afskrivningsmetode;
     }
 
     @Override
     public int hentBrugstid() {
-        return 0;
+        return brugstid;
     }
 
     @Override
     public double hentScrapvaerdi() {
-        return 0;
+        return scrapvaerdi;
     }
 
     @Override
-    public double hentAnskaffelsesvaedi() {
-        return 0;
+    public double hentAnskaffelsesvaerdi() {
+        return anskaffelsesvaerdi;
     }
 }
