@@ -1,9 +1,13 @@
 package entities;
 
+
 import beregnafskrivning.*;
 import entities.exceptions.*;
 
 public class AfskrivningImpl implements Afskrivning {
+
+
+    private static AfskrivningsBeregner standardafskrivningsberegner = new LinearAfskrivningsBeregnerImpl();
     private String navn;
     private int brugstid;
     private double scrapvaerdi;
@@ -15,7 +19,7 @@ public class AfskrivningImpl implements Afskrivning {
 
 
     }
-
+    
     @Override
     public void angivLineaerAfskrivning(double anskaffelsesvaerdi, double scrapvaerdi, int brugstid) throws KanIkkeBeregneAfskrivningException, NegativBeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, OverMaksbeloebException, NegativVaerdiException, NegativAfskrivningsprocentException {
         LinearAfskrivningRequestImpl linearAfskrivningsRequest = new LinearAfskrivningRequestImpl(brugstid, scrapvaerdi, anskaffelsesvaerdi);
@@ -57,5 +61,9 @@ public class AfskrivningImpl implements Afskrivning {
     @Override
     public double hentAfskrivningsvaerdi() {
         return afskrivningsvaerdi;
+    }
+
+    static void AngivStandardafskrivningsberegner(AfskrivningsBeregner standardafskrivningsberegner) {
+        AfskrivningImpl.standardafskrivningsberegner = standardafskrivningsberegner;
     }
 }

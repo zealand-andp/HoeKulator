@@ -14,7 +14,7 @@ public class StraksAfskrivningBeregnerImpl implements StraksAfskrivningBeregner 
         }
         straksAfskrivningsRequest = (StraksAfskrivningsRequest) request;
 
-        if (straksAfskrivningsRequest.hentAnskaffelsesvaerdi() < 0) {
+        if (straksAfskrivningsRequest.hentAnskaffelsesvaerdi() <= 0) {
             throw new NegativBeloebException("Negativt beloeb");
         }
         if (straksAfskrivningsRequest.hentAnskaffelsesvaerdi()>maksBeloeb) {
