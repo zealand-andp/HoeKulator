@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StraksAfskrivningsBeregnerImplTest {
-    @Test void beregnAfskrivningNegativ() {
+    @Test void beregnAfskrivningNegativ() throws NegativBeloebException, OverMaksbeloebException {
         MockStraksAfskrivningsRequest1 mockStraksAfskrivningsRequest1 = new MockStraksAfskrivningsRequest1();
         StraksAfskrivningBeregnerImpl straksAfskrivningBeregner = new StraksAfskrivningBeregnerImpl();
-        assertThrows(NegativBeloebException.class, straksAfskrivningBeregner.beregnAfskrivning(mockStraksAfskrivningsRequest1));
+        assertThrows(NegativBeloebException.class, () -> straksAfskrivningBeregner.beregnAfskrivning(mockStraksAfskrivningsRequest1));
     }
 
-    @Test void beregnAfskrivningOverMaks() {
+    @Test void beregnAfskrivningOverMaks() throws NegativBeloebException, OverMaksbeloebException {
         MockStraksAfskrivningsRequest2 mockStraksAfskrivningsRequest2 = new MockStraksAfskrivningsRequest2();
         StraksAfskrivningBeregnerImpl straksAfskrivningBeregner = new StraksAfskrivningBeregnerImpl();
-        assertThrows(OverMaksbeloebException.class, straksAfskrivningBeregner.beregnAfskrivning(mockStraksAfskrivningsRequest2));
+        assertThrows(OverMaksbeloebException.class, () -> straksAfskrivningBeregner.beregnAfskrivning(mockStraksAfskrivningsRequest2));
     }
 
-    private class MockStraksAfskrivningsRequest1 implements StraksAfskrivningsRequest, AfskrivningsRequest {
+    private class MockStraksAfskrivningsRequest1 implements StraksAfskrivningsRequest, AfskrivningRequest {
 
         @Override
         public boolean erBeregnet() {
@@ -40,22 +40,12 @@ public class StraksAfskrivningsBeregnerImplTest {
         }
 
         @Override
-        public int hentBrugstid() {
+        public double hentAnskaffelsesvaerdi() {
             return 0;
-        }
-
-        @Override
-        public double hentScrapvaerdi() {
-            return 0;
-        }
-
-        @Override
-        public double hentAnskaffelsesvaedi() {
-            return -5000;
         }
     }
 
-    private class MockStraksAfskrivningsRequest2 implements StraksAfskrivningsRequest, AfskrivningsRequest {
+    private class MockStraksAfskrivningsRequest2 implements StraksAfskrivningsRequest, AfskrivningRequest {
 
         @Override
         public boolean erBeregnet() {
@@ -78,18 +68,9 @@ public class StraksAfskrivningsBeregnerImplTest {
         }
 
         @Override
-        public int hentBrugstid() {
+        public double hentAnskaffelsesvaerdi() {
             return 0;
         }
 
-        @Override
-        public double hentScrapvaerdi() {
-            return 0;
-        }
-
-        @Override
-        public double hentAnskaffelsesvaedi() {
-            return 14201;
-        }
     }
 }

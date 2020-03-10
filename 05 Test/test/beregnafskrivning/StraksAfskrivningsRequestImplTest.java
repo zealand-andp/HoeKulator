@@ -21,12 +21,12 @@ public class StraksAfskrivningsRequestImplTest {
         assertTrue(straksAfskrivningsRequest.erBeregnet());
     }
 
-    @Test void hentAfskrivning() throws NegativBeloebException, OverMaksbeloebException, NegativVaerdiException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException {
+    @Test void hentAfskrivning() throws NegativBeloebException, OverMaksbeloebException, NegativVaerdiException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException {
         double anskaffelsvaerdi = 5000;
         StraksAfskrivningsRequestImpl straksAfskrivningsRequest = new StraksAfskrivningsRequestImpl(anskaffelsvaerdi);
         MockLinearAfskrivningsBeregner mockLinearAfskrivningsBeregner = new MockLinearAfskrivningsBeregner();
-        mockLinearAfskrivningsBeregner.beregnAfskrivning((AfskrivningsRequest) straksAfskrivningsRequest);
-        assertEquals(5000, ((AfskrivningsRequest) straksAfskrivningsRequest).hentAfskrivning());
+        mockLinearAfskrivningsBeregner.beregnAfskrivning((AfskrivningRequest) straksAfskrivningsRequest);
+        assertEquals(5000, ((AfskrivningRequest) straksAfskrivningsRequest).hentAfskrivning());
     }
 
     @Test void hentAnskaffelsesvaerdi() throws NegativBeloebException, OverMaksbeloebException {
@@ -39,14 +39,15 @@ public class StraksAfskrivningsRequestImplTest {
         double anskaffelsesvaerdi = 5000;
         StraksAfskrivningsRequestImpl straksAfskrivningsRequest = new StraksAfskrivningsRequestImpl(anskaffelsesvaerdi);
         straksAfskrivningsRequest.angivAfskrivning(anskaffelsesvaerdi);
-        assertEquals(5000, straksAfskrivningsRequest.hentBeloeb());
+        assertEquals(5000, straksAfskrivningsRequest.hentAfskrivning());
         assertTrue(straksAfskrivningsRequest.erBeregnet());
 
     }
 
     private class MockLinearAfskrivningsBeregner implements LinearAfskrivningsBeregner, AfskrivningsBeregner {
+
         @Override
-        public void beregnAfskrivning(AfskrivningsRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException {
+        public void beregnAfskrivning(AfskrivningRequest request) throws NegativEllerNulVaerdiException, NegativVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, OverMaksbeloebException, NegativAfskrivningsprocentException {
             request.angivAfskrivning(5000);
         }
     }

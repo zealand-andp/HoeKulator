@@ -1,6 +1,7 @@
 package beregnafskrivning;
 
 import entities.*;
+import entities.exceptions.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BeregnAfskrivningImplTest {
     private static MockObserverManager mockObserverManager;
     @Test
-    void angivStraksAfskrivning() {
+    void angivStraksAfskrivning() throws NegativVaerdiException, KanIkkeBeregneAfskrivningException, NegativAfskrivningsprocentException, OverMaksbeloebException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, NegativEllerNulVaerdiException {
         mockObserverManager = new MockObserverManager();
         String navn = "Cykler";
         double anskaffelsesvaerdi = 5000;
         BeregnAfskrivningImpl beregnAfskrivning = new BeregnAfskrivningImpl();
-        beregnAfskrivning.angivStraksAfskrivning(navn, anskaffelsesvaerdi);
+        beregnAfskrivning.angivStraksafskrivning(navn, anskaffelsesvaerdi);
 
         assertEquals(1, mockObserverManager.notificationsTaeller);
     }
@@ -70,12 +71,6 @@ public class BeregnAfskrivningImplTest {
         public void opdater(Observable observable) {
 
         }
-    }
 
-    private class TestbarSalgspris extends BeregnAfskrivningImpl {
-        @Override
-        protected ObserverManager newObserverManager() {
-            return mockObserverManager;
-        }
     }
 }
