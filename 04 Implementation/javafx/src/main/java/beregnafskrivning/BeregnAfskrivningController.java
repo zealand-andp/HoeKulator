@@ -1,7 +1,7 @@
 package beregnafskrivning;
 
-import beregnomsaetning.MetodeController;
 import entities.*;
+import entities.exceptions.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -14,13 +14,15 @@ import javafx.scene.layout.Pane;
 import start.GrundUIController;
 
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 public class BeregnAfskrivningController {
     String nuvaerendeMetode;
-    MetodeController metodeController;
-    private Afskrivning afskrivning;
+    MetodeControllerAfskrivning metodeController;
     GrundUIController grundUIController;
     Node node;
+
+    BeregnAfskrivningImpl beregnAfskrivning;
 
     @FXML
     private Pane metodePane;
@@ -32,26 +34,19 @@ public class BeregnAfskrivningController {
     private Button beregnButton;
 
     @FXML
-    private TextField afskrivningTf;
-
-    public TextField getNavnTf() {
-        return navnTf;
-    }
-
-    @FXML
-    private TextField navnTf;
+    private TextField afskrivningTf, navnTf;
 
     public void initialize() {
-//        afskrivning = new AfskrivningImpl();
-//        afskrivning.tilmeldObserver(new Observer() {
-//            @Override
-//            public void opdater(Observable observable) {
-//                if (observable instanceof Omsaetning) {
-//                    double changed = ((Omsaetning) observable).hentOmsaetning();
-//                    afskrivningTf.setText(String.valueOf(changed));
-//                }
-//            }
-//        });
+        beregnAfskrivning = new BeregnAfskrivningImpl();
+        beregnAfskrivning.tilmeldObserver(new Observer() {
+            @Override
+            public void opdater(Observable observable) {
+                if (observable instanceof BeregnAfskrivning) {
+                    Afskrivning changed = ((BeregnAfskrivning) observable).hentAfskrivninger().get(navnTf.getText());
+                    afskrivningTf.setText(String.valueOf(changed.hentAfskrivningsvaerdi()));
+                }
+            }
+        });
         metodeChoiceBox.getItems().addAll("Lineær Afskrivning", "Saldoafskrivning", "Straksafskrivning");
         metodeChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -91,6 +86,30 @@ public class BeregnAfskrivningController {
         node = loader.load();
         metodeController = loader.getController();
         metodePane.getChildren().setAll(node);
+    }
+
+    public void beregn() throws NegativVaerdiException, OverMaksbeloebException, KanIkkeBeregneAfskrivningException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, NegativAfskrivningsprocentException {
+        double anskaffelesvaerdiInput;
+        double scrapvaerdiInput;
+        int brugstidInput;
+        double afskrivningsprocentInput;
+        switch(nuvaerendeMetode){
+            case "Lineær Afskrivning":
+                anskaffelesvaerdiInput = Double.parseDouble(metodeController.getAnskaffelsesvaerdiLineaerTf().getText());
+                scrapvaerdiInput = Double.parseDouble(metodeController.getScrapvaerdiTf().getText());
+                brugstidInput = Integer.parseInt(metodeController.getBrugstidTf().getText());
+                beregnAfskrivning.angivLinearAfskrivning(navnTf.getText(), brugstidInput, scrapvaerdiInput, anskaffelesvaerdiInput);
+                break;
+            case "Saldoafskrivning":
+                anskaffelesvaerdiInput = Double.parseDouble(metodeController.getAnskaffelsesvaerdiSaldoTf().getText());
+                afskrivningsprocentInput = Double.parseDouble(metodeController.getAfskrivningsprocentTf().getText());
+                beregnAfskrivning.angivSaldoafskrivning(navnTf.getText(), anskaffelesvaerdiInput, afskrivningsprocentInput);
+                break;
+            case "Straksafskrivning":
+                anskaffelesvaerdiInput = Double.parseDouble(metodeController.getAnskaffelsesvaerdiStraksTf().getText());
+                beregnAfskrivning.angivStraksafskrivning(navnTf.getText(), anskaffelesvaerdiInput);
+                break;
+        }
     }
 
     @FXML

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="beregnomsaetning.MetodeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="beregnomsaetning.MetodeControllerOmsaetning">
    <children>
       <TextField fx:id="primoaarTf" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
       <TextField fx:id="procentstigningTf" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
