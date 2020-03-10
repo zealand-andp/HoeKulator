@@ -7,9 +7,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-      <TextField layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
-      <TextField layoutX="362.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="anskaffelsesvaerdiLineaerTf" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="scrapvaerdiTf" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="brugstidTf" layoutX="362.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
       <Label layoutX="362.0" layoutY="7.0" text="Brugstid i år:">
          <font>
             <Font size="12.0" />

@@ -28,7 +28,7 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     }
 
     @Override
-    public void angivSaldoafskrivning(String navn, int anskaffelsesvaerdi, double afskrivningsprocent) throws OverMaksbeloebException, KanIkkeBeregneAfskrivningException, NegativVaerdiException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, NegativAfskrivningsprocentException {
+    public void angivSaldoafskrivning(String navn, double anskaffelsesvaerdi, double afskrivningsprocent) throws OverMaksbeloebException, KanIkkeBeregneAfskrivningException, NegativVaerdiException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativBeloebException, NegativAfskrivningsprocentException {
         boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
         if (!afskrivningMedNavnFindes) {
             Afskrivning afskrivning = new AfskrivningImpl(navn);
@@ -40,11 +40,11 @@ public class BeregnAfskrivningImpl implements BeregnAfskrivning, Observable {
     }
 
     @Override
-    public void angivStraksafskrivning(String navn, int anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException, NegativVaerdiException, KanIkkeBeregneAfskrivningException {
+    public void angivStraksafskrivning(String navn, double anskaffelsesvaerdi) throws NegativBeloebException, OverMaksbeloebException, NegativEllerNulVaerdiException, ScrapvaerdiStoerreEndAnskaffelsesvaerdiException, NegativAfskrivningsprocentException, NegativVaerdiException, KanIkkeBeregneAfskrivningException {
         boolean afskrivningMedNavnFindes = afskrivninger.containsKey(navn);
         if (!afskrivningMedNavnFindes) {
             Afskrivning afskrivning = new AfskrivningImpl(navn);
-            afskrivning.put(navn, afskrivning);
+            afskrivninger.put(navn, afskrivning);
         }
         Afskrivning afskrivning = afskrivninger.get(navn);
         afskrivning.angivStraksafskrivning(anskaffelsesvaerdi);
