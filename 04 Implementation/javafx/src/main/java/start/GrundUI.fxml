@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel?>
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel.CollapsedPanel?>
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel.ExpandedPanel?>
+<?import com.gluonhq.charm.glisten.control.ExpansionPanelContainer?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+    <items>
+        <ExpansionPanel>
+            <collapsedContent>
+                <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Omsætning" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label fx:id="omsaetningResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+                </ExpansionPanel.CollapsedPanel>
+            </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane fx:id="omsaetningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                  <children>
+                     <Label prefWidth="250.0" text="Omsætning">
+                        <padding>
+                           <Insets left="10.0" top="10.0" />
+                        </padding>
+                     </Label>
+                        <Label fx:id="omsaetningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="58" mnemonicParsing="false" onAction="#tilfoejTilResultatBudget" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+        </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Vareforbrug" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="250.0" text="-Vareforbrug">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Bruttofortjeneste" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="250.0" text="Bruttofortjeneste">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Salgsfremmende omkostninger" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="250.0" text="-Salgsfremmende omkostninger">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Markedsføringsbidrag" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="250.0" text="Markedsføringsbidrag">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Kontante kapacitetsomkostninger" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="250.0" text="-Kontante kapacitetsomkostninger">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Indtjeningsbidrag" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="200.0" text="Indtjeningsbidrag">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+        <ExpansionPanel>
+            <collapsedContent>
+                <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
+                    <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Afskrivninger" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+                    </titleNodes>
+                </ExpansionPanel.CollapsedPanel>
+            </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane fx:id="afskrivningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="200.0" text="-Afskrivninger">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#tilfoejNyAfskrivning" prefHeight="28.0" prefWidth="120.0" text="Tilføj ny afskrivning" />
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+        </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Resultat før renter" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="200.0" text="Resultat før renter">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #dddddd;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Renteomkostninger" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                     <children>
+                        <Label prefWidth="200.0" text="-Renteomkostninger">
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                           <padding>
+                              <Insets right="34.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                     </children>
+                  </Pane>
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+      <ExpansionPanel>
+         <collapsedContent>
+            <ExpansionPanel.CollapsedPanel style="-fx-background-color: #ffffff;">
+               <titleNodes>
+                  <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Resultat" />
+                  <Label alignment="CENTER_RIGHT" text="=" />
+                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                     <padding>
+                        <Insets right="42.0" />
+                     </padding>
+                  </Label>
+               </titleNodes>
+            </ExpansionPanel.CollapsedPanel>
+         </collapsedContent>
+         <expandedContent>
+            <ExpansionPanel.ExpandedPanel>
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1288.0" />
+               </content>
+            </ExpansionPanel.ExpandedPanel>
+         </expandedContent>
+      </ExpansionPanel>
+    </items>
+</ExpansionPanelContainer>

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/04 Implementation/javafx" rootProjectPath="$MODULE_DIR$/04 Implementation/javafx" />
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/04 Implementation/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04 Implementation/javafx" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/05 Test/test" isTestSource="true" />
-    </content>
+    <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" scope="TEST">
