@@ -1,5 +1,7 @@
 package entities;
 
+import entities.exceptions.NegativBeloebException;
+
 public class OmsaetningImpl implements Omsaetning, Observable {
     private ObserverManager observerManager;
     private Bruttofortjeneste bruttofortjeneste;
@@ -12,6 +14,15 @@ public class OmsaetningImpl implements Omsaetning, Observable {
 
     public OmsaetningImpl() {
         observerManager = newObserverManager();
+    }
+
+    @Override
+    public void angivBeloeb(double beloeb) throws NegativBeloebException {
+        if (beloeb < 0) {
+            throw new NegativBeloebException("Beløb er negativt.");
+        }
+        this.beloeb = beloeb;
+        observerManager.notificerObservere(this);
     }
 
     @Override
