@@ -269,7 +269,7 @@
                     <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Afskrivninger" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="afskrivningResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -288,12 +288,12 @@
                            </padding>
                         </Label>
                         <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#tilfoejNyAfskrivning" prefHeight="28.0" prefWidth="120.0" text="Tilføj ny afskrivning" />
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="afskrivningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+" />
+                        <!--<Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+"/>-->
                      </children>
                   </Pane>
                </content>
