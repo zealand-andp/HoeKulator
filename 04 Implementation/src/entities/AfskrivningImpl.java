@@ -1,10 +1,12 @@
 package entities;
 
+import beregnafskrivning.AfskrivningsBeregner;
 import beregnafskrivning.LinearAfskrivningsBeregnerImpl;
 import beregnafskrivning.LinearAfskrivningsRequestImpl;
 import entities.exceptions.*;
 
 public class AfskrivningImpl implements Afskrivning {
+    private static AfskrivningsBeregner standardafskrivningsberegner = new LinearAfskrivningsBeregnerImpl();
     private String navn;
     private int brugstid;
     private double scrapvaerdi;
@@ -16,6 +18,10 @@ public class AfskrivningImpl implements Afskrivning {
 
     }
 
+
+    static void angivStandardAfskrivningsBeregner(AfskrivningsBeregner afskrivningsBeregner) {
+        standardafskrivningsberegner = afskrivningsBeregner;
+    }
 
     @Override
     public void containsKey(String navn) {

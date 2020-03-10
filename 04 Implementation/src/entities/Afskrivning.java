@@ -1,5 +1,6 @@
 package entities;
 
+import beregnafskrivning.AfskrivningsBeregner;
 import entities.exceptions.*;
 
 public interface Afskrivning {
