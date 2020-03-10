@@ -1,5 +1,6 @@
 package beregnafskrivning;
 
-public interface LinearAfskrivningsRequest {
+public interface
+LinearAfskrivningsRequest {
 
 }

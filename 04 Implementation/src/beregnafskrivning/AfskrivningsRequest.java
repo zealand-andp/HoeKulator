@@ -8,4 +8,5 @@ public interface AfskrivningsRequest {
     int hentBrugstid();
     double hentScrapvaerdi();
     double hentAnskaffelsesvaedi();
+    double hentAfskrivningsProcent();
 }
