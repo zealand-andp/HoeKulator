@@ -13,7 +13,7 @@ public class AfsaetningImpl implements Afsaetning, Observable {
     @Override
     public void angivAntal(int antal) throws NegativAntalException {
         if (antal < 0){
-            throw new NegativAntalException();
+            throw new NegativAntalException("Antallet må ikke være negativt");
         }
         this.antal = antal;
         observerManager.notificerObservere(this);
