@@ -3,7 +3,6 @@ package beregnomsaetning;
 import entities.*;
 import entities.exceptions.NegativAntalException;
 import entities.exceptions.NegativBeloebException;
-import entities.exceptions.NegativPrisException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -13,14 +12,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import start.GrundUIController;
 
 import java.io.IOException;
 
 public class BeregnOmsaetningController {
-    String nuvaerendeMetode;
-    MetodeController metodeController;
+    private String nuvaerendeMetode;
+    private MetodeControllerOmsaetning metodeControllerOmsaetning;
+    private GrundUIController grundUIController;
+    private BeregnOmsaetningImpl beregnOmsaetning;
 
-    Omsaetning omsaetning;
     @FXML
     private Pane metodePane;
 
@@ -34,16 +35,6 @@ public class BeregnOmsaetningController {
     private TextField omsaetningTf;
 
     public void initialize() {
-        omsaetning = new OmsaetningImpl();
-        omsaetning.tilmeldObserver(new Observer() {
-            @Override
-            public void opdater(Observable observable) {
-                if (observable instanceof Omsaetning) {
-                    double changed = ((Omsaetning) observable).hentOmsaetning();
-                    omsaetningTf.setText(String.valueOf(changed));
-                }
-            }
-        });
         metodeComboBox.getItems().addAll("Afsætning og salgspris", "Bruttofortjeneste og vareforbrug", "Primoårsomsætning og procentstigning");
         metodeComboBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -81,7 +72,7 @@ public class BeregnOmsaetningController {
         }
         assert loader != null;
         node = loader.load();
-        metodeController = loader.getController();
+        metodeControllerOmsaetning = loader.getController();
         metodePane.getChildren().setAll(node);
     }
 
@@ -94,40 +85,38 @@ public class BeregnOmsaetningController {
         double procentstigningInput;
         switch (nuvaerendeMetode) {
             case "Afsætning og salgspris":
-                afsaetningInput = Integer.parseInt(metodeController.getAfsaetningTf().getText());
-                AfsaetningImpl afsaetning = new AfsaetningImpl();
-                afsaetning.angivAntal(afsaetningInput);
-                salgsprisInput = Double.parseDouble(metodeController.getSalgsprisTf().getText());
-                SalgsprisImpl salgspris = new SalgsprisImpl();
-                salgspris.angivPris(salgsprisInput);
-                omsaetning.anvendAfsaetningOgSalgspris(afsaetning, salgspris);
+                afsaetningInput = Integer.parseInt(metodeControllerOmsaetning.getAfsaetningTf().getText());
+                salgsprisInput = Double.parseDouble(metodeControllerOmsaetning.getSalgsprisTf().getText());
+                beregnOmsaetning.angivAfsaetningOgSalgspris(salgsprisInput, afsaetningInput);
                 break;
             case "Bruttofortjeneste og vareforbrug":
-                bruttofortjenesteInput = Double.parseDouble(metodeController.getBruttofortjenesteTf().getText());
-                BruttofortjenesteImpl bruttofortjeneste = new BruttofortjenesteImpl();
-                bruttofortjeneste.angivBeloeb(bruttofortjenesteInput);
-                vareforbrugInput = Double.parseDouble(metodeController.getVareforbrugTf().getText());
-                VareforbrugImpl vareforbrug = new VareforbrugImpl();
-                vareforbrug.angivBeloeb(vareforbrugInput);
-                omsaetning.anvendBruttofortjenesteOgVareforbrug(bruttofortjeneste, vareforbrug);
+                bruttofortjenesteInput = Double.parseDouble(metodeControllerOmsaetning.getBruttofortjenesteTf().getText());
+                vareforbrugInput = Double.parseDouble(metodeControllerOmsaetning.getVareforbrugTf().getText());
+                beregnOmsaetning.angivBruttofortjenesteOgVareforbrug(bruttofortjenesteInput, vareforbrugInput);
                 break;
             case "Primoårsomsætning og procentstigning":
-                primoAarInput = Double.parseDouble(metodeController.getPrimoaarTf().getText());
-                PrimoAarsomsaetningImpl primoAarsomsaetning = new PrimoAarsomsaetningImpl();
-                primoAarsomsaetning.angivBeloeb(primoAarInput);
-                procentstigningInput = Double.parseDouble(metodeController.getProcentstigningTf().getText());
-                ProcentstigningImpl procentstigning = new ProcentstigningImpl();
-                procentstigning.angivDecimaltal(procentstigningInput);
-                omsaetning.anvendPrimoAarsomsaetningOgProcentstigning(primoAarsomsaetning, procentstigning);
+                primoAarInput = Double.parseDouble(metodeControllerOmsaetning.getPrimoaarTf().getText());
+                procentstigningInput = Double.parseDouble(metodeControllerOmsaetning.getProcentstigningTf().getText());
+                beregnOmsaetning.angivPrimoAarsomsaetningOgProcentstigning(primoAarInput, procentstigningInput);
                 break;
         }
     }
 
-    public TextField getOmsaetningTf() {
-        return omsaetningTf;
+    public void setGrundUIController(GrundUIController grundUIController) {
+        this.grundUIController = grundUIController;
     }
 
-    public Omsaetning getOmsaetning() {
-        return omsaetning;
+    public void setBeregnOmsaetning(BeregnOmsaetningImpl beregnOmsaetning) {
+        this.beregnOmsaetning = beregnOmsaetning;
+        this.beregnOmsaetning.getOmsaetning().tilmeldObserver(new Observer() {
+            @Override
+            public void opdater(Observable observable) {
+                if (observable instanceof Omsaetning) {
+                    double changed = ((Omsaetning) observable).hentOmsaetning();
+                    omsaetningTf.setText(String.valueOf(changed));
+                    grundUIController.tilfoejOmsaetningTilResultatBudget();
+                }
+            }
+        });
     }
 }

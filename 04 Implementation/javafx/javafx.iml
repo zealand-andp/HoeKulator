@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="javafx" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11" inherit-compiler-output="true">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <content url="file://$MODULE_DIR$/../src">
+      <sourceFolder url="file://$MODULE_DIR$/../src" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../05 Test/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../05 Test/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.gluonhq:charm-glisten:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:13.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:13.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:11.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.gluonhq:charm-glisten:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:13.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:13.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.5.2" level="project" />
   </component>
 </module>
