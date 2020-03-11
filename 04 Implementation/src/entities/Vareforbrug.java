@@ -1,10 +1,11 @@
 package entities;
 
-import entities.exceptions.NegativBeloebException;
 
 public interface Vareforbrug {
-    void angivBeloeb(double beloeb) throws NegativBeloebException;
-    double hentBeloeb();
+    void anvendIndkoebsprisOgAfsaetning(Indkoebspris indkoebspris, Afsaetning afsaetning);
+    void anvendBruttofortjenesteOgOmsætning(Bruttofortjeneste bruttofortjeneste, Omsaetning omsaetning);
+    void anvendVarelagerPrimoOgVarekoebOgVarelagerUltimo(VarelagerPrimo varelagerPrimo, Varekoeb varekoeb, VarelagerUltimo varelagerUltimo);
     void tilmeldObserver(Observer observer);
     void afmeldObserver(Observer observer);
+    double hentVareforbrug();
 }
