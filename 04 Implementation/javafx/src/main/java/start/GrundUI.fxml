@@ -11,7 +11,9 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+<?import javafx.scene.control.ScrollPane?>
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="670.0" minWidth="1338.0">
     <items>
         <ExpansionPanel>
             <collapsedContent>
@@ -478,3 +480,4 @@
       </ExpansionPanel>
     </items>
 </ExpansionPanelContainer>
+</ScrollPane>
