@@ -4,6 +4,7 @@ import beregnafskrivning.BeregnAfskrivning;
 import beregnafskrivning.BeregnAfskrivningController;
 import beregnafskrivning.BeregnAfskrivningImpl;
 import beregnomsaetning.BeregnOmsaetningController;
+import beregnomsaetning.BeregnOmsaetningImpl;
 import beregnresultatfoerrenter.BeregnResultatFoerRenter;
 import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
 import entities.Afskrivning;
@@ -21,12 +22,13 @@ import java.util.Map;
 
 public class GrundUIController {
     private BeregnOmsaetningController beregnOmsaetningController;
-//    private BeregnAfskrivningController beregnAfskrivningController;
+    ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
     double afskrivningsPaneLayoutY = 38;
     ArrayList<Node> afskrivninger;
-    ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
+    BeregnOmsaetningImpl beregnOmsaetning;
     BeregnAfskrivningImpl beregnAfskrivning;
     BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
+
 
     @FXML
     Label omsaetningResultatLabel1, omsaetningResultatLabel2;
@@ -48,6 +50,7 @@ public class GrundUIController {
         beregnAfskrivningControllers = new ArrayList<>();
         beregnAfskrivning = new BeregnAfskrivningImpl();
         beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
+        beregnOmsaetning = new BeregnOmsaetningImpl();
         loadOmsaetning();
         loadAfskrivning();
     }
@@ -56,6 +59,8 @@ public class GrundUIController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnomsaetning/Beregn_omsaetning.fxml"));
         Node node = fxmlLoader.load();
         beregnOmsaetningController = fxmlLoader.getController();
+        beregnOmsaetningController.setGrundUIController(this);
+        beregnOmsaetningController.setBeregnOmsaetning(beregnOmsaetning);
         omsaetningPane.getChildren().add(node);
     }
 
@@ -73,8 +78,8 @@ public class GrundUIController {
     }
 
     @FXML
-    public void tilfoejTilResultatBudget(){
-        omsaetningResultatLabel1.setText(String.valueOf(beregnOmsaetningController.getOmsaetning().hentOmsaetning()));
+    public void tilfoejOmsaetningTilResultatBudget(){
+        omsaetningResultatLabel1.setText(String.valueOf(beregnOmsaetning.getOmsaetning().hentOmsaetning()));
         omsaetningResultatLabel2.setText(omsaetningResultatLabel1.getText());
     }
 
