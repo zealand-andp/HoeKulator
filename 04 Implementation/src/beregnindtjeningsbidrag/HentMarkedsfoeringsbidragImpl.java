@@ -1,8 +1,8 @@
 package beregnindtjeningsbidrag;
 
-public class HentMarkedsføringsbidragImpl {
+public class HentMarkedsfoeringsbidragImpl {
 
-    protected double hentMarkedsføringsbidrag(int markedsføringsbidrag){
+    protected double hentMarkedsfoeringsbidrag(int markedsfoeringsbidrag){
     return 1.0;
     } //TODO tilføj markedsføringsbidrags object til parametre og implement kode
 
