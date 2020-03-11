@@ -14,15 +14,14 @@ import javafx.scene.layout.Pane;
 import start.GrundUIController;
 
 import java.io.IOException;
-import java.util.LinkedHashMap;
 
 public class BeregnAfskrivningController {
     String nuvaerendeMetode;
     MetodeControllerAfskrivning metodeController;
     GrundUIController grundUIController;
     Node node;
-
     BeregnAfskrivningImpl beregnAfskrivning;
+    Observer observer;
 
     @FXML
     private Pane metodePane;
@@ -37,16 +36,7 @@ public class BeregnAfskrivningController {
     private TextField afskrivningTf, navnTf;
 
     public void initialize() {
-        beregnAfskrivning = new BeregnAfskrivningImpl();
-        beregnAfskrivning.tilmeldObserver(new Observer() {
-            @Override
-            public void opdater(Observable observable) {
-                if (observable instanceof BeregnAfskrivning) {
-                    Afskrivning changed = ((BeregnAfskrivning) observable).hentAfskrivninger().get(navnTf.getText());
-                    afskrivningTf.setText(String.valueOf(changed.hentAfskrivningsvaerdi()));
-                }
-            }
-        });
+//        usedNames
         metodeChoiceBox.getItems().addAll("Lineær Afskrivning", "Saldoafskrivning", "Straksafskrivning");
         metodeChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -110,11 +100,13 @@ public class BeregnAfskrivningController {
                 beregnAfskrivning.angivStraksafskrivning(navnTf.getText(), anskaffelesvaerdiInput);
                 break;
         }
+        navnTf.setEditable(false);
     }
 
     @FXML
     public void fjernSelv() throws IOException {
-        grundUIController.fjernAfkrivning(node);
+        beregnAfskrivning.afmeldObserver(observer);
+        grundUIController.fjernAfkrivning(node, navnTf.getText());
     }
 
     public void setGrundUIController(GrundUIController grundUIController) {
@@ -123,5 +115,17 @@ public class BeregnAfskrivningController {
 
     public void setNode(Node node) {
         this.node = node;
+    }
+
+    public void setBeregnAfskrivning(BeregnAfskrivningImpl beregnAfskrivning) {
+        this.beregnAfskrivning = beregnAfskrivning;
+        observer = observable -> {
+            if (observable instanceof BeregnAfskrivning) {
+                Afskrivning changed = ((BeregnAfskrivning) observable).hentAfskrivninger().get(navnTf.getText());
+                afskrivningTf.setText(String.valueOf(changed.hentAfskrivningsvaerdi()));
+                grundUIController.opdaterAfskrivninger();
+            }
+        };
+        beregnAfskrivning.tilmeldObserver(observer);
     }
 }
