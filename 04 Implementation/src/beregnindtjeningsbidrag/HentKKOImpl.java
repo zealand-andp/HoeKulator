@@ -1,4 +1,4 @@
 package beregnindtjeningsbidrag;
 
-public class hentKKOImpl {
+public class HentKKOImpl {
 }
