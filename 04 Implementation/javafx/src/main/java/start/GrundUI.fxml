@@ -285,7 +285,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Indtjeningsbidrag" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="indtjeningsbidragResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -303,7 +303,7 @@
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="indtjeningsbidragResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
@@ -374,7 +374,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Resultat før renter" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="resultatFoerRenterResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -392,7 +392,7 @@
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="resultatFoerRenterResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
