@@ -138,7 +138,7 @@ class OmsaetningImplTest {
     }
 
     @Override
-    public double hentbeloeb() {
+    public double hentBeloeb() {
       return beloeb;
     }
   }
@@ -154,7 +154,17 @@ class OmsaetningImplTest {
       public double hentBeloeb() {
       return beloeb;
     }
+
+      @Override
+      public void tilmeldObserver(Observer observer) {
+
       }
+
+      @Override
+      public void afmeldObserver(Observer observer) {
+
+      }
+  }
 
   private static class Mockafsaetning implements Afsaetning{
       public double afsaetning = 21622;
