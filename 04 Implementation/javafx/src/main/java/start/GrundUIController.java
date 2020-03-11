@@ -4,7 +4,11 @@ import beregnafskrivning.BeregnAfskrivning;
 import beregnafskrivning.BeregnAfskrivningController;
 import beregnafskrivning.BeregnAfskrivningImpl;
 import beregnomsaetning.BeregnOmsaetningController;
+import beregnresultatfoerrenter.BeregnResultatFoerRenter;
+import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
 import entities.Afskrivning;
+import entities.Indtjeningsbidrag;
+import entities.IndtjeningsbidragImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,6 +26,7 @@ public class GrundUIController {
     ArrayList<Node> afskrivninger;
     ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
     BeregnAfskrivningImpl beregnAfskrivning;
+    BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
 
     @FXML
     Label omsaetningResultatLabel1, omsaetningResultatLabel2;
@@ -30,12 +35,19 @@ public class GrundUIController {
     Label afskrivningResultatLabel1, afskrivningResultatLabel2;
 
     @FXML
+    Label indtjeningsbidragResultatLabel1, indtjeningsbidragResultatLabel2;
+
+    @FXML
+    Label resultatFoerRenterResultatLabel1, resultatFoerRenterResultatLabel2;
+
+    @FXML
     private Pane omsaetningPane, afskrivningPane;
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
         beregnAfskrivningControllers = new ArrayList<>();
         beregnAfskrivning = new BeregnAfskrivningImpl();
+        beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
         loadOmsaetning();
         loadAfskrivning();
     }
@@ -116,5 +128,15 @@ public class GrundUIController {
         }
         afskrivningResultatLabel1.setText(sum + "");
         afskrivningResultatLabel2.setText(sum + "");
+        opdaterResultatFoerRenter();
+    }
+
+    public void opdaterResultatFoerRenter() {
+        Indtjeningsbidrag indtjeningsbidrag = new IndtjeningsbidragImpl();
+        indtjeningsbidrag.angivBeloeb(0);
+        beregnResultatFoerRenter.angivAfskrivningerOgIndtjeningsbidrag(beregnAfskrivning.hentAfskrivninger(), indtjeningsbidrag);
+        String resultat = String.valueOf(beregnResultatFoerRenter.hentResultat());
+        resultatFoerRenterResultatLabel1.setText(resultat);
+        resultatFoerRenterResultatLabel2.setText(resultat);
     }
 }

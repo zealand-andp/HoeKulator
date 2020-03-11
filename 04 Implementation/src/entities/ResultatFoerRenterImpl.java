@@ -6,31 +6,25 @@ import java.util.Map;
 public class ResultatFoerRenterImpl implements ResultatFoerRenter, Observable {
     private double resultat;
     private ObserverManager observerManager;
-    private Afskrivning afskrivninger;
+    private LinkedHashMap<String, Afskrivning> afskrivninger;
     private Indtjeningsbidrag indtjeningsbidrag;
 
-    public ResultatFoerRenterImpl(){
+    public ResultatFoerRenterImpl(LinkedHashMap<String, Afskrivning> afskrivninger, Indtjeningsbidrag indtjeningsbidrag) {
+        this.afskrivninger = afskrivninger;
+        this.indtjeningsbidrag = indtjeningsbidrag;
         observerManager = newObserverManager();
     }
 
     @Override
     public double hentResultatFoerRenter() {
-        double afskrivingsbeloeb = afskrivninger.hentAfskrivningsvaerdi();
+        double afskrivingsbeloeb = 0;
+        for (Map.Entry<String, Afskrivning> entry : afskrivninger.entrySet()) {
+            afskrivingsbeloeb += entry.getValue().hentAfskrivningsvaerdi();
+        }
         double indtjeningsbidragBeloeb = indtjeningsbidrag.hentBeloeb();
         resultat = indtjeningsbidragBeloeb - afskrivingsbeloeb;
         return resultat;
     }
-
-    @Override
-    public void angivAfskrivning(Afskrivning afskrivninger) {
-        this.afskrivninger = afskrivninger;
-    }
-
-    @Override
-    public void angivIndtjeningsbidrag(Indtjeningsbidrag indtjeningsbidrag) {
-        this.indtjeningsbidrag = indtjeningsbidrag;
-    }
-
 
     @Override
     public void tilmeldObserver(Observer observer) {
