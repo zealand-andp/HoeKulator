@@ -1,4 +1,4 @@
 package beregnindtjeningsbidrag;
 
-public class BeregnIndtjeningsbidragImpl {
+public class BeregnIndtjeningsbidragImpl  {
 }
