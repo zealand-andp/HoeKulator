@@ -1,12 +1,9 @@
 package beregnafskrivning;
 
-public interface AfskrivningsRequest {
+public interface AfskrivningRequest {
     boolean erBeregnet();
     void angivAfskrivning(double beloeb);
     double hentAfskrivning();
     Afskrivningsmetoder hentAfskrivningsmetode();
-    int hentBrugstid();
-    double hentScrapvaerdi();
-    double hentAnskaffelsesvaedi();
-    double hentAfskrivningsProcent();
+    double hentAnskaffelsesvaerdi();
 }
