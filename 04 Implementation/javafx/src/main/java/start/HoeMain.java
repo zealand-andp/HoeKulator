@@ -37,7 +37,7 @@ public class HoeMain extends Application{
 
         //URL fxmlUrl=getClass().getResource("/GrundUI.fxml");
         //Parent root = FXMLLoader.load(fxmlUrl);
-        Parent root = FXMLLoader.load(getClass().getResource("Test.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GrundUI2.fxml"));
         //Parent root = loader.load(myFxmlURL);
         primaryStage.setTitle("HoeKulator");
         Scene scene = new Scene(root, 1388, 720);
