@@ -1,9 +1,10 @@
 package beregnindtjeningsbidrag;
 
-public class HentMarkedsfoeringsbidragImpl {
+public class HentMarkedsfoeringsbidragImpl implements  HentMarkedsfoeringsbidrag{
 
-    protected double hentMarkedsfoeringsbidrag(int markedsfoeringsbidrag){
-    return 1.0;
-    } //TODO tilføj markedsføringsbidrags object til parametre og implement kode
-
+    @Override
+    public double hentMarkedsfoeringsbidrag() {
+        double mfb = 2.0;
+        return mfb;
+    }
 }
