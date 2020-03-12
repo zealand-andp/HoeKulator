@@ -62,8 +62,10 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         observerManager.notificerObservere(this);
     }
 
-
-    // Vi tænker at den skal sendes vidre til Beregnomseatning 
+    @Override
+    public double hentBeloeb() {
+        return beloeb;
+    }
 
     public double hentOmsaetning() {
         if (primoAarsomsaetning != null && procentstigning != null) {

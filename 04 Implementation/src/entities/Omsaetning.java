@@ -9,5 +9,6 @@ public interface Omsaetning {
     void anvendPrimoAarsomsaetningOgProcentstigning(PrimoAarsomsaetning primoAarsomsaetning, Procentstigning procentstigning);
     void tilmeldObserver(Observer observer);
     void afmeldObserver(Observer observer);
+    double hentBeloeb();
     double hentOmsaetning();
 }
