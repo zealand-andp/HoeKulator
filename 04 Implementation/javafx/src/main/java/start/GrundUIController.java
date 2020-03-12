@@ -91,7 +91,7 @@ public class GrundUIController {
     }
 
     public void loadBruttofortjeneste() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnbruttofortjeneste/beregn-bruttofortjeneste.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnbruttofortjeneste/Beregn_bruttofortjeneste.fxml"));
         Node node = fxmlLoader.load();
         beregnBruttofortjenesteController = fxmlLoader.getController();
         beregnBruttofortjenesteController.setGrundUIController(this);
