@@ -343,16 +343,6 @@
               <content>
                   <Pane fx:id="renteindtaegterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                       <children>
-                          <Label prefWidth="200.0" text="Renteindtægter">
-                              <padding>
-                                  <Insets left="10.0" top="10.0" />
-                              </padding>
-                          </Label>
-                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
-                              <padding>
-                                  <Insets right="34.0" top="10.0" />
-                              </padding>
-                          </Label>
                       </children>
                   </Pane>
               </content>
@@ -370,25 +360,6 @@
               <content>
                   <Pane fx:id="renteomkostningerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                       <children>
-                          <Label prefWidth="200.0" text="-Renteomkostninger">
-                              <padding>
-                                  <Insets left="10.0" top="10.0" />
-                              </padding>
-                          </Label>
-                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
-                              <padding>
-                                  <Insets right="34.0" top="10.0" />
-                              </padding>
-                          </Label>
-                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
-                              <graphic>
-                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                      <image>
-                                          <Image url="/checkmark.png" />
-                                      </image>
-                                  </ImageView>
-                              </graphic>
-                          </Button>
                       </children>
                   </Pane>
               </content>
@@ -406,25 +377,6 @@
               <content>
                   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
                       <children>
-                          <Label prefWidth="200.0" text="Resultat før skat">
-                              <padding>
-                                  <Insets left="10.0" top="10.0" />
-                              </padding>
-                          </Label>
-                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
-                              <padding>
-                                  <Insets right="34.0" top="10.0" />
-                              </padding>
-                          </Label>
-                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
-                              <graphic>
-                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                      <image>
-                                          <Image url="/checkmark.png" />
-                                      </image>
-                                  </ImageView>
-                              </graphic>
-                          </Button>
                       </children>
                   </Pane>
               </content>
