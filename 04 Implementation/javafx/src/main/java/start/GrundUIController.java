@@ -43,7 +43,7 @@ public class GrundUIController {
     Label resultatFoerRenterResultatLabel1, resultatFoerRenterResultatLabel2;
 
     @FXML
-    private Pane omsaetningPane, afskrivningPane;
+    private Pane omsaetningPane, afskrivningPane, renteindtaegterPane, renteomkostningerPane;
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
@@ -53,6 +53,8 @@ public class GrundUIController {
         beregnOmsaetning = new BeregnOmsaetningImpl();
         loadOmsaetning();
         loadAfskrivning();
+        loadRenteintaegter();
+        loadRenteomkostninger();
     }
 
     public void loadOmsaetning() throws IOException {
@@ -75,6 +77,18 @@ public class GrundUIController {
         afskrivningPane.getChildren().add(node);
         afskrivninger.add(node);
         beregnAfskrivningController.setNode(node);
+    }
+
+    public void loadRenteintaegter() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultatfoerskat/Beregn_renteindtaegter.fxml"));
+        Node node = fxmlLoader.load();
+        renteindtaegterPane.getChildren().add(node);
+    }
+
+    public void loadRenteomkostninger() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultatfoerskat/Beregn_renteomkostninger.fxml"));
+        Node node = fxmlLoader.load();
+        renteomkostningerPane.getChildren().add(node);
     }
 
     @FXML

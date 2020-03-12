@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Pane?>
+<ScrollPane minHeight="670.0" minWidth="1350.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+   <content>
+      <VBox maxHeight="-Infinity" minWidth="1370">
+         <children>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane fx:id="omsaetningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="250.0" text="Omsætning">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label fx:id="omsaetningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                      </children>
+                  </Pane>
+              </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Omsætning" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="omsaetningResultatLabel1" text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="250.0" text="-Vareforbrug">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="-Vareforbrug" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="250.0" text="Bruttofortjeneste">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Bruttofortjeneste" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="250.0" text="-Salgsfremmende omkostninger">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="-Salgsfremmende omkostninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="250.0" text="Markedsføringsbidrag">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Markedsføringsbidrag" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="250.0" text="-Kontante kapacitetsomkostninger">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="-Kontante kapacitetsomkostninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="200.0" text="Indtjeningsbidrag">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label fx:id="indtjeningsbidragResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Indtjeningsbidrag" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="indtjeningsbidragResultatLabel1" text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane fx:id="afskrivningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="200.0" text="-Afskrivninger">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#tilfoejNyAfskrivning">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/plus.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                          <Label fx:id="afskrivningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <!--<Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+"/>-->
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Afskrivninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="afskrivningResultatLabel1" text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="200.0" text="Resultat før renter">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label fx:id="resultatFoerRenterResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" >
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Resultat før renter" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="resultatFoerRenterResultatLabel1" text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane fx:id="renteindtaegterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="200.0" text="Renteindtægter">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Renteindtægter" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane fx:id="renteomkostningerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="200.0" text="-Renteomkostninger">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Renteomkostninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                          <Label prefWidth="200.0" text="Resultat før skat">
+                              <padding>
+                                  <Insets left="10.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                              <padding>
+                                  <Insets right="34.0" top="10.0" />
+                              </padding>
+                          </Label>
+                          <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/checkmark.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Resultat før skat" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="00.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
