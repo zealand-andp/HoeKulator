@@ -109,7 +109,7 @@ public class BeregnVareforbrugController {
                 bruttofortjeneste.angivBeloeb(bruttofortjenesteInput);
                 omsaetningInput = Double.parseDouble(metodeController.getBruttofortjensteTf().getText());
                 OmsaetningImpl omsaetning = new OmsaetningImpl();
-                omsaetning.hentOmsaetning(omsaetningInput);
+                omsaetning.hentOmsaetning(omsaetningInput); //omsætningen skal være resultatet man får efter beregn omsætning
                 vareforbrug.anvendBruttofortjenesteOgOmsætning(bruttofortjeneste, omsaetning);
                 break;
             case "Primo-varelager, varekøb, ultimo-varelager":

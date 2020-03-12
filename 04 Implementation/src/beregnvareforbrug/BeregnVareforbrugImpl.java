@@ -26,7 +26,7 @@ public class BeregnVareforbrugImpl implements BeregnVareforbrug {
     @Override
     public void angivBruttofortjenesteOgOmsætning(double bruttofortjeneste, double omsaetning) throws NegativBeloebException {
         this.bruttofortjeneste.angivBeloeb(bruttofortjeneste);
-        this.omsaetning.hentOmsaetning(omsaetning);
+        this.omsaetning.hentOmsaetning(omsaetning); //omsætningen skal være resultatet man får efter beregn omsætning
         this.vareforbrug.anvendBruttofortjenesteOgOmsætning(this.bruttofortjeneste, this.omsaetning);
     }
 
