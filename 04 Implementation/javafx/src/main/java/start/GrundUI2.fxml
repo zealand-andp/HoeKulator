@@ -234,6 +234,43 @@
                   </HBox>
                </graphic>
             </TitledPane>
+             <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+                 <content>
+                     <Pane fx:id="skatteprocentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                         <children>
+                         </children>
+                     </Pane>
+                 </content>
+                 <graphic>
+                     <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                         <children>
+                             <Label text="Skatteprocent" />
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="skatteprocentResultatLabel" text="0.0%" />
+                         </children>
+                     </HBox>
+                 </graphic>
+             </TitledPane>
+             <TitledPane animated="false" collapsible="false" expanded="false" stylesheets="/TitlePane2.css">
+                 <content>
+                     <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                         <children>
+                         </children>
+                     </Pane>
+                 </content>
+                 <graphic>
+                     <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1315.0">
+                         <children>
+                             <Label text="Resultat">
+                                 <HBox.margin>
+                                     <Insets left="15.0" />
+                                 </HBox.margin></Label>
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="resultatResultatLabel" text="00.00" />
+                         </children>
+                     </HBox>
+                 </graphic>
+             </TitledPane>
          </children>
       </VBox>
    </content>
