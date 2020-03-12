@@ -7,6 +7,7 @@ import beregnomsaetning.BeregnOmsaetningController;
 import beregnomsaetning.BeregnOmsaetningImpl;
 import beregnresultatfoerrenter.BeregnResultatFoerRenter;
 import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
+import bruttofortjeneste.BeregnBruttofortjenesteController;
 import entities.Afskrivning;
 import entities.Indtjeningsbidrag;
 import entities.IndtjeningsbidragImpl;
@@ -23,6 +24,7 @@ import java.util.Map;
 public class GrundUIController {
     private BeregnOmsaetningController beregnOmsaetningController;
     ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
+    private BeregnBruttofortjenesteController beregnBruttofortjenesteController;
     double afskrivningsPaneLayoutY = 38;
     ArrayList<Node> afskrivninger;
     BeregnOmsaetningImpl beregnOmsaetning;
@@ -75,6 +77,15 @@ public class GrundUIController {
         afskrivningPane.getChildren().add(node);
         afskrivninger.add(node);
         beregnAfskrivningController.setNode(node);
+    }
+
+    public void loadBruttofortjeneste() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../bruttofortjeneste/beregn-bruttofortjeneste.fxml"));
+        Node node = fxmlLoader.load();
+        beregnOmsaetningController = fxmlLoader.getController();
+        beregnOmsaetningController.setGrundUIController(this);
+        beregnOmsaetningController.setBeregnOmsaetning(beregnOmsaetning);
+        omsaetningPane.getChildren().add(node);
     }
 
     @FXML
