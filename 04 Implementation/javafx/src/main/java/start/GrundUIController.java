@@ -38,19 +38,27 @@ public class GrundUIController {
 
 
     @FXML
-    Label omsaetningResultatLabel1, omsaetningResultatLabel2;
+    private Label omsaetningResultatLabel1, omsaetningResultatLabel2;
 
     @FXML
-    Label afskrivningResultatLabel1, afskrivningResultatLabel2;
+    private Label afskrivningResultatLabel1, afskrivningResultatLabel2;
 
     @FXML
-    Label indtjeningsbidragResultatLabel1, indtjeningsbidragResultatLabel2;
+    private Label indtjeningsbidragResultatLabel1, indtjeningsbidragResultatLabel2;
 
     @FXML
-    Label resultatFoerRenterResultatLabel1, resultatFoerRenterResultatLabel2;
+    private Label resultatFoerSkatResultatLabel;
+
+    @FXML
+    private Label resultatFoerRenterResultatLabel1, resultatFoerRenterResultatLabel2;
+
+    @FXML
+    private Label renteindtaegterResultatLabel, renteomkostningerResultatLabel;
 
     @FXML
     private Pane omsaetningPane, afskrivningPane, renteindtaegterPane, renteomkostningerPane;
+
+
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
@@ -101,7 +109,7 @@ public class GrundUIController {
         Node node = fxmlLoader.load();
         beregnRenteomkostningerController = fxmlLoader.getController();
         beregnRenteomkostningerController.setGrundUIController(this);
-        beregnRenteindtaegterController.setBeregnResultatFoerSkat(beregnResultatFoerSkat);
+        beregnRenteomkostningerController.setBeregnResultatFoerSkat(beregnResultatFoerSkat);
         renteomkostningerPane.getChildren().add(node);
     }
 
@@ -168,8 +176,26 @@ public class GrundUIController {
         Indtjeningsbidrag indtjeningsbidrag = new IndtjeningsbidragImpl();
         indtjeningsbidrag.angivBeloeb(0);
         beregnResultatFoerRenter.angivAfskrivningerOgIndtjeningsbidrag(beregnAfskrivning.hentAfskrivninger(), indtjeningsbidrag);
-        String resultat = String.valueOf(beregnResultatFoerRenter.hentResultat());
+        String resultat = String.valueOf(beregnResultatFoerRenter.hentResultat().hentResultatFoerRenter());
+        beregnResultatFoerSkat.angivResultatFoerRenter(beregnResultatFoerRenter.hentResultat());
         resultatFoerRenterResultatLabel1.setText(resultat);
         resultatFoerRenterResultatLabel2.setText(resultat);
+        opdaterResultatFoerSkat();
+    }
+
+    public void opdaterRenteindtaegter() {
+        String tal = String.valueOf(beregnResultatFoerSkat.hentRenteindtaegter().hentRenteindtaegter());
+        renteindtaegterResultatLabel.setText(tal);
+    }
+
+    public void opdaterRenteomkostninger() {
+        String tal = String.valueOf(beregnResultatFoerSkat.hentRenteomkostninger().hentRenteomkostninger());
+        renteomkostningerResultatLabel.setText(tal);
+    }
+
+
+    public void opdaterResultatFoerSkat() {
+        beregnResultatFoerSkat.beregnResultat();
+        resultatFoerSkatResultatLabel.setText(String.valueOf(beregnResultatFoerSkat.HentResultat().hentResultatFoerSkat()));
     }
 }

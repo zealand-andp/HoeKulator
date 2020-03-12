@@ -4,10 +4,10 @@ import entities.*;
 import entities.exceptions.NegativBeloebException;
 
 public class BeregnResultatFoerSkatImpl implements BeregnResultatFoerSkat {
-    private RenteindtaegterImpl renteindtaegter;
-    private RenteomkostningerImpl renteomkostninger;
-    private ResultatFoerRenterImpl resultatFoerRenter;
-    private ResultatFoerSkatImpl resultatFoerSkat;
+    private Renteindtaegter renteindtaegter;
+    private Renteomkostninger renteomkostninger;
+    private ResultatFoerRenter resultatFoerRenter;
+    private ResultatFoerSkat resultatFoerSkat;
 
     public BeregnResultatFoerSkatImpl() {
         renteindtaegter = new RenteindtaegterImpl();
@@ -15,7 +15,7 @@ public class BeregnResultatFoerSkatImpl implements BeregnResultatFoerSkat {
         resultatFoerSkat = new ResultatFoerSkatImpl();
     }
 
-    public void angivResultatFoerRenter(ResultatFoerRenterImpl resultatFoerRenter) {
+    public void angivResultatFoerRenter(ResultatFoerRenter resultatFoerRenter) {
         this.resultatFoerRenter = resultatFoerRenter;
     }
 
@@ -31,6 +31,9 @@ public class BeregnResultatFoerSkatImpl implements BeregnResultatFoerSkat {
 
     @Override
     public void beregnResultat() {
+        if (resultatFoerRenter == null) {
+            resultatFoerRenter = new ResultatFoerRenterImpl();
+        }
         resultatFoerSkat.angivRenteindtaegter(renteindtaegter);
         resultatFoerSkat.angivRenteomkostninger(renteomkostninger);
         resultatFoerSkat.angivResultatFoerRenter(resultatFoerRenter);
@@ -40,5 +43,15 @@ public class BeregnResultatFoerSkatImpl implements BeregnResultatFoerSkat {
     @Override
     public ResultatFoerSkat HentResultat() {
         return resultatFoerSkat;
+    }
+
+    @Override
+    public Renteindtaegter hentRenteindtaegter() {
+        return renteindtaegter;
+    }
+
+    @Override
+    public Renteomkostninger hentRenteomkostninger() {
+        return renteomkostninger;
     }
 }

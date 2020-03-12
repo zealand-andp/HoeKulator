@@ -27,11 +27,13 @@ public class ResultatFoerSkatImpl implements ResultatFoerSkat, Observable {
     }
 
     @Override
-    public void hentResultatFoerSkat() {
+    public double hentResultatFoerSkat() {
             double ri = renteindtaegter.hentRenteindtaegter();
             double ro = renteomkostninger.hentRenteomkostninger();
             double rfr = resultatFoerRenter.hentResultatFoerRenter();
             resultat = rfr - ro + ri;
+            observerManager.notificerObservere(this);
+            return resultat;
         }
 
     @Override

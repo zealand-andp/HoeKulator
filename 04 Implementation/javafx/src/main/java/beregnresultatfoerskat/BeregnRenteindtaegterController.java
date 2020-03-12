@@ -1,5 +1,7 @@
 package beregnresultatfoerskat;
 
+import entities.Observable;
+import entities.Observer;
 import entities.Renteindtaegter;
 import entities.RenteindtaegterImpl;
 import entities.exceptions.NegativBeloebException;
@@ -16,6 +18,12 @@ public class BeregnRenteindtaegterController {
 
     public void setBeregnResultatFoerSkat(BeregnResultatFoerSkat beregnResultatFoerSkat) {
         this.beregnResultatFoerSkat = beregnResultatFoerSkat;
+        beregnResultatFoerSkat.hentRenteindtaegter().tilmeldObserver(new Observer() {
+            @Override
+            public void opdater(Observable observable) {
+                grundUIController.opdaterResultatFoerSkat();
+            }
+        });
     }
 
     public void setGrundUIController(GrundUIController grundUIController) {
@@ -33,6 +41,7 @@ public class BeregnRenteindtaegterController {
 
     public void beregn() throws NegativBeloebException {
         beregnResultatFoerSkat.angivRenteindtaegter(Double.parseDouble(renteindtaegtTf.getText()));
+        grundUIController.opdaterRenteindtaegter();
     }
 
 

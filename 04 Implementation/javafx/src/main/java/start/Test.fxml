@@ -361,7 +361,7 @@
                      <children>
                         <Label text="Renteindtægter" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label fx:id="renteindtaegterResultatLabel" text="00.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -397,7 +397,7 @@
                      <children>
                         <Label text="Renteomkostninger" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label fx:id="renteomkostningerResultatLabel" text="00.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -433,7 +433,7 @@
                      <children>
                         <Label text="Resultat før skat" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label fx:id="resultatFoerSkatResultatLabel" text="00.00" />
                      </children>
                   </HBox>
                </graphic>
