@@ -4,6 +4,8 @@ import entities.exceptions.NegativBeloebException;
 
 public class BruttofortjenesteImpl implements Bruttofortjeneste, Observable {
     private double beloeb;
+    private Omsaetning omsaetning;
+    private  Vareforbrug vareforbrug;
     ObserverManager observerManager;
 
     public BruttofortjenesteImpl() {
@@ -19,8 +21,25 @@ public class BruttofortjenesteImpl implements Bruttofortjeneste, Observable {
         this.beloeb = beloeb;
         observerManager.notificerObservere(this);
     }
+  
+    @Override
+    public void anvendOmsaetningOgVareforbrug(Omsaetning omsaetning, Vareforbrug vareforbrug) {
+        this.omsaetning = omsaetning;
+        this.vareforbrug = vareforbrug;
 
+        observerManager.notificerObservere(this);
+    }
 
+    @Override
+    public double hentbeloeb() {
+        return beloeb;
+    }
+
+    @Override
+    public void hentBruttofortjeneste() {
+        this.beloeb = omsaetning.hentBeloeb() - vareforbrug.hentBeloeb();
+        observerManager.notificerObservere(this);
+    }
 
     @Override
     public void tilmeldObserver(Observer observer) {
