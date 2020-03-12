@@ -21,7 +21,7 @@ public class BruttofortjenesteImpl implements Bruttofortjeneste, Observable {
         this.beloeb = beloeb;
         observerManager.notificerObservere(this);
     }
-
+  
     @Override
     public void anvendOmsaetningOgVareforbrug(Omsaetning omsaetning, Vareforbrug vareforbrug) {
         this.omsaetning = omsaetning;

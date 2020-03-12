@@ -72,7 +72,7 @@ public class OmsaetningImpl implements Omsaetning, Observable {
            beloeb = primoAarsomsaetning.hentBeloeb()*(1.0 + procentstigning.hentDecimaltal() / 100.0);
         }
         else if (vareforbrug != null && bruttofortjeneste != null){
-            beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentbeloeb();
+            beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentBeloeb();
         }
 
         else if (salgspris != null && afsaetning != null) {

@@ -17,17 +17,17 @@ class OmsaetningImplTest {
       OmsaetningImpl omsaetning = new TestbarOmsaetning();
       MockBruttofortjeneste bruttofortjeneste = new MockBruttofortjeneste();
       MockVareforbrug vareforbrug = new MockVareforbrug();
+      vareforbrug.angivBeloeb(12698.0);
       assertEquals(12698.0, bruttofortjeneste.beloeb, DELTA);
-      assertEquals(21622.0, vareforbrug.beloeb, DELTA);
+      assertEquals(21622.0, vareforbrug.hentBeloeb(), DELTA);
       assertEquals(0, mockObserverManager.notificationsTaeller);
 
 
 
       omsaetning.anvendBruttofortjenesteOgVareforbrug(bruttofortjeneste, vareforbrug);
-
       assertEquals(1, mockObserverManager.notificationsTaeller);
-     double resultat = 34320.0;
-     assertEquals(resultat, omsaetning.hentOmsaetning());
+      double resultat = 34320.0;
+      assertEquals(resultat, omsaetning.hentOmsaetning());
 
 
     }
@@ -138,75 +138,85 @@ class OmsaetningImplTest {
     }
 
     @Override
-    public double hentbeloeb() {
-      return beloeb;
-    }
-  }
-
-  private static class MockVareforbrug implements Vareforbrug {
-      public double beloeb = 21622;
-    @Override
-    public void angivBeloeb(double beloeb)  {
-
-    }
-
-    @Override
     public double hentBeloeb() {
       return beloeb;
     }
   }
 
+  private static class MockVareforbrug implements Vareforbrug {
+      private double beloeb;
+      @Override
+      public void angivBeloeb(double beloeb)  {
+        this.beloeb = beloeb;
+      }
+
+    @Override
+      public double hentBeloeb() {
+      return beloeb;
+    }
+
+      @Override
+      public void tilmeldObserver(Observer observer) {
+
+      }
+
+      @Override
+      public void afmeldObserver(Observer observer) {
+
+      }
+  }
+
   private static class Mockafsaetning implements Afsaetning{
       public double afsaetning = 21622;
 
-    public void angivAntal(int antal)  {
+      public void angivAntal(int antal)  {
 
-    }
+      }
 
-    @Override
-    public double hentAntal() {
+      @Override
+      public double hentAntal() {
       return afsaetning;
     }
-  }
+      }
 
   private static class MockSalgspris implements Salgspris {
       public double salgspris = 66666;
 
-    @Override
-    public void angivPris(double pris)  {
+      @Override
+      public void angivPris(double pris)  {
 
-    }
+      }
 
-    @Override
-    public double hentPris() {
+      @Override
+      public double hentPris() {
       return salgspris;
     }
-  }
-private static class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
- public double primoAarsomsaetning = 100000;
+      }
+  private static class MockPrimoAarsomsaetning implements entities.PrimoAarsomsaetning {
+      public double primoAarsomsaetning = 100000;
 
-  @Override
-  public void angivBeloeb(double beloeb) {
+      @Override
+      public void angivBeloeb(double beloeb) {
 
-  }
+      }
 
-  @Override
-  public double hentBeloeb() {
+      @Override
+      public double hentBeloeb() {
     return primoAarsomsaetning;
   }
-}
+      }
 
-private static class MockProcentstigning implements entities.Procentstigning {
-public double procentstigning = 5.0;
-  @Override
-  public void angivDecimaltal(double procentstigning) {
+  private static class MockProcentstigning implements entities.Procentstigning {
+      public double procentstigning = 5.0;
+      @Override
+      public void angivDecimaltal(double procentstigning) {
 
-  }
+      }
 
-  @Override
-  public double hentDecimaltal() {
+      @Override
+      public double hentDecimaltal() {
     return procentstigning;
   }
-}
+      }
 
 }
