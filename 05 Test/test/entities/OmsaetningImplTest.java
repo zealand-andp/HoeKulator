@@ -150,8 +150,9 @@ class OmsaetningImplTest {
         }
 
         @Override
-        public void hentBruttofortjeneste() {
+        public double hentBruttofortjeneste() {
 
+            return 0;
         }
     }
 
