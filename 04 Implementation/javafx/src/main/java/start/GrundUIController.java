@@ -1,12 +1,12 @@
 package start;
 
-import beregnafskrivning.BeregnAfskrivning;
 import beregnafskrivning.BeregnAfskrivningController;
 import beregnafskrivning.BeregnAfskrivningImpl;
+import beregnbruttofortjeneste.BeregnBruttofortjenesteImpl;
 import beregnomsaetning.BeregnOmsaetningController;
 import beregnomsaetning.BeregnOmsaetningImpl;
-import beregnresultatfoerrenter.BeregnResultatFoerRenter;
 import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
+import beregnbruttofortjeneste.BeregnBruttofortjenesteController;
 import entities.Afskrivning;
 import entities.Indtjeningsbidrag;
 import entities.IndtjeningsbidragImpl;
@@ -23,15 +23,20 @@ import java.util.Map;
 public class GrundUIController {
     private BeregnOmsaetningController beregnOmsaetningController;
     ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
+    private BeregnBruttofortjenesteController beregnBruttofortjenesteController;
     double afskrivningsPaneLayoutY = 38;
     ArrayList<Node> afskrivninger;
     BeregnOmsaetningImpl beregnOmsaetning;
+    BeregnBruttofortjenesteImpl beregnBruttofortjeneste;
     BeregnAfskrivningImpl beregnAfskrivning;
     BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
 
 
     @FXML
     Label omsaetningResultatLabel1, omsaetningResultatLabel2;
+
+    @FXML
+    Label bruttofortjenesteResultatLabel1, bruttofortjenesteResultatLabel2;
 
     @FXML
     Label afskrivningResultatLabel1, afskrivningResultatLabel2;
@@ -43,7 +48,10 @@ public class GrundUIController {
     Label resultatFoerRenterResultatLabel1, resultatFoerRenterResultatLabel2;
 
     @FXML
-    private Pane omsaetningPane, afskrivningPane;
+    private Pane omsaetningPane, afskrivningPane, bruttofortjenestePane;
+
+    public GrundUIController() {
+    }
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
@@ -51,8 +59,10 @@ public class GrundUIController {
         beregnAfskrivning = new BeregnAfskrivningImpl();
         beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
         beregnOmsaetning = new BeregnOmsaetningImpl();
+        beregnBruttofortjeneste = new BeregnBruttofortjenesteImpl();
         loadOmsaetning();
         loadAfskrivning();
+        loadBruttofortjeneste();
     }
 
     public void loadOmsaetning() throws IOException {
@@ -62,6 +72,15 @@ public class GrundUIController {
         beregnOmsaetningController.setGrundUIController(this);
         beregnOmsaetningController.setBeregnOmsaetning(beregnOmsaetning);
         omsaetningPane.getChildren().add(node);
+    }
+
+    public void loadBruttofortjeneste() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnbruttofortjeneste/beregn-bruttofortjeneste.fxml"));
+        Node node = fxmlLoader.load();
+        beregnBruttofortjenesteController = fxmlLoader.getController();
+        beregnBruttofortjenesteController.setGrundUIController(this);
+        beregnBruttofortjenesteController.setBeregnBruttofortjeneste(beregnBruttofortjeneste);
+        bruttofortjenestePane.getChildren().add(node);
     }
 
     public void loadAfskrivning() throws IOException{
@@ -81,6 +100,12 @@ public class GrundUIController {
     public void tilfoejOmsaetningTilResultatBudget(){
         omsaetningResultatLabel1.setText(String.valueOf(beregnOmsaetning.getOmsaetning().hentOmsaetning()));
         omsaetningResultatLabel2.setText(omsaetningResultatLabel1.getText());
+    }
+
+    @FXML
+    public void tilfoejBruttofortjenesteTilResultatBudget(){
+        bruttofortjenesteResultatLabel1.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
+        bruttofortjenesteResultatLabel2.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
     }
 
     @FXML
