@@ -31,7 +31,7 @@ public class BruttofortjenesteImpl implements Bruttofortjeneste, Observable {
     }
 
     @Override
-    public double hentbeloeb() {
+    public double hentBeloeb() {
         return beloeb;
     }
 
@@ -49,10 +49,6 @@ public class BruttofortjenesteImpl implements Bruttofortjeneste, Observable {
     @Override
     public void afmeldObserver(Observer observer) {
         observerManager.afmeldObserver(observer);
-    }
-
-    public double hentBeloeb() {
-        return beloeb;
     }
 
     protected ObserverManager newObserverManager() {
