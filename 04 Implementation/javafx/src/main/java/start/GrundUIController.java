@@ -47,12 +47,16 @@ public class GrundUIController {
     @FXML
     private Pane omsaetningPane, afskrivningPane, bruttofortjenestePane;
 
+    public GrundUIController() {
+    }
+
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
         beregnAfskrivningControllers = new ArrayList<>();
         beregnAfskrivning = new BeregnAfskrivningImpl();
         beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
         beregnOmsaetning = new BeregnOmsaetningImpl();
+        beregnBruttofortjeneste = new BeregnBruttofortjenesteImpl();
         loadOmsaetning();
         loadAfskrivning();
         loadBruttofortjeneste();

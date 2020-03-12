@@ -26,8 +26,8 @@ public class BeregnBruttofortjenesteController {
             public void opdater(Observable observable) {
                 if (observable instanceof Bruttofortjeneste) {
                     double changed = ((Bruttofortjeneste) observable).hentBruttofortjeneste();
-//                    bruttofortjenesteTf.setText(String.valueOf(changed));
-//                    grundUIController.tilfoejOmsaetningTilResultatBudget();
+                    bruttofortjenesteTf.setText(String.valueOf(changed));
+                    grundUIController.tilfoejOmsaetningTilResultatBudget();
                 }
             }
         });
