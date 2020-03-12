@@ -46,7 +46,7 @@ public class GrundUIController {
     private Label afskrivningResultatLabel;
   
     @FXML
-    private Label bruttofortjenesteResultatLabel1, bruttofortjenesteResultatLabel2;
+    private Label bruttofortjenesteResultatLabel;
 
     @FXML
     private Label indtjeningsbidragResultatLabel;
@@ -137,8 +137,7 @@ public class GrundUIController {
 
     @FXML
     public void tilfoejBruttofortjenesteTilResultatBudget(){
-        bruttofortjenesteResultatLabel1.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
-        bruttofortjenesteResultatLabel2.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
+        bruttofortjenesteResultatLabel.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
     }
 
     @FXML

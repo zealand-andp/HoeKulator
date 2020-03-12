@@ -51,7 +51,7 @@
             </TitledPane>
             <TitledPane expanded="false" stylesheets="/TitlePane1.css">
               <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                  <Pane fx:id="bruttofortjenestePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                       <children>
                       </children>
                   </Pane>
@@ -61,7 +61,7 @@
                      <children>
                         <Label text="Bruttofortjeneste" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label fx:id="bruttofortjenesteResultatLabel" text="00.00" />
                      </children>
                   </HBox>
                </graphic>
