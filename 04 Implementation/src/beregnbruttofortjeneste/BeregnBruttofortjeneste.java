@@ -7,4 +7,5 @@ import entities.exceptions.NegativBeloebException;
 
 public interface BeregnBruttofortjeneste {
     void angivOmsaetningOgVareforbrug(double omsaetning, double vareforbrug) throws NegativBeloebException;
+    public Bruttofortjeneste getBruttofortjeneste();
 }

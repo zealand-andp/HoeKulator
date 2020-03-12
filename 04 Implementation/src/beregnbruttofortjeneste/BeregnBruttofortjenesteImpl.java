@@ -20,4 +20,9 @@ public class BeregnBruttofortjenesteImpl implements BeregnBruttofortjeneste {
         this.vareforbrug.angivBeloeb(vareforbrug);
         this.bruttofortjeneste.anvendOmsaetningOgVareforbrug(this.omsaetning, this.vareforbrug);
     }
+
+    @Override
+    public Bruttofortjeneste getBruttofortjeneste() {
+        return bruttofortjeneste;
+    }
 }

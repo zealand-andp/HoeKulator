@@ -154,6 +154,16 @@ class OmsaetningImplTest {
 
             return 0;
         }
+
+        @Override
+        public void tilmeldObserver(Observer observer) {
+
+        }
+
+        @Override
+        public void afmeldObserver(Observer observer) {
+
+        }
     }
 
     private static class MockVareforbrug implements Vareforbrug {
