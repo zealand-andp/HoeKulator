@@ -39,7 +39,7 @@ public class BeregnVareforbrugController {
             @Override
             public void opdater(Observable observable) {
                 if (observable instanceof Vareforbrug) {
-                    double changed = ((Vareforbrug) observable).hentBeloeb();
+                    double changed = ((Vareforbrug) observable).hentVareforbrug();
                     vareforbrugTf.setText(String.valueOf(changed));
                 }
             }
@@ -83,6 +83,51 @@ public class BeregnVareforbrugController {
         metodeController = loader.getController();
         vareforbrugMetodePane.getChildren().setAll(node);
 
-
     }
+
+    public void bergen() throws NegativPrisException, NegativAntalException, NegativBeloebException {
+        int afsaetningInput;
+        double indkoebsprisInput;
+        double bruttofortjenesteInput;
+        double omsaetningInput;
+        double varelagerPrimoInput;
+        double varelagerUltimoInput;
+        double varekoebInput;
+        switch (nuvaerendeMetode){
+            case "Indkøbspris og afsætning":
+                indkoebsprisInput = Double.parseDouble(metodeController.getIndskoebsprisTf().getText());
+                IndkoebsprisImpl indkoebspris = new IndkoebsprisImpl();
+                indkoebspris.angivPris(indkoebsprisInput);
+                afsaetningInput = Integer.parseInt(metodeController.getAfsaetningTf().getText());
+                AfsaetningImpl afsaetning = new AfsaetningImpl();
+                afsaetning.angivAntal(afsaetningInput);
+                vareforbrug.anvendIndkoebsprisOgAfsaetning(indkoebspris, afsaetning);
+                break;
+            case "Omsætning og bruttofortjenste":
+                bruttofortjenesteInput = Double.parseDouble(metodeController.getBruttofortjensteTf().getText());
+                BruttofortjenesteImpl bruttofortjeneste = new BruttofortjenesteImpl();
+                bruttofortjeneste.angivBeloeb(bruttofortjenesteInput);
+                omsaetningInput = Double.parseDouble(metodeController.getBruttofortjensteTf().getText());
+                OmsaetningImpl omsaetning = new OmsaetningImpl();
+                omsaetning.hentOmsaetning(omsaetningInput);
+                vareforbrug.anvendBruttofortjenesteOgOmsætning(bruttofortjeneste, omsaetning);
+                break;
+            case "Primo-varelager, varekøb, ultimo-varelager":
+                varelagerPrimoInput = Double.parseDouble(metodeController.getVarelagerPrimoTf().getText());
+                VarelagerPrimoImpl varelagerPrimo = new VarelagerPrimoImpl();
+                varelagerPrimo.angivBeloeb(varelagerPrimoInput);
+                varelagerUltimoInput = Double.parseDouble(metodeController.getVarelagerUltimoTf1().getText());
+                VarelagerUltimoImpl varelagerUltimo = new VarelagerUltimoImpl();
+                varelagerUltimo.angivBeloeb(varelagerUltimoInput);
+                varekoebInput = Double.parseDouble(metodeController.getVarekoebTf().getText());
+                VarekoebImpl varekoeb = new VarekoebImpl();
+                varekoeb.angivBeloeb(varekoebInput);
+                vareforbrug.anvendVarelagerPrimoOgVarekoebOgVarelagerUltimo(varelagerPrimo, varekoeb, varelagerUltimo);
+                break;
+        }
+    }
+
+    public TextField getVareforbrugTf(){ return vareforbrugTf; }
+
+    public Vareforbrug getVareforbrug() { return  vareforbrug; }
 }
