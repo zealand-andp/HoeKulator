@@ -2,6 +2,7 @@ package start;
 
 import beregnafskrivning.BeregnAfskrivningController;
 import beregnafskrivning.BeregnAfskrivningImpl;
+import beregnbruttofortjeneste.BeregnBruttofortjenesteImpl;
 import beregnomsaetning.BeregnOmsaetningController;
 import beregnomsaetning.BeregnOmsaetningImpl;
 import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
@@ -9,6 +10,7 @@ import beregnresultatfoerskat.BeregnRenteindtaegterController;
 import beregnresultatfoerskat.BeregnRenteomkostningerController;
 import beregnresultatfoerskat.BeregnResultatFoerSkat;
 import beregnresultatfoerskat.BeregnResultatFoerSkatImpl;
+import beregnbruttofortjeneste.BeregnBruttofortjenesteController;
 import entities.Afskrivning;
 import entities.Indtjeningsbidrag;
 import entities.IndtjeningsbidragImpl;
@@ -26,10 +28,12 @@ public class GrundUIController {
     private BeregnRenteindtaegterController beregnRenteindtaegterController;
     private BeregnRenteomkostningerController beregnRenteomkostningerController;
     private BeregnOmsaetningController beregnOmsaetningController;
+    private BeregnBruttofortjenesteController beregnBruttofortjenesteController;
     private ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
     private double afskrivningsPaneLayoutY = 38;
     private ArrayList<Node> afskrivninger;
     private BeregnOmsaetningImpl beregnOmsaetning;
+    private BeregnBruttofortjenesteImpl beregnBruttofortjeneste;
     private BeregnAfskrivningImpl beregnAfskrivning;
     private BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
     private BeregnResultatFoerSkat beregnResultatFoerSkat;
@@ -40,6 +44,9 @@ public class GrundUIController {
 
     @FXML
     private Label afskrivningResultatLabel;
+  
+    @FXML
+    private Label bruttofortjenesteResultatLabel1, bruttofortjenesteResultatLabel2;
 
     @FXML
     private Label indtjeningsbidragResultatLabel;
@@ -54,9 +61,10 @@ public class GrundUIController {
     private Label renteindtaegterResultatLabel, renteomkostningerResultatLabel;
 
     @FXML
-    private Pane omsaetningPane, afskrivningPane, renteindtaegterPane, renteomkostningerPane;
+    private Pane omsaetningPane, afskrivningPane, renteindtaegterPane, renteomkostningerPane, bruttofortjenestePane;
 
-
+    public GrundUIController() {
+    }
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
@@ -65,10 +73,12 @@ public class GrundUIController {
         beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
         beregnResultatFoerSkat = new BeregnResultatFoerSkatImpl();
         beregnOmsaetning = new BeregnOmsaetningImpl();
+        beregnBruttofortjeneste = new BeregnBruttofortjenesteImpl();
         loadOmsaetning();
         loadAfskrivning();
         loadRenteintaegter();
         loadRenteomkostninger();
+        loadBruttofortjeneste();
     }
 
     public void loadOmsaetning() throws IOException {
@@ -78,6 +88,15 @@ public class GrundUIController {
         beregnOmsaetningController.setGrundUIController(this);
         beregnOmsaetningController.setBeregnOmsaetning(beregnOmsaetning);
         omsaetningPane.getChildren().add(node);
+    }
+
+    public void loadBruttofortjeneste() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnbruttofortjeneste/beregn-bruttofortjeneste.fxml"));
+        Node node = fxmlLoader.load();
+        beregnBruttofortjenesteController = fxmlLoader.getController();
+        beregnBruttofortjenesteController.setGrundUIController(this);
+        beregnBruttofortjenesteController.setBeregnBruttofortjeneste(beregnBruttofortjeneste);
+        bruttofortjenestePane.getChildren().add(node);
     }
 
     public void loadAfskrivning() throws IOException{
@@ -114,6 +133,12 @@ public class GrundUIController {
     @FXML
     public void tilfoejOmsaetningTilResultatBudget(){
         omsaetningResultatLabel.setText(String.valueOf(beregnOmsaetning.getOmsaetning().hentOmsaetning()));
+    }
+
+    @FXML
+    public void tilfoejBruttofortjenesteTilResultatBudget(){
+        bruttofortjenesteResultatLabel1.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
+        bruttofortjenesteResultatLabel2.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
     }
 
     @FXML

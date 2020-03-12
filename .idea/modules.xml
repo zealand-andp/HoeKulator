@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HoeKulator.iml" filepath="$PROJECT_DIR$/.idea/HoeKulator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/04 Implementation/javafx/javafx.iml" filepath="$PROJECT_DIR$/04 Implementation/javafx/javafx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04 Implementation/javafx/javafx.iml" filepath="$PROJECT_DIR$/04 Implementation/javafx/javafx.iml" group="javafx" />
     </modules>
   </component>
 </project>
