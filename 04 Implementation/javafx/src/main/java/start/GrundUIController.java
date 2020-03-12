@@ -7,6 +7,10 @@ import beregnomsaetning.BeregnOmsaetningController;
 import beregnomsaetning.BeregnOmsaetningImpl;
 import beregnresultatfoerrenter.BeregnResultatFoerRenter;
 import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
+import beregnresultatfoerskat.BeregnRenteindtaegterController;
+import beregnresultatfoerskat.BeregnRenteomkostningerController;
+import beregnresultatfoerskat.BeregnResultatFoerSkat;
+import beregnresultatfoerskat.BeregnResultatFoerSkatImpl;
 import entities.Afskrivning;
 import entities.Indtjeningsbidrag;
 import entities.IndtjeningsbidragImpl;
@@ -21,13 +25,16 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class GrundUIController {
+    private BeregnRenteindtaegterController beregnRenteindtaegterController;
+    private BeregnRenteomkostningerController beregnRenteomkostningerController;
     private BeregnOmsaetningController beregnOmsaetningController;
-    ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
-    double afskrivningsPaneLayoutY = 38;
-    ArrayList<Node> afskrivninger;
-    BeregnOmsaetningImpl beregnOmsaetning;
-    BeregnAfskrivningImpl beregnAfskrivning;
-    BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
+    private ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
+    private double afskrivningsPaneLayoutY = 38;
+    private ArrayList<Node> afskrivninger;
+    private BeregnOmsaetningImpl beregnOmsaetning;
+    private BeregnAfskrivningImpl beregnAfskrivning;
+    private BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
+    private BeregnResultatFoerSkat beregnResultatFoerSkat;
 
 
     @FXML
@@ -50,6 +57,7 @@ public class GrundUIController {
         beregnAfskrivningControllers = new ArrayList<>();
         beregnAfskrivning = new BeregnAfskrivningImpl();
         beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
+        beregnResultatFoerSkat = new BeregnResultatFoerSkatImpl();
         beregnOmsaetning = new BeregnOmsaetningImpl();
         loadOmsaetning();
         loadAfskrivning();
@@ -82,12 +90,18 @@ public class GrundUIController {
     public void loadRenteintaegter() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultatfoerskat/Beregn_renteindtaegter.fxml"));
         Node node = fxmlLoader.load();
+        beregnRenteindtaegterController = fxmlLoader.getController();
+        beregnRenteindtaegterController.setGrundUIController(this);
+        beregnRenteindtaegterController.setBeregnResultatFoerSkat(beregnResultatFoerSkat);
         renteindtaegterPane.getChildren().add(node);
     }
 
     public void loadRenteomkostninger() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultatfoerskat/Beregn_renteomkostninger.fxml"));
         Node node = fxmlLoader.load();
+        beregnRenteomkostningerController = fxmlLoader.getController();
+        beregnRenteomkostningerController.setGrundUIController(this);
+        beregnRenteindtaegterController.setBeregnResultatFoerSkat(beregnResultatFoerSkat);
         renteomkostningerPane.getChildren().add(node);
     }
 
