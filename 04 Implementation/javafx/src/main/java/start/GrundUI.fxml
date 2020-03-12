@@ -20,7 +20,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Omsætning" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label fx:id="omsaetningResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="omsaetningResultatLabel" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -266,7 +266,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Indtjeningsbidrag" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label fx:id="indtjeningsbidragResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="indtjeningsbidragResultatLabel" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -310,7 +310,7 @@
                     <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Afskrivninger" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label fx:id="afskrivningResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="afskrivningResultatLabel" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
