@@ -1,11 +1,9 @@
 package start;
 
-import beregnafskrivning.BeregnAfskrivning;
 import beregnafskrivning.BeregnAfskrivningController;
 import beregnafskrivning.BeregnAfskrivningImpl;
 import beregnomsaetning.BeregnOmsaetningController;
 import beregnomsaetning.BeregnOmsaetningImpl;
-import beregnresultatfoerrenter.BeregnResultatFoerRenter;
 import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
 import beregnresultatfoerskat.BeregnRenteindtaegterController;
 import beregnresultatfoerskat.BeregnRenteomkostningerController;
@@ -38,19 +36,19 @@ public class GrundUIController {
 
 
     @FXML
-    private Label omsaetningResultatLabel1, omsaetningResultatLabel2;
+    private Label omsaetningResultatLabel;
 
     @FXML
-    private Label afskrivningResultatLabel1, afskrivningResultatLabel2;
+    private Label afskrivningResultatLabel;
 
     @FXML
-    private Label indtjeningsbidragResultatLabel1, indtjeningsbidragResultatLabel2;
+    private Label indtjeningsbidragResultatLabel;
 
     @FXML
     private Label resultatFoerSkatResultatLabel;
 
     @FXML
-    private Label resultatFoerRenterResultatLabel1, resultatFoerRenterResultatLabel2;
+    private Label resultatFoerRenterResultatLabel;
 
     @FXML
     private Label renteindtaegterResultatLabel, renteomkostningerResultatLabel;
@@ -115,8 +113,7 @@ public class GrundUIController {
 
     @FXML
     public void tilfoejOmsaetningTilResultatBudget(){
-        omsaetningResultatLabel1.setText(String.valueOf(beregnOmsaetning.getOmsaetning().hentOmsaetning()));
-        omsaetningResultatLabel2.setText(omsaetningResultatLabel1.getText());
+        omsaetningResultatLabel.setText(String.valueOf(beregnOmsaetning.getOmsaetning().hentOmsaetning()));
     }
 
     @FXML
@@ -167,8 +164,7 @@ public class GrundUIController {
         for (Map.Entry<String, Afskrivning> entry : beregnAfskrivning.hentAfskrivninger().entrySet()) {
             sum += entry.getValue().hentAfskrivningsvaerdi();
         }
-        afskrivningResultatLabel1.setText(sum + "");
-        afskrivningResultatLabel2.setText(sum + "");
+        afskrivningResultatLabel.setText(sum + "");
         opdaterResultatFoerRenter();
     }
 
@@ -178,8 +174,7 @@ public class GrundUIController {
         beregnResultatFoerRenter.angivAfskrivningerOgIndtjeningsbidrag(beregnAfskrivning.hentAfskrivninger(), indtjeningsbidrag);
         String resultat = String.valueOf(beregnResultatFoerRenter.hentResultat().hentResultatFoerRenter());
         beregnResultatFoerSkat.angivResultatFoerRenter(beregnResultatFoerRenter.hentResultat());
-        resultatFoerRenterResultatLabel1.setText(resultat);
-        resultatFoerRenterResultatLabel2.setText(resultat);
+        resultatFoerRenterResultatLabel.setText(resultat);
         opdaterResultatFoerSkat();
     }
 
