@@ -175,6 +175,21 @@ class OmsaetningImplTest {
         }
 
         @Override
+        public void anvendIndkoebprisOgAfsaetning(Indkoebspris indkoebspris, Afsaetning afsaetning) {
+
+        }
+
+        @Override
+        public void anvendBruttofortjenesteOgOmsaetning(Bruttofortjeneste bruttofortjeneste, Omsaetning omsaetning) {
+
+        }
+
+        @Override
+        public void anvendVarelagerPrimoOgVarekoebOgVarelagerUltimo(VarelagerPrimo varelagerPrimo, Varekoeb varekoeb, VarelagerUltimo varelagerUltimo) {
+
+        }
+
+        @Override
         public double hentBeloeb() {
             return beloeb;
         }
@@ -187,6 +202,11 @@ class OmsaetningImplTest {
         @Override
         public void afmeldObserver(Observer observer) {
 
+        }
+
+        @Override
+        public double hentVareforbrug() {
+            return 0;
         }
     }
 
