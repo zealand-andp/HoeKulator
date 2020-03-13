@@ -73,7 +73,7 @@ public class KKOImpl implements KKO, Observable{
     }
 
     @Override
-    public void tilføjkko(KKO nykko) {
+    public void tilfoejKKO(KKO nyKKO) throws NavnEksistererException, ForaelderEksistererIkkeException {
         tilfoejGaranteretUnikOgForaelderhavendeKKO(nyKKO);
     }
 
