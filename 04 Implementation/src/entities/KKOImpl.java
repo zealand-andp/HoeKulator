@@ -12,9 +12,9 @@ public class KKOImpl implements KKO, Observable{
     private String navn;
     private double beloeb;
     private String foraeldersNavn;
-    ArrayList<KKO> efterfoelgerer;
-    Aendringstype aendringstype;
-    double aendringssats;
+    private ArrayList<KKO> efterfoelgerer;
+    private Aendringstype aendringstype;
+    private double aendringssats;
 
     public KKOImpl() {
         observerManager = newObserverManager();
