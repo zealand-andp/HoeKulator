@@ -22,7 +22,14 @@ public class ResultatImpl implements Resultat {
 
     @Override
     public void beregnResultat() {
+        if (resultatFoerSkat == null) {
+            return;
+        }
+        if (skatteprocent == null) {
+            skatteprocent = new SkatteprocentImpl();
+        }
         beloeb = resultatFoerSkat.hentResultatFoerSkat() - (resultatFoerSkat.hentResultatFoerSkat() * skatteprocent.hentVaerdi() / 100);
+        observerManager.notificerObservere(this);
     }
 
     @Override

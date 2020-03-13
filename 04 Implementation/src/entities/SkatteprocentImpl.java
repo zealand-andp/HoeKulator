@@ -11,6 +11,7 @@ public class SkatteprocentImpl implements Skatteprocent {
     @Override
     public void angivSkatteprocent(double vaerdi) {
         this.vaerdi = vaerdi;
+        observerManager.notificerObservere(this);
     }
 
     @Override

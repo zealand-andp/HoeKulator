@@ -4,9 +4,11 @@ import entities.*;
 
 public class BeregnResultatImpl implements BeregnResultat {
     private Resultat resultat;
+    private Skatteprocent skatteprocent;
 
     public BeregnResultatImpl() {
         resultat = new ResultatImpl();
+        skatteprocent = new SkatteprocentImpl();
     }
 
 
@@ -17,9 +19,9 @@ public class BeregnResultatImpl implements BeregnResultat {
 
     @Override
     public void angivSkatteprocent(double beloeb) {
-        Skatteprocent skatteprocent = new SkatteprocentImpl();
         skatteprocent.angivSkatteprocent(beloeb);
         resultat.angivSkatteprocent(skatteprocent);
+        beregnResultat();
     }
 
     @Override
@@ -30,5 +32,10 @@ public class BeregnResultatImpl implements BeregnResultat {
     @Override
     public Resultat hentResultat() {
         return resultat;
+    }
+
+    @Override
+    public Skatteprocent hentSkatteprocent() {
+        return skatteprocent;
     }
 }
