@@ -9,14 +9,26 @@ import entities.exceptions.NegativBeloebException;
 public class BeregnmarkedefoeringsbidragImpl implements Beregnmarkedefoeringsbidrag {
     double beloeb;
     ObserverManager observerManager;
+    private entities.Bruttofortjeneste Bruttofortjeneste;
 
 
     @Override
     public double hentMarkedefoeringsbidrag(){
-        return beloeb;
+        double markedefoeringsbidrag ;
+        Bruttofortjeneste = new Bruttofortjeneste() {
+            @Override
+            public void angivBeloeb(double beloeb) throws NegativBeloebException {
+
+            }
+
+            @Override
+            public double hentBeloeb() {
+                return beloeb;
+            }
+        };
+        //return markedefoeringsbidrag;
     }
 
-    //@Override
     public void tilmeldObserver(Observer observer){
         observerManager.tilmeldObserver(observer);
     }
