@@ -4,6 +4,8 @@ import entities.Indkoebspris;
 import entities.Observable;
 import entities.Observer;
 import entities.Vareforbrug;
+import entities.exceptions.NegativAntalException;
+import entities.exceptions.NegativBeloebException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -75,6 +77,35 @@ public class BeregnVareforbrugController {
         node = loader.load();
         metodeControllerVareforbrug = loader.getController();
         metodePane.getChildren().setAll(node);
+    }
+
+    public void beregn() throws NegativAntalException, NegativBeloebException {
+        double indkoebsprisInput;
+        int afsaetningInput;
+        double bruttofortjenesteInput;
+        double omsaetningInput;
+        double varelagerPrimoInput;
+        double varekoebInput;
+        double varelagerUltimoInput;
+
+        switch (nuvaerendeMetode) {
+            case "Indkøbspris og afsætning":
+                indkoebsprisInput = Double.parseDouble(metodeControllerVareforbrug.getIndkoebsprisTf().getText());
+                afsaetningInput = Integer.parseInt(metodeControllerVareforbrug.getAfsaetningTf().getText());
+                beregnVareforbrug.angivIndkoebsprisOgAfsaetning(indkoebsprisInput, afsaetningInput);
+                break;
+            case "Bruttofortjeneste og omsætning":
+                bruttofortjenesteInput = Double.parseDouble(metodeControllerVareforbrug.getBruttofortjenesteTf().getText());
+                omsaetningInput = Double.parseDouble(metodeControllerVareforbrug.getOmsaetningTf().getText());
+                beregnVareforbrug.angivBruttofortjenesteOgOmsaetning(bruttofortjenesteInput, omsaetningInput);;
+                break;
+            case "Varelager primo, varekøb og varelager ultimo":
+                varelagerPrimoInput = Double.parseDouble(metodeControllerVareforbrug.getVarelagerPrimoTf().getText());
+                varekoebInput = Double.parseDouble(metodeControllerVareforbrug.getVarekoebTf().getText());
+                varelagerUltimoInput = Double.parseDouble(metodeControllerVareforbrug.getVarelagerUltimoTf().getText());
+                beregnVareforbrug.angivVarelagerPrimoOgVarekoebOgVarelagerUltimo(varelagerPrimoInput, varekoebInput, varelagerUltimoInput);
+                break;
+        }
     }
 
     public void setGrundUIController(GrundUIController grundUIController) {
