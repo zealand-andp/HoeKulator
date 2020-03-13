@@ -10,7 +10,7 @@ public class KKOImpl implements KKO, Observable{
     private ObserverManager observerManager;
 
     private String navn;
-    double beloeb;
+    private double beloeb;
     private String foraeldersNavn;
     ArrayList<KKO> efterfoelgerer;
     Aendringstype aendringstype;
