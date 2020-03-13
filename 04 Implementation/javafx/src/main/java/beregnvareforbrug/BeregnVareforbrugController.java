@@ -1,6 +1,9 @@
 package beregnvareforbrug;
 
 import entities.Indkoebspris;
+import entities.Observable;
+import entities.Observer;
+import entities.Vareforbrug;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -33,7 +36,7 @@ public class BeregnVareforbrugController {
     private TextField vareforbrugTf;
 
     public void initialize() {
-        metodeComboBox.getItems().addAll("Indkøbspris og Afsætning", "Bruttofortjeneste og Omsætning", "Varelager Primo, Varekøb og Varelager Ultimo");
+        metodeComboBox.getItems().addAll("Indkøbspris og afsætning", "Bruttofortjeneste og omsætning", "Varelager primo, varekøb og varelager ultimo");
         metodeComboBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
             @Override
@@ -56,15 +59,15 @@ public class BeregnVareforbrugController {
         Node node = null;
         switch (metode){
             case "Indkøbspris og afsætning":
-                loader = new FXMLLoader(getClass().getResource("Indkøbspris_og_afsaetning.fxml"));
+                loader = new FXMLLoader(getClass().getResource("Indkoebspris_og_afsaetning.fxml"));
                 nuvaerendeMetode = "Indkøbspris og afsætning";
                 break;
             case "Bruttofortjeneste og omsætning":
-                loader = new FXMLLoader(getClass().getResource("Bruttofortjeneste_og_omsætning.fxml"));
+                loader = new FXMLLoader(getClass().getResource("Bruttofortjeneste_og_omsaetning.fxml"));
                 nuvaerendeMetode = "Bruttofortjeneste og omsætning";
                 break;
             case "Varelager primo, varekøb og varelager ultimo":
-                loader = new FXMLLoader(getClass().getResource("Varelager_primo_og_varekøb_og_varelager_ultimo.fxml"));
+                loader = new FXMLLoader(getClass().getResource("Varelager_primo_og_varekoeb_og_varelager_ultimo.fxml"));
                 nuvaerendeMetode = "Varelager primo, varekøb og varelager ultimo";
                 break;
         }
@@ -76,5 +79,19 @@ public class BeregnVareforbrugController {
 
     public void setGrundUIController(GrundUIController grundUIController) {
         this.grundUIController = grundUIController;
+    }
+
+    public void setBeregnVareforbrug(BeregnVareforbrugImpl beregnVareforbrug){
+        this.beregnVareforbrug = beregnVareforbrug;
+        this.beregnVareforbrug.getVareforbrug().tilmeldObserver(new Observer() {
+            @Override
+            public void opdater(Observable observable) {
+                if (observable instanceof Vareforbrug){
+                    double changed = ((Vareforbrug) observable).hentVareforbrug();
+                    vareforbrugTf.setText(String.valueOf(changed));
+                    grundUIController.tilfoejVareforbrugTilResultatbudget();
+                }
+            }
+        });
     }
 }

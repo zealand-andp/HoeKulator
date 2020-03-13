@@ -23,6 +23,7 @@ public class BeregnVareforbrugImpl implements BeregnVareforbrug{
         varelagerPrimo = new VarelagerPrimoImpl();
         varekoeb = new VarekoebImpl();
         varelagerUltimo = new VarelagerUltimoImpl();
+        vareforbrug = new VareforbrugImpl();
     }
 
     @Override

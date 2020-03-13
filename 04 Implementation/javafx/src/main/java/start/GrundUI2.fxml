@@ -34,7 +34,7 @@
             </TitledPane>
             <TitledPane expanded="false" stylesheets="/TitlePane2.css">
               <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                  <Pane fx:id="vareforbrugPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                       <children>
                       </children>
                   </Pane>
@@ -44,7 +44,7 @@
                      <children>
                         <Label text="-Vareforbrug" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="0.00" />
+                        <Label fx:id="vareforbrugResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
