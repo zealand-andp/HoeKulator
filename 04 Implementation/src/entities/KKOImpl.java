@@ -72,14 +72,7 @@ public class KKOImpl implements KKO, Observable{
 
     @Override
     public void tilføjkko(KKO nykko) {
-        for (int i = 0; i < efterfoelgerer.size(); i++) {
-            if (efterfoelgerer.get(i).getNavn().equals(nykko.getForaeldersNavn())) {
-                efterfoelgerer.add(nykko);
-            }
-            else {
-                efterfoelgerer.get(i).tilføjkko(nykko);
-            }
-        }
+        tilfoejGaranteretUnikOgForaelderhavendeKKO(nyKKO);
     }
 
 
