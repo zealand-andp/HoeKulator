@@ -22,7 +22,7 @@ public class BeregnKKOImpl implements BeregnKKO, Observable {
         }
 
         if (!kko.foraelderEksisterer(foraeldersNavn)) {
-            throw new ForaeldereksistererikkeException();
+            throw new ForaelderEksistererIkkeException();
         }
 
         KKO nykko = new KKOImpl(navn, beloeb, foraeldersNavn);
