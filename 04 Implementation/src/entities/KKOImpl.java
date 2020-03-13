@@ -77,7 +77,17 @@ public class KKOImpl implements KKO, Observable{
         tilfoejGaranteretUnikOgForaelderhavendeKKO(nyKKO);
     }
 
-
+    private void tilfoejGaranteretUnikOgForaelderhavendeKKO(KKO nyKKO) {
+        if (nyKKO.hentForaeldersNavn().equals(this.navn)) {
+            efterfoelgerer.add(nyKKO);
+        }
+        else {
+            for (int i = 0; i < efterfoelgerer.size(); i++) {
+                efterfoelgerer.get(i).tilfoejGaranteretUnikOgForaelderhavendeKKO(nyKKO);
+            }
+        }
+    }
+    
     @Override
     public void tilmeldObserver(Observer observer) {
         observerManager.tilmeldObserver(observer);
