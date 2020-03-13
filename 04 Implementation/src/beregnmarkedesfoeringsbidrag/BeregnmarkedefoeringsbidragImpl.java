@@ -26,7 +26,7 @@ public class BeregnmarkedefoeringsbidragImpl implements Beregnmarkedefoeringsbid
                 return beloeb;
             }
         };
-        //return markedefoeringsbidrag;
+        return beloeb;
     }
 
     public void tilmeldObserver(Observer observer){
