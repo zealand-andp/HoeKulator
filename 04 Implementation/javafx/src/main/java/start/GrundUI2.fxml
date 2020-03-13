@@ -27,7 +27,7 @@
                      <children>
                         <Label text="Omsætning" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="omsaetningResultatLabel" text="00.00" />
+                        <Label fx:id="omsaetningResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -44,7 +44,7 @@
                      <children>
                         <Label text="-Vareforbrug" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -61,7 +61,7 @@
                      <children>
                         <Label text="Bruttofortjeneste" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="bruttofortjenesteResultatLabel" text="00.00" />
+                        <Label fx:id="bruttofortjenesteResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -78,7 +78,7 @@
                      <children>
                         <Label text="-Salgsfremmende omkostninger" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -95,7 +95,7 @@
                      <children>
                         <Label text="Markedsføringsbidrag" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -112,7 +112,7 @@
                      <children>
                         <Label text="-Kontante kapacitetsomkostninger" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="00.00" />
+                        <Label text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -129,7 +129,7 @@
                      <children>
                         <Label text="Indtjeningsbidrag" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="indtjeningsbidragResultatLabel" text="00.00" />
+                        <Label fx:id="indtjeningsbidragResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -155,7 +155,7 @@
                      <children>
                         <Label text="Afskrivninger" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="afskrivningResultatLabel" text="00.00" />
+                        <Label fx:id="afskrivningResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -175,7 +175,7 @@
                               <Insets left="15.0" />
                            </HBox.margin></Label>
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="resultatFoerRenterResultatLabel" text="00.00" />
+                        <Label fx:id="resultatFoerRenterResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -192,7 +192,7 @@
                      <children>
                         <Label text="Renteindtægter" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="renteindtaegterResultatLabel" text="00.00" />
+                        <Label fx:id="renteindtaegterResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -209,7 +209,7 @@
                      <children>
                         <Label text="Renteomkostninger" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="renteomkostningerResultatLabel" text="00.00" />
+                        <Label fx:id="renteomkostningerResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
@@ -229,11 +229,48 @@
                               <Insets left="15.0" />
                            </HBox.margin></Label>
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label fx:id="resultatFoerSkatResultatLabel" text="00.00" />
+                        <Label fx:id="resultatFoerSkatResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
             </TitledPane>
+             <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+                 <content>
+                     <Pane fx:id="skatteprocentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                         <children>
+                         </children>
+                     </Pane>
+                 </content>
+                 <graphic>
+                     <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1303.0">
+                         <children>
+                             <Label text="Skatteprocent" />
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="skatteprocentResultatLabel" text="0.0%" />
+                         </children>
+                     </HBox>
+                 </graphic>
+             </TitledPane>
+             <TitledPane animated="false" collapsible="false" expanded="false" stylesheets="/TitlePane2.css">
+                 <content>
+                     <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                         <children>
+                         </children>
+                     </Pane>
+                 </content>
+                 <graphic>
+                     <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1315.0">
+                         <children>
+                             <Label text="Resultat">
+                                 <HBox.margin>
+                                     <Insets left="15.0" />
+                                 </HBox.margin></Label>
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="resultatResultatLabel" text="0.00" />
+                         </children>
+                     </HBox>
+                 </graphic>
+             </TitledPane>
          </children>
       </VBox>
    </content>
