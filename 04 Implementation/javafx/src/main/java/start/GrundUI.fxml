@@ -8,8 +8,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
-
-<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ScrollPane?>
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+<ExpansionPanelContainer maxHeight="-Infinity" maxWidth="-Infinity" minHeight="670.0" minWidth="1338.0">
     <items>
         <ExpansionPanel>
             <collapsedContent>
@@ -17,7 +20,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Omsætning" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label fx:id="omsaetningResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="omsaetningResultatLabel" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -40,7 +43,6 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="58" mnemonicParsing="false" onAction="#tilfoejTilResultatBudget" text="+" />
                      </children>
                   </Pane>
                </content>
@@ -76,7 +78,15 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                     </Button>
                      </children>
                   </Pane>
                </content>
@@ -89,7 +99,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Bruttofortjeneste" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="bruttofortjenesteResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -100,19 +110,18 @@
          <expandedContent>
             <ExpansionPanel.ExpandedPanel>
                <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                  <Pane fx:id="bruttofortjenestePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                      <children>
                         <Label prefWidth="250.0" text="Bruttofortjeneste">
                            <padding>
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="bruttofortjenesteResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
                      </children>
                   </Pane>
                </content>
@@ -148,7 +157,15 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </content>
@@ -184,7 +201,15 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </content>
@@ -220,7 +245,15 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </content>
@@ -233,7 +266,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Indtjeningsbidrag" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="indtjeningsbidragResultatLabel" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -251,12 +284,20 @@
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="indtjeningsbidragResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </content>
@@ -269,7 +310,7 @@
                     <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="-Afskrivninger" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="afskrivningResultatLabel" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -287,13 +328,21 @@
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#tilfoejNyAfskrivning" prefHeight="28.0" prefWidth="120.0" text="Tilføj ny afskrivning" />
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#tilfoejNyAfskrivning">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/plus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="afskrivningResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+" />
+                        <!--<Button layoutX="1150.0" layoutY="18.0" mnemonicParsing="false" text="+"/>-->
                      </children>
                   </Pane>
                </content>
@@ -306,7 +355,7 @@
                <titleNodes>
                   <Label maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Resultat før renter" />
                   <Label alignment="CENTER_RIGHT" text="=" />
-                  <Label alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
+                  <Label fx:id="resultatFoerRenterResultatLabel1" alignment="CENTER_RIGHT" prefWidth="400.0" snapToPixel="false" text="0,00">
                      <padding>
                         <Insets right="42.0" />
                      </padding>
@@ -324,12 +373,20 @@
                               <Insets left="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
+                        <Label fx:id="resultatFoerRenterResultatLabel2" alignment="CENTER_RIGHT" layoutX="900.0" prefWidth="400.0" snapToPixel="false" text="0,00">
                            <padding>
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" >
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </content>
@@ -365,7 +422,15 @@
                               <Insets right="34.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false" text="+" />
+                        <Button layoutX="1220.0" layoutY="40.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="/checkmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </Pane>
                </content>
@@ -396,3 +461,4 @@
       </ExpansionPanel>
     </items>
 </ExpansionPanelContainer>
+</ScrollPane>

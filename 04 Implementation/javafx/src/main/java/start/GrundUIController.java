@@ -1,7 +1,22 @@
 package start;
 
 import beregnafskrivning.BeregnAfskrivningController;
+import beregnafskrivning.BeregnAfskrivningImpl;
+import beregnbruttofortjeneste.BeregnBruttofortjenesteImpl;
 import beregnomsaetning.BeregnOmsaetningController;
+import beregnomsaetning.BeregnOmsaetningImpl;
+import beregnresultat.BeregnResultat;
+import beregnresultat.BeregnResultatImpl;
+import beregnresultat.BeregnSkatteprocentController;
+import beregnresultatfoerrenter.BeregnResultatFoerRenterImpl;
+import beregnresultatfoerskat.BeregnRenteindtaegterController;
+import beregnresultatfoerskat.BeregnRenteomkostningerController;
+import beregnresultatfoerskat.BeregnResultatFoerSkat;
+import beregnresultatfoerskat.BeregnResultatFoerSkatImpl;
+import beregnbruttofortjeneste.BeregnBruttofortjenesteController;
+import entities.Afskrivning;
+import entities.Indtjeningsbidrag;
+import entities.IndtjeningsbidragImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,32 +25,81 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class GrundUIController {
-    private BeregnOmsaetningController beregnOmsaetningController;
-//    private BeregnAfskrivningController beregnAfskrivningController;
-    double afskrivningsPaneLayoutY = 38;
-    ArrayList<Node> afskrivninger;
-    ArrayList<BeregnAfskrivningController> beregnAfskrivningControllers;
+    private double afskrivningsPaneLayoutY = 38;
+    private ArrayList<Node> afskrivninger;
+    private BeregnOmsaetningImpl beregnOmsaetning;
+    private BeregnBruttofortjenesteImpl beregnBruttofortjeneste;
+    private BeregnAfskrivningImpl beregnAfskrivning;
+    private BeregnResultatFoerRenterImpl beregnResultatFoerRenter;
+    private BeregnResultatFoerSkat beregnResultatFoerSkat;
+    private BeregnResultat beregnResultat;
+
 
     @FXML
-    Label omsaetningResultatLabel1, omsaetningResultatLabel2;
+    private Label omsaetningResultatLabel;
 
     @FXML
-    private Pane omsaetningPane, afskrivningPane;
+    private Label afskrivningResultatLabel;
+  
+    @FXML
+    private Label bruttofortjenesteResultatLabel;
+
+    @FXML
+    private Label indtjeningsbidragResultatLabel;
+
+    @FXML
+    private Label resultatFoerSkatResultatLabel;
+
+    @FXML
+    private Label resultatFoerRenterResultatLabel;
+
+    @FXML
+    private Label renteindtaegterResultatLabel, renteomkostningerResultatLabel;
+
+    @FXML
+    private Label skatteprocentResultatLabel, resultatResultatLabel;
+
+    @FXML
+    private Pane omsaetningPane, afskrivningPane, renteindtaegterPane, renteomkostningerPane, bruttofortjenestePane, skatteprocentPane;
+
+    public GrundUIController() {
+    }
 
     public void initialize() throws IOException {
         afskrivninger = new ArrayList<>();
-        beregnAfskrivningControllers = new ArrayList<>();
+        beregnAfskrivning = new BeregnAfskrivningImpl();
+        beregnResultatFoerRenter = new BeregnResultatFoerRenterImpl();
+        beregnResultatFoerSkat = new BeregnResultatFoerSkatImpl();
+        beregnOmsaetning = new BeregnOmsaetningImpl();
+        beregnBruttofortjeneste = new BeregnBruttofortjenesteImpl();
+        beregnResultat = new BeregnResultatImpl();
         loadOmsaetning();
         loadAfskrivning();
+        loadRenteintaegter();
+        loadRenteomkostninger();
+        loadBruttofortjeneste();
+        loadSkatteprocent();
     }
 
     public void loadOmsaetning() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnomsaetning/Beregn_omsaetning.fxml"));
         Node node = fxmlLoader.load();
-        beregnOmsaetningController = fxmlLoader.getController();
+        BeregnOmsaetningController beregnOmsaetningController = fxmlLoader.getController();
+        beregnOmsaetningController.setGrundUIController(this);
+        beregnOmsaetningController.setBeregnOmsaetning(beregnOmsaetning);
         omsaetningPane.getChildren().add(node);
+    }
+
+    public void loadBruttofortjeneste() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnbruttofortjeneste/Beregn_bruttofortjeneste.fxml"));
+        Node node = fxmlLoader.load();
+        BeregnBruttofortjenesteController beregnBruttofortjenesteController = fxmlLoader.getController();
+        beregnBruttofortjenesteController.setGrundUIController(this);
+        beregnBruttofortjenesteController.setBeregnBruttofortjeneste(beregnBruttofortjeneste);
+        bruttofortjenestePane.getChildren().add(node);
     }
 
     public void loadAfskrivning() throws IOException{
@@ -44,16 +108,47 @@ public class GrundUIController {
         BeregnAfskrivningController beregnAfskrivningController;
         beregnAfskrivningController = fxmlLoader.getController();
         beregnAfskrivningController.setGrundUIController(this);
-        beregnAfskrivningControllers.add(beregnAfskrivningController);
+        beregnAfskrivningController.setBeregnAfskrivning(beregnAfskrivning);
         afskrivningPane.getChildren().add(node);
         afskrivninger.add(node);
         beregnAfskrivningController.setNode(node);
     }
 
+    public void loadRenteintaegter() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultatfoerskat/Beregn_renteindtaegter.fxml"));
+        Node node = fxmlLoader.load();
+        BeregnRenteindtaegterController beregnRenteindtaegterController = fxmlLoader.getController();
+        beregnRenteindtaegterController.setGrundUIController(this);
+        beregnRenteindtaegterController.setBeregnResultatFoerSkat(beregnResultatFoerSkat);
+        renteindtaegterPane.getChildren().add(node);
+    }
+
+    public void loadRenteomkostninger() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultatfoerskat/Beregn_renteomkostninger.fxml"));
+        Node node = fxmlLoader.load();
+        BeregnRenteomkostningerController beregnRenteomkostningerController = fxmlLoader.getController();
+        beregnRenteomkostningerController.setGrundUIController(this);
+        beregnRenteomkostningerController.setBeregnResultatFoerSkat(beregnResultatFoerSkat);
+        renteomkostningerPane.getChildren().add(node);
+    }
+
+    public void loadSkatteprocent() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../beregnresultat/Beregn_skatteprocent.fxml"));
+        Node node = fxmlLoader.load();
+        BeregnSkatteprocentController beregnSkatteprocentController = fxmlLoader.getController();
+        beregnSkatteprocentController.setGrundUIController(this);
+        beregnSkatteprocentController.setBeregnResultat(beregnResultat);
+        skatteprocentPane.getChildren().add(node);
+    }
+
     @FXML
-    public void tilfoejTilResultatBudget(){
-        omsaetningResultatLabel1.setText(String.valueOf(beregnOmsaetningController.getOmsaetning().hentOmsaetning()));
-        omsaetningResultatLabel2.setText(omsaetningResultatLabel1.getText());
+    public void tilfoejOmsaetningTilResultatBudget(){
+        omsaetningResultatLabel.setText(String.valueOf(beregnOmsaetning.getOmsaetning().hentOmsaetning()));
+    }
+
+    @FXML
+    public void tilfoejBruttofortjenesteTilResultatBudget(){
+        bruttofortjenesteResultatLabel.setText(String.valueOf(beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste()));
     }
 
     @FXML
@@ -65,7 +160,7 @@ public class GrundUIController {
         BeregnAfskrivningController beregnAfskrivningController;
         beregnAfskrivningController = fxmlLoader.getController();
         beregnAfskrivningController.setGrundUIController(this);
-        beregnAfskrivningControllers.add(beregnAfskrivningController);
+        beregnAfskrivningController.setBeregnAfskrivning(beregnAfskrivning);
         node.setLayoutY(afskrivningsPaneLayoutY);
         afskrivningPane.setPrefHeight(afskrivningPane.getPrefHeight() + 68);
         afskrivningPane.getChildren().add(node);
@@ -74,9 +169,15 @@ public class GrundUIController {
     }
 
     @FXML
-    public void fjernAfkrivning(Node node) throws IOException{
+    public void fjernAfkrivning(Node node, String string) throws IOException{
         if (afskrivninger.size() <= 0){
             return;
+        }
+        if (!string.isEmpty()) {
+            if (beregnAfskrivning.hentAfskrivninger().containsKey(string)) {
+                beregnAfskrivning.hentAfskrivninger().remove(string);
+                opdaterAfskrivninger();
+            }
         }
         afskrivningPane.getChildren().remove(node);
         afskrivninger.remove(node);
@@ -89,5 +190,63 @@ public class GrundUIController {
         for (int i = 0; i < afskrivninger.size(); i++) {
             afskrivninger.get(i).setLayoutY(i * 68 + 38);
         }
+    }
+
+    @FXML
+    public void opdaterAfskrivninger() {
+        double sum = 0;
+        for (Map.Entry<String, Afskrivning> entry : beregnAfskrivning.hentAfskrivninger().entrySet()) {
+            sum += entry.getValue().hentAfskrivningsvaerdi();
+        }
+        String formatted = String.format("%.2f", sum);
+        afskrivningResultatLabel.setText(formatted);
+        opdaterResultatFoerRenter();
+    }
+
+    public void opdaterResultatFoerRenter() {
+        Indtjeningsbidrag indtjeningsbidrag = new IndtjeningsbidragImpl();
+        indtjeningsbidrag.angivBeloeb(0);
+        beregnResultatFoerRenter.angivAfskrivningerOgIndtjeningsbidrag(beregnAfskrivning.hentAfskrivninger(), indtjeningsbidrag);
+        double tal = beregnResultatFoerRenter.hentResultat().hentResultatFoerRenter();
+        String formatted = String.format("%.2f", tal);
+        resultatFoerRenterResultatLabel.setText(formatted);
+        beregnResultatFoerSkat.angivResultatFoerRenter(beregnResultatFoerRenter.hentResultat());
+        opdaterResultatFoerSkat();
+    }
+
+    public void opdaterRenteindtaegter() {
+        double tal = beregnResultatFoerSkat.hentRenteindtaegter().hentRenteindtaegter();
+        String formatted = String.format("%.2f", tal);
+        renteindtaegterResultatLabel.setText(formatted);
+    }
+
+    public void opdaterRenteomkostninger() {
+        double tal = beregnResultatFoerSkat.hentRenteomkostninger().hentRenteomkostninger();
+        String formatted = String.format("%.2f", tal);
+        renteomkostningerResultatLabel.setText(formatted);
+    }
+
+
+    public void opdaterResultatFoerSkat() {
+        beregnResultatFoerSkat.beregnResultat();
+        double tal = beregnResultatFoerSkat.HentResultat().hentResultatFoerSkat();
+        String formatted = String.format("%.2f", tal);
+        resultatFoerSkatResultatLabel.setText(formatted);
+        beregnResultat.angivResultatFoerSkat(beregnResultatFoerSkat.HentResultat());
+        opdaterResultat();
+    }
+
+    public void opdaterSkatteprocent() {
+        double tal = beregnResultat.hentSkatteprocent().hentVaerdi();
+        String formatted = String.format("%.1f", tal);
+        skatteprocentResultatLabel.setText(formatted + "%");
+        opdaterResultat();
+    }
+
+    public void opdaterResultat() {
+        beregnResultat.beregnResultat();
+        double tal = beregnResultat.hentResultat().hentBeloeb();
+        String formatted = String.format("%.2f", tal);
+        resultatResultatLabel.setText(formatted);
     }
 }

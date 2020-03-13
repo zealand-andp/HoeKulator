@@ -1,5 +1,7 @@
 package entities;
 
+import entities.exceptions.NegativBeloebException;
+
 public class OmsaetningImpl implements Omsaetning, Observable {
     private ObserverManager observerManager;
     private Bruttofortjeneste bruttofortjeneste;
@@ -12,6 +14,15 @@ public class OmsaetningImpl implements Omsaetning, Observable {
 
     public OmsaetningImpl() {
         observerManager = newObserverManager();
+    }
+
+    @Override
+    public void angivBeloeb(double beloeb) throws NegativBeloebException {
+        if (beloeb < 0) {
+            throw new NegativBeloebException("Beløb er negativt.");
+        }
+        this.beloeb = beloeb;
+        observerManager.notificerObservere(this);
     }
 
     @Override
@@ -51,15 +62,17 @@ public class OmsaetningImpl implements Omsaetning, Observable {
         observerManager.notificerObservere(this);
     }
 
-
-    // Vi tænker at den skal sendes vidre til Beregnomseatning 
+    @Override
+    public double hentBeloeb() {
+        return beloeb;
+    }
 
     public double hentOmsaetning() {
         if (primoAarsomsaetning != null && procentstigning != null) {
            beloeb = primoAarsomsaetning.hentBeloeb()*(1.0 + procentstigning.hentDecimaltal() / 100.0);
         }
         else if (vareforbrug != null && bruttofortjeneste != null){
-            beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentbeloeb();
+            beloeb = vareforbrug.hentBeloeb() + bruttofortjeneste.hentBeloeb();
         }
 
         else if (salgspris != null && afsaetning != null) {
