@@ -49,7 +49,9 @@ public class KKOImpl implements KKO, Observable{
         }
         else {
             for (int i = 0; i < efterfoelgerer.size(); i++) {
-                efterfoelgerer.get(i).navnEksisterer(navn);
+                if (efterfoelgerer.get(i).navnEksisterer(navn)) {
+                    return true;
+                }
             }
         }
         return false;
