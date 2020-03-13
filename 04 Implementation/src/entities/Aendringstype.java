@@ -1,7 +1,8 @@
 package entities;
 
 public enum Aendringstype {
+    INGEN,
     PROCENTAENDRING,
-    BELOEBMAESSIGT_AENDRING
+    BELOEBMAESSIG_AENDRING
 
 }
