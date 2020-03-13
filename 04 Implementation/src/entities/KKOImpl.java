@@ -103,7 +103,7 @@ public class KKOImpl implements KKO, Observable{
         return new ObserverManagerImpl();
     }
 
-    public String getNavn() {
+    public String hentNavn() {
         return navn;
     }
 
