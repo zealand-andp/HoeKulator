@@ -6,15 +6,16 @@ import java.util.LinkedHashMap;
 
 public class BeregnResultatFoerRenterImpl implements BeregnResultatFoerRenter {
     private double resultat;
+    private ResultatFoerRenter resultatFoerRenter;
 
     @Override
     public void angivAfskrivningerOgIndtjeningsbidrag(LinkedHashMap<String, Afskrivning> afskrivninger, Indtjeningsbidrag indtjeningsbidrag) {
-        ResultatFoerRenter resultatFoerRenter = new ResultatFoerRenterImpl(afskrivninger, indtjeningsbidrag);
+        resultatFoerRenter = new ResultatFoerRenterImpl(afskrivninger, indtjeningsbidrag);
         resultat = resultatFoerRenter.hentResultatFoerRenter();
     }
 
     @Override
-    public double hentResultat() {
-        return resultat;
+    public ResultatFoerRenter hentResultat() {
+        return resultatFoerRenter;
     }
 }

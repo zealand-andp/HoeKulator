@@ -15,14 +15,22 @@ public class ResultatFoerRenterImpl implements ResultatFoerRenter, Observable {
         observerManager = newObserverManager();
     }
 
+    public ResultatFoerRenterImpl() {
+        resultat = 0;
+    }
+
     @Override
     public double hentResultatFoerRenter() {
         double afskrivingsbeloeb = 0;
-        for (Map.Entry<String, Afskrivning> entry : afskrivninger.entrySet()) {
-            afskrivingsbeloeb += entry.getValue().hentAfskrivningsvaerdi();
+        if (afskrivninger != null) {
+            for (Map.Entry<String, Afskrivning> entry : afskrivninger.entrySet()) {
+                afskrivingsbeloeb += entry.getValue().hentAfskrivningsvaerdi();
+            }
         }
-        double indtjeningsbidragBeloeb = indtjeningsbidrag.hentBeloeb();
-        resultat = indtjeningsbidragBeloeb - afskrivingsbeloeb;
+        if (indtjeningsbidrag != null) {
+            double indtjeningsbidragBeloeb = indtjeningsbidrag.hentBeloeb();
+            resultat = indtjeningsbidragBeloeb - afskrivingsbeloeb;
+        }
         return resultat;
     }
 

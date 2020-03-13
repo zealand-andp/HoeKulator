@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane minHeight="670.0" minWidth="1350.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="start.GrundUIController">
+   <content>
+      <VBox maxHeight="-Infinity" minWidth="1370">
+         <children>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane fx:id="omsaetningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Omsætning" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="omsaetningResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="-Vareforbrug" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane fx:id="bruttofortjenestePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Bruttofortjeneste" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="bruttofortjenesteResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="-Salgsfremmende omkostninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Markedsføringsbidrag" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="-Kontante kapacitetsomkostninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Indtjeningsbidrag" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="indtjeningsbidragResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane fx:id="afskrivningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                          <Button fx:id="nyAfskrivning" layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#tilfoejNyAfskrivning">
+                              <graphic>
+                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="/plus.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Afskrivninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="afskrivningResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1315.0">
+                     <children>
+                        <Label text="Resultat før renter">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="resultatFoerRenterResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane fx:id="renteindtaegterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Renteindtægter" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="renteindtaegterResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+              <content>
+                  <Pane fx:id="renteomkostningerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1300.0">
+                     <children>
+                        <Label text="Renteomkostninger" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="renteomkostningerResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" expanded="false" stylesheets="/TitlePane2.css">
+              <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                      <children>
+                      </children>
+                  </Pane>
+              </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1315.0">
+                     <children>
+                        <Label text="Resultat før skat">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="resultatFoerSkatResultatLabel" text="0.00" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </TitledPane>
+             <TitledPane expanded="false" stylesheets="/TitlePane1.css">
+                 <content>
+                     <Pane fx:id="skatteprocentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
+                         <children>
+                         </children>
+                     </Pane>
+                 </content>
+                 <graphic>
+                     <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1303.0">
+                         <children>
+                             <Label text="Skatteprocent" />
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="skatteprocentResultatLabel" text="0.0%" />
+                         </children>
+                     </HBox>
+                 </graphic>
+             </TitledPane>
+             <TitledPane animated="false" collapsible="false" expanded="false" stylesheets="/TitlePane2.css">
+                 <content>
+                     <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                         <children>
+                         </children>
+                     </Pane>
+                 </content>
+                 <graphic>
+                     <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="1315.0">
+                         <children>
+                             <Label text="Resultat">
+                                 <HBox.margin>
+                                     <Insets left="15.0" />
+                                 </HBox.margin></Label>
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="resultatResultatLabel" text="0.00" />
+                         </children>
+                     </HBox>
+                 </graphic>
+             </TitledPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
