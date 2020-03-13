@@ -107,7 +107,7 @@ public class KKOImpl implements KKO, Observable{
         return navn;
     }
 
-    public String getForaeldersNavn() {
+    public String hentForaeldersNavn() {
         return foraeldersNavn;
     }
 }
