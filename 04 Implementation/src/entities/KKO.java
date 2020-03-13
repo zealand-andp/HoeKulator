@@ -1,6 +1,6 @@
 package entities;
 
-import entities.exceptions.ForaeldereksistererikkeException;
+import entities.exceptions.ForaelderEksistererIkkeException;
 import entities.exceptions.NavnEksistererException;
 import entities.exceptions.NegativBeloebException;
 

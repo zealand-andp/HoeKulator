@@ -1,7 +1,7 @@
 package beregnKKO;
 
 import entities.Aendringstype;
-import entities.exceptions.ForaeldereksistererikkeException;
+import entities.exceptions.ForaelderEksistererIkkeException;
 import entities.exceptions.NavnEksistererException;
 import entities.exceptions.NegativBeloebException;
 
