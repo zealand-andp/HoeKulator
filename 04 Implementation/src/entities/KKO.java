@@ -10,6 +10,6 @@ public interface KKO {
     void tilføjkko(KKO nykko);
     void tilmeldObserver(Observer observer);
     void afmeldObserver(Observer observer);
-    String getNavn();
-    String getForaeldersNavn();
+    String hentNavn();
+    String hentForaeldersNavn();
 }
