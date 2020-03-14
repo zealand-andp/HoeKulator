@@ -19,15 +19,10 @@ public class BeregnSkatteprocentController {
 
     public void setBeregnResultat(BeregnResultat beregnResultat) {
         this.beregnResultat = beregnResultat;
-        this.beregnResultat.hentSkatteprocent().tilmeldObserver(new Observer() {
-            @Override
-            public void opdater(Observable observable) {
-                grundUIController.opdaterSkatteprocent();
-            }
-        });
     }
 
     public void angiv() {
         beregnResultat.angivSkatteprocent(Double.parseDouble(skatteprocentTf.getText()));
+        grundUIController.opdaterSkatteprocent();
     }
 }

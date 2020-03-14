@@ -85,7 +85,7 @@
             </TitledPane>
             <TitledPane expanded="false" stylesheets="/TitlePane1.css">
               <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                  <Pane fx:id="markedsfoeringsbidragPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1288.0">
                       <children>
                       </children>
                   </Pane>
@@ -95,14 +95,14 @@
                      <children>
                         <Label text="Markedsføringsbidrag" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="0.00" />
+                        <Label fx:id="markedsfoeringsbidragResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>
             </TitledPane>
             <TitledPane expanded="false" stylesheets="/TitlePane2.css">
               <content>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
+                  <Pane fx:id="kkoPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1288.0">
                       <children>
                       </children>
                   </Pane>
@@ -112,7 +112,7 @@
                      <children>
                         <Label text="-Kontante kapacitetsomkostninger" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <Label text="0.00" />
+                        <Label fx:id="kkoResultatLabel" text="0.00" />
                      </children>
                   </HBox>
                </graphic>

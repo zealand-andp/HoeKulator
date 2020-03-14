@@ -1,4 +1,4 @@
-package beregnmarkedesfoeringsbidrag;
+package beregnmarkedsfoeringsbidrag;
 
 import beregnsso.BeregnSSO;
 import entities.Bruttofortjeneste;

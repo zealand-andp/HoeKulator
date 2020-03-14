@@ -1,11 +1,8 @@
 package beregnindtjeningsbidrag;
 
-import beregnbruttofortjeneste.BeregnBruttofortjenesteImpl;
-import entities.Bruttofortjeneste;
 import entities.Indtjeningsbidrag;
 import entities.Observable;
 import entities.Observer;
-import entities.exceptions.NegativBeloebException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import start.GrundUIController;
@@ -25,7 +22,9 @@ public class BeregnIndtjeningsbidragController {
         double mfbTfInput = Double.parseDouble(mfbTf.getText());
         double kkoTfInput = Double.parseDouble(kkoTf.getText());
         beregnIndtjeningsbidrag.angivMarkedsfoeringsbidragOgKKO(mfbTfInput, kkoTfInput);
-        grundUIController.tilfoejBruttofortjenesteTilResultatBudget();
+        grundUIController.opdaterIndtjeningsbidrag();
+        grundUIController.opdaterKKO();
+        grundUIController.opdaterMarkedsfoeringsbidrag();
     }
 
     public void setBeregnIndtjeningsbidrag(BeregnIndtjeningsbidrag beregnIndtjeningsbidrag) {

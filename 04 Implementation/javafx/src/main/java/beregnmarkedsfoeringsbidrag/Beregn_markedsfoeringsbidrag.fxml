@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<Pane layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="beregnmarkedsfoeringsbidrag.BeregnMarkedsfoeringsbidragController">
+   <children>
+      <TextField fx:id="bruttofortjenesteTf" layoutX="14.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="ssoTf" layoutX="188.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <TextField fx:id="markedsfoeringsbidragTf" layoutX="986.0" layoutY="26.0" prefHeight="28.0" prefWidth="160.0" />
+      <Label layoutX="14.0" layoutY="7.0" text="Angiv Bruttofortjeneste:" />
+      <Label layoutX="188.0" layoutY="7.0" text="Angiv Salgsfremmende omkostninger:" />
+      <Label layoutX="986.0" layoutY="7.0" text="Markedsføringsbidrag:" />
+      <Button fx:id="beregnButton" layoutX="938.0" layoutY="26.0" mnemonicParsing="false" onAction="#beregn">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/checkmark.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</Pane>
