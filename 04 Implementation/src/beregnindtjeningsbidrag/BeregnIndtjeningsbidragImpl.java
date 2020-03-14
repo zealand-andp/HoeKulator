@@ -1,18 +1,18 @@
 package beregnindtjeningsbidrag;
 
 import beregnKKO.BeregnKKO;
-import entities.Indtjeningsbidrag;
-import entities.IndtjeningsbidragImpl;
-import entities.KKO;
-import entities.Markedsfoeringsbidrag;
+import beregnKKO.BeregnKKOImpl;
+import entities.*;
 
 public class BeregnIndtjeningsbidragImpl implements BeregnIndtjeningsbidrag {
     BeregnKKO kko;
     Markedsfoeringsbidrag markedsfoeringsbidrag;
     Indtjeningsbidrag indtjeningsbidrag;
 
-    BeregnIndtjeningsbidragImpl() {
+    public BeregnIndtjeningsbidragImpl() {
         indtjeningsbidrag = new IndtjeningsbidragImpl();
+        markedsfoeringsbidrag = new MarkedsfoeringsbidragImpl();
+        kko = new BeregnKKOImpl();
     }
 
     @Override
@@ -31,6 +31,13 @@ public class BeregnIndtjeningsbidragImpl implements BeregnIndtjeningsbidrag {
     @Override
     public void angivMarkedsfoeringsBidrag(Markedsfoeringsbidrag markedsfoeringsbidrag) {
         this.markedsfoeringsbidrag = markedsfoeringsbidrag;
+    }
+
+    @Override
+    public void angivMarkedsfoeringsbidragOgKKO(double markedsfoeringsbidrag, double kko) {
+        this.markedsfoeringsbidrag.angivBeloeb(markedsfoeringsbidrag);
+        this.kko.angivSum(kko);
+        beregnIndtjeningsbidrag();
     }
 
     @Override

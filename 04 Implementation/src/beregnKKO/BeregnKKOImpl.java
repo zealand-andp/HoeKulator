@@ -69,6 +69,11 @@ public class BeregnKKOImpl implements BeregnKKO, Observable {
     }
 
     @Override
+    public void angivSum(double sum) {
+        this.sum = sum;
+    }
+
+    @Override
     public void tilmeldObserver(Observer observer) {
         observerManager.tilmeldObserver(observer);
     }

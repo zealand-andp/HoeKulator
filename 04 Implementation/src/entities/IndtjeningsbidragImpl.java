@@ -1,6 +1,6 @@
 package entities;
 
-public class IndtjeningsbidragImpl implements Indtjeningsbidrag, Observable{
+public class IndtjeningsbidragImpl implements Indtjeningsbidrag {
     private double beloeb;
     private ObserverManager observerManager;
 
