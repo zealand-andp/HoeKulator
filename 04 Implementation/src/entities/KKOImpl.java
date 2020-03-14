@@ -18,6 +18,7 @@ public class KKOImpl implements KKO, Observable{
     private double aendringssats;
 
     public KKOImpl() {
+        navn = "Kontante kapacitetsomkostninger";
         observerManager = newObserverManager();
     }
 
@@ -83,6 +84,11 @@ public class KKOImpl implements KKO, Observable{
 
     private void tilfoejGaranteretUnikOgForaelderhavendeKKO(KKO nyKKO) throws NavnEksistererException, ForaelderEksistererIkkeException {
         if (nyKKO.hentForaeldersNavn().equals(this.navn)) {
+            for (int i = 0; i < efterfoelgere.size(); i++) {
+                if (efterfoelgere.get(i).navnEksisterer(nyKKO.hentNavn())) {
+                    throw new NavnEksistererException();
+                }
+            }
             efterfoelgere.add(nyKKO);
         }
         else {
