@@ -63,9 +63,7 @@ public class BeregnKKOImpl implements BeregnKKO, Observable {
         KKO nykko = new KKOImpl(navn, foraeldersNavn);
         kko.tilfoejKKO(nykko);
         observerManager.notificerObservere(this);
-
     }
-
 
     @Override
     public void tilmeldObserver(Observer observer) {

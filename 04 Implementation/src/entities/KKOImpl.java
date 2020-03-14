@@ -132,8 +132,15 @@ public class KKOImpl implements KKO, Observable{
         for (int i = 0; i < efterfoelgere.size(); i++) {
             if (efterfoelgere.get(i).hentNavn().equals(navn)) {
                 return efterfoelgere.get(i);
+            } else if (efterfoelgere.get(i).hentEfterfoelgere().size() > 0) {
+                efterfoelgere.get(i).hentKKO(navn);
             }
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<KKO> hentEfterfoelgere() {
+        return efterfoelgere;
     }
 }

@@ -1,16 +1,18 @@
 package beregnindtjeningsbidrag;
 
-public class BeregnIndtjeningsbidragImpl implements BeregnIndtjeningsbidrag {
+import entities.Indtjeningsbidrag;
+import entities.KKO;
+import entities.Markedsfoeringsbidrag;
 
-    HentKKO kkoRequest;
-    HentMarkedsfoeringsbidrag mfbRequest;
-    double indtjeningsbidrag;
+public class BeregnIndtjeningsbidragImpl implements BeregnIndtjeningsbidrag {
+    KKO kko;
+    Markedsfoeringsbidrag markedsfoeringsbidrag;
+    Indtjeningsbidrag indtjeningsbidrag;
 
     @Override
     public void beregnIndtjeningsbidrag(){
-       double kko = kkoRequest.hentKKO();
-       double mfb = mfbRequest.hentMarkedsfoeringsbidrag();
-       this.indtjeningsbidrag = mfb - kko;
+       if (markedsfoeringsbidrag == null || kko == null) {
+       }
     }
 
 }

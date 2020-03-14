@@ -3,6 +3,8 @@ package entities;
 import entities.exceptions.ForaelderEksistererIkkeException;
 import entities.exceptions.NavnEksistererException;
 
+import java.util.ArrayList;
+
 public interface KKO {
     boolean navnEksisterer(String navn);
     boolean foraelderEksisterer(String foraeldersNavn);
@@ -12,4 +14,5 @@ public interface KKO {
     String hentNavn();
     String hentForaeldersNavn();
     KKO hentKKO(String navn);
+    ArrayList<KKO> hentEfterfoelgere();
 }
