@@ -15,4 +15,5 @@ public interface KKO {
     String hentForaeldersNavn();
     KKO hentKKO(String navn);
     ArrayList<KKO> hentEfterfoelgere();
+    double hentBeloeb();
 }

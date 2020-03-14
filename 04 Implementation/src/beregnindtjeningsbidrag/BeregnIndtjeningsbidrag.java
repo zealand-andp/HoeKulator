@@ -1,5 +1,12 @@
 package beregnindtjeningsbidrag;
 
-public interface BeregnIndtjeningsbidrag { //TODO find ud af hvad denne skal bruges til, evt tilføj indtjeningsbidragsBeregner?
-    public void beregnIndtjeningsbidrag();
+import beregnKKO.BeregnKKO;
+import entities.Indtjeningsbidrag;
+import entities.Markedsfoeringsbidrag;
+
+public interface BeregnIndtjeningsbidrag {
+    void beregnIndtjeningsbidrag();
+    void angivKKO(BeregnKKO kko);
+    void angivMarkedsfoeringsBidrag(Markedsfoeringsbidrag markedsfoeringsbidrag);
+    Indtjeningsbidrag hentIndtjeningsbidrag();
 }

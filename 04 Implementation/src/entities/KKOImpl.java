@@ -143,4 +143,11 @@ public class KKOImpl implements KKO, Observable{
     public ArrayList<KKO> hentEfterfoelgere() {
         return efterfoelgere;
     }
+
+    @Override
+    public double hentBeloeb() {
+        return beloeb;
+    }
+
+
 }
