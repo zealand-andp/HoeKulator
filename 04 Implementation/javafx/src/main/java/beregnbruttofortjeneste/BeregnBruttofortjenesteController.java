@@ -24,6 +24,8 @@ public class BeregnBruttofortjenesteController {
         double vareforbrugInput = Double.parseDouble(vareforbrugTf.getText());
         beregnBruttofortjeneste.angivOmsaetningOgVareforbrug(omsaetningInput, vareforbrugInput);
         grundUIController.tilfoejBruttofortjenesteTilResultatBudget();
+        grundUIController.getOmsaetningResultatLabel().setText(String.valueOf(omsaetningInput));
+        grundUIController.getVareforbrugResultatLabel().setText(String.valueOf(vareforbrugInput));
     }
 
     public void setBeregnBruttofortjeneste(BeregnBruttofortjenesteImpl beregnBruttofortjeneste) {

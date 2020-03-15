@@ -93,6 +93,8 @@ public class BeregnOmsaetningController {
                 bruttofortjenesteInput = Double.parseDouble(metodeControllerOmsaetning.getBruttofortjenesteTf().getText());
                 vareforbrugInput = Double.parseDouble(metodeControllerOmsaetning.getVareforbrugTf().getText());
                 beregnOmsaetning.angivBruttofortjenesteOgVareforbrug(bruttofortjenesteInput, vareforbrugInput);
+                grundUIController.getBruttofortjenesteResultatLabel().setText(String.valueOf(bruttofortjenesteInput));
+                grundUIController.getVareforbrugResultatLabel().setText(String.valueOf(vareforbrugInput));
                 break;
             case "Primoårsomsætning og procentstigning":
                 primoAarInput = Double.parseDouble(metodeControllerOmsaetning.getPrimoaarTf().getText());
