@@ -271,4 +271,16 @@ public class GrundUIController {
         String formatted = String.format("%.2f", tal);
         resultatResultatLabel.setText(formatted);
     }
+
+    public Label getOmsaetningResultatLabel() {
+        return omsaetningResultatLabel;
+    }
+
+    public Label getVareforbrugResultatLabel() {
+        return vareforbrugResultatLabel;
+    }
+
+    public Label getBruttofortjenesteResultatLabel() {
+        return bruttofortjenesteResultatLabel;
+    }
 }

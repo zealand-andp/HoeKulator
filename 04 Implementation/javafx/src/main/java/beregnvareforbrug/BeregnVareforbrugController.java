@@ -97,7 +97,9 @@ public class BeregnVareforbrugController {
             case "Bruttofortjeneste og omsætning":
                 bruttofortjenesteInput = Double.parseDouble(metodeControllerVareforbrug.getBruttofortjenesteTf().getText());
                 omsaetningInput = Double.parseDouble(metodeControllerVareforbrug.getOmsaetningTf().getText());
-                beregnVareforbrug.angivBruttofortjenesteOgOmsaetning(bruttofortjenesteInput, omsaetningInput);;
+                beregnVareforbrug.angivBruttofortjenesteOgOmsaetning(bruttofortjenesteInput, omsaetningInput);
+                grundUIController.getOmsaetningResultatLabel().setText(String.valueOf(omsaetningInput));
+                grundUIController.getBruttofortjenesteResultatLabel().setText(String.valueOf(bruttofortjenesteInput));
                 break;
             case "Varelager primo, varekøb og varelager ultimo":
                 varelagerPrimoInput = Double.parseDouble(metodeControllerVareforbrug.getVarelagerPrimoTf().getText());
