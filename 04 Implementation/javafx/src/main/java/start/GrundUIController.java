@@ -214,6 +214,28 @@ public class GrundUIController {
         }
     }
 
+    public void opdaterOmsaetning() {
+        beregnOmsaetning.getOmsaetning().hentOmsaetning();
+        double tal = beregnOmsaetning.getOmsaetning().hentBeloeb();
+        String formatted = String.format("%.2f", tal);
+        omsaetningResultatLabel.setText(formatted);
+    }
+
+    public void opdaterVareforbrug() {
+        beregnVareforbrug.getVareforbrug().hentVareforbrug();
+        double tal = beregnVareforbrug.getVareforbrug().hentBeloeb();
+        String formatted = String.format("%.2f", tal);
+        vareforbrugResultatLabel.setText(formatted);
+    }
+
+    public void opdaterBruttofortjeneste() {
+        beregnBruttofortjeneste.getBruttofortjeneste().hentBruttofortjeneste();
+        double tal = beregnBruttofortjeneste.getBruttofortjeneste().hentBeloeb();
+        String formatted = String.format("%.2f", tal);
+        bruttofortjenesteResultatLabel.setText(formatted);
+    }
+
+
     @FXML
     public void opdaterAfskrivninger() {
         double sum = 0;
