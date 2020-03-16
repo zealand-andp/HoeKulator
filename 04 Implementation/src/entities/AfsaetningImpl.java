@@ -3,7 +3,7 @@ package entities;
 import entities.exceptions.NegativAntalException;
 
 public class AfsaetningImpl implements Afsaetning {
-    private int antal;
+    private int antal = 0;
     private ObserverManager observerManager;
 
     public AfsaetningImpl() {
