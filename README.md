@@ -45,3 +45,4 @@ Tidsregistrering vil foregå i individuelle Excel-ark som findes i mappen [Tidsr
 For at træne skabelsen af gode artefakter så indfører vi et benspænd, som dikterer at man som udgangspunkt ikke må lave en artefakt, som bygger på en artefakt, som man selv har lavet. Dvs. at man eksempelvis ikke må lave SSD01 hvis man selv har lavet UC01. Sammenhængen mellem artefakter kan ses af tegningen til højre.
 
 Det er hjælpsomt at I selv er opmærksomme på denne begrænsning under opgavefordelingen og forudseende nok til at melde jer til opgaver som ikke konflikter med jeres tidligere bidrag.
+
