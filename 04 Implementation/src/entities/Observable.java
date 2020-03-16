@@ -1,3 +1,5 @@
+// TODO Tilføj JavaDoc der forklarer at Observable skal være super interface for alle entities.
+
 package entities;
 
 public interface Observable {

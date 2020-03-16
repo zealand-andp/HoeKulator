@@ -2,8 +2,8 @@ package entities;
 
 import entities.exceptions.NegativAntalException;
 
-public class AfsaetningImpl implements Afsaetning, Observable {
-    private int antal;
+public class AfsaetningImpl implements Afsaetning {
+    private int antal = 0;
     private ObserverManager observerManager;
 
     public AfsaetningImpl() {
